@@ -9,7 +9,7 @@ class Events extends Component {
   constructor(props) {
     super(props);
 
-    // this.renderUpcomingEvents = this.renderUpcomingEvents.bind(this);
+    this.renderEvents = this.renderEvents.bind(this);
     //dummy data
     this.events = [
       {
@@ -34,24 +34,50 @@ class Events extends Component {
         reviews: ['good', 'great', 'awesome']
       }
     ]
+
+    this.pastEvents = [
+      {
+        title: 'Hamlet',
+        img: 'http://lorempixel.com/400/200',
+        desc: 'alt text desc',
+        dateRange: 'November 12th - November 30th',
+        reviews: ['good', 'great', 'awesome']
+      },
+      {
+        title: 'Fences',
+        img: 'http://lorempixel.com/400/200',
+        desc: 'alt text desc',
+        dateRange: 'December 12th - December 30th',
+        reviews: ['good', 'great', 'awesome']
+      },
+      {
+        title: 'Chicago',
+        img: 'http://lorempixel.com/400/200',
+        desc: 'alt text desc',
+        dateRange: 'October 12th - October 30th',
+        reviews: ['good', 'great', 'awesome']
+      }
+    ]
   }
 
-  // renderUpcomingEvents() {
-  //   this.events && this.events.map((event, i) => {
-  //     return (
-  //       <div key={i}>
-  //         <h2>{event.title}</h2>
-  //         <img src={event.img} alt={event.desc}/>
-  //         <h3>{event.dateRange}</h3>
-  //         {event.reviews.map((review, i) => {
-  //           return <h4 key={i}>{review}</h4>
-  //         })}
-  //       </div>
-  //     )
-  //   })
-  // }
+  renderEvents(events) {
+    return events.map((event, i) => {
+      return (
+        <div key={i}>
+          <h2>{event.title}</h2>
+          <img src={event.img} alt={event.desc}/>
+          <h3>{event.dateRange}</h3>
+          {event.reviews.map((review, i) => {
+            return <h4 key={i}>{review}</h4>
+          })}
+        </div>
+      )
+    })
+  }
 
   render(){
+    const upcoming = this.renderEvents(this.events);
+    const past = this.renderEvents(this.pastEvents);
     return(
       <div>
 
@@ -65,18 +91,15 @@ class Events extends Component {
           </div>
 
           {
-            this.events && this.events.map((event, i) => {
-              return (
-                <div key={i}>
-                  <h2>{event.title}</h2>
-                  <img src={event.img} alt={event.desc}/>
-                  <h3>{event.dateRange}</h3>
-                  {event.reviews.map((review, i) => {
-                    return <h4 key={i}>{review}</h4>
-                  })}
-                </div>
-              )
-            })
+            upcoming
+          }
+
+          <div>
+            <h1>Past Events</h1>
+          </div>
+
+          {
+            past
           }
 
           <Sidebar/>
