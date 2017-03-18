@@ -27,8 +27,8 @@ ReactDOM.render(
         <Route path="/donate" component={Donate} />
         <Route path="/auditions" component={Auditions} />
         <Route path="/accessibility" component={Accessibility} />
-        <Footer />
       </div>
+      <Footer />
     </div>
   </Router>,
   document.getElementById('root')
