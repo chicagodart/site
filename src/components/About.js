@@ -25,9 +25,9 @@ class About extends Component {
             <img src="http://www.arshtcenter.org/Global/PressRoom/photos/hi/Spring%20Awakening%20photo%20by%20Paul%20Kolnick.jpg" alt="A scene from Spring Awakening" height="100%" width="100%" />
           </div>
           
-          <div className="max-width-4 mx-auto">
-            <div className="clearfix">
-              <div className="lg-col lg-col-2">
+          <div className="max-width-12 mx-auto">
+            <div className="clearfix mx3">
+              <div className="col col-8">
                 <div>
                   <h2>Mission</h2>
                   <p>mission + vision</p>
@@ -49,7 +49,7 @@ class About extends Component {
                   <p>sponsers</p>
                 </div>
               </div>
-              <div className="lg-col lg-col-2">
+              <div className="col col-4 center">
                 <Sidebar items={this.state}/>
               </div>
             </div>
