@@ -19,8 +19,8 @@ class Accessibility extends Component {
     return(
       <div>
       
-        <div>
-          <h1>Hero Img</h1>
+        <div className="hero-img">
+          <img src="http://www.arshtcenter.org/Global/PressRoom/photos/hi/Spring%20Awakening%20photo%20by%20Paul%20Kolnick.jpg" alt="A scene from Spring Awakening" height="100%" width="100%" />
         </div>
 
         <div className="clearfix">
