@@ -9,7 +9,6 @@ class SingleEvent extends Component {
   render(){
     return(
       <div>
-        <Navbar/>
       
         <div>
           <div>
@@ -22,7 +21,6 @@ class SingleEvent extends Component {
           </div>        
         </div>
         
-        <Footer/>
       </div>
     )
   }

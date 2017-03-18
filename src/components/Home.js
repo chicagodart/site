@@ -9,7 +9,6 @@ class Home extends Component {
   render(){
     return(
       <div>
-        <Navbar/>
 
         <div>
           <div>
@@ -30,7 +29,6 @@ class Home extends Component {
           
         </div>
         
-        <Footer/>
       </div>
     )
   }

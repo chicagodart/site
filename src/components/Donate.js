@@ -9,7 +9,6 @@ class Donate extends Component {
   render(){
     return(
       <div>
-        <Navbar/>
       
         <div>
           <div>
@@ -23,7 +22,6 @@ class Donate extends Component {
           <Sidebar/>
           
         </div>
-        <Footer/>
       </div>
     )
   }

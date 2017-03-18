@@ -9,25 +9,25 @@ import Sidebar from './Sidebar';
 class Accessibility extends Component {
   
   render(){
-    <div>
-      <Navbar/>
-      
-      {/*Body*/}
+    return(
       <div>
+        
+        {/*Body*/}
         <div>
-          <h1>Hero Img</h1>
-        </div>
+          <div>
+            <h1>Hero Img</h1>
+          </div>
 
-        <div>
-          <h1>Content</h1>
-        </div>
+          <div>
+            <h1>Content</h1>
+          </div>
 
-        <Sidebar/>
+          <Sidebar/>
+          
+        </div>
         
       </div>
-      
-      <Footer/>
-    </div>
+    )
   }
 }
 
