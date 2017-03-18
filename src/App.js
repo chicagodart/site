@@ -19,6 +19,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1>{ !!page && page.title.rendered }</h1>
+        {!!page && page.content.rendered}
+        {!!page && page.acf.foobar_lookatme}
       </div>
     );
   }
