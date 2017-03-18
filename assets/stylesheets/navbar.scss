@@ -4,6 +4,9 @@
   flex-direction: row;
   align-items: center;
   padding: 10px 0px;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .navbar-brand {
@@ -23,6 +26,7 @@
   justify-content: flex-end;
   flex: 1;
   margin: 0px 50px 0px 5px;
+  // position: relative;
 
   ul {
     list-style-type: none;
@@ -36,11 +40,15 @@
 
   li {
     display: flex;
-    margin: 0px 0px 0px 35px;
+    margin: 0px 0px 0px 50px;
     color: $bright-blue;
     a {
       color: $bright-blue;
       text-decoration: none;
     }
   }
+}
+
+#art-parens {
+  color: $medium-blue;
 }

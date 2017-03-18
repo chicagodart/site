@@ -18,15 +18,17 @@ import Auditions from './components/Auditions';
 
 ReactDOM.render(
   <Router>
-    <div className="container">
+    <div>
       <Navbar />
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/events" component={Events} />
-      <Route path="/donate" component={Donate} />
-      <Route path="/auditions" component={Auditions} />
-      <Route path="/accessibility" component={Accessibility} />
-      <Footer />
+      <div className="container">
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/events" component={Events} />
+        <Route path="/donate" component={Donate} />
+        <Route path="/auditions" component={Auditions} />
+        <Route path="/accessibility" component={Accessibility} />
+        <Footer />
+      </div>
     </div>
   </Router>,
   document.getElementById('root')
