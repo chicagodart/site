@@ -6,7 +6,7 @@ Version:     0.0.1
 Author:      Heap O' Nerds
 */
 
-function wp_react_hello_world() {
+function wp_dart_site() {
   echo '<div id="root"></div>';
 }
  
