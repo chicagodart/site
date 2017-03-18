@@ -1,0 +1,15 @@
+@import "variables";
+@import "navbar";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.container {
+  padding: 0px 20px;
+}
