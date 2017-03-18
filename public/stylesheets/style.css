@@ -30,7 +30,7 @@
     font-size: 1em; }
   .navbar-menu-right li {
     display: flex;
-    margin: 0px 0px 0px 35px;
+    margin: 0px 0px 0px 50px;
     color: #1e90ff; }
     .navbar-menu-right li a {
       color: #1e90ff;
@@ -49,3 +49,6 @@ body {
 
 .container {
   padding: 0px 100px; }
+
+.content {
+  display: flex; }
