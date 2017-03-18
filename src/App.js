@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
+import { loadPages } from './reducers/pages';
+
+import DataActions from './DataActions';
 
 class App extends Component {
+
+  componentWillMount(){
+    this.props.loadPages()
+  }
 
   render() {
     const page = this.props.pages[0];
@@ -21,4 +29,14 @@ const mapStateToProps = (state) => {
   }
 }
 
+<<<<<<< Updated upstream
 export default connect(mapStateToProps)(App);
+=======
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadPages: (pages) => dispatch(loadPages(pages))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+>>>>>>> Stashed changes
