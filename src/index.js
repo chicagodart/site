@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-//components
+// components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -18,17 +18,15 @@ import Auditions from './components/Auditions';
 
 ReactDOM.render(
   <Router>
-    <div>
-      <Navbar/>
-      <div>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/events" component={Events} />
-        <Route exact path="/donate" component={Donate} />
-        <Route exact path="/auditions" component={Auditions} />
-        <Route exact path="/accessibility" component={Accessibility} />
-      </div>
-      <Footer/>
+    <div className="container">
+      <Navbar />
+      <Route exact path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/events" component={Events} />
+      <Route path="/donate" component={Donate} />
+      <Route path="/auditions" component={Auditions} />
+      <Route path="/accessibility" component={Accessibility} />
+      <Footer />
     </div>
   </Router>,
   document.getElementById('root')
