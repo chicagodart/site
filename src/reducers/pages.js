@@ -24,19 +24,11 @@ export const loadPages = () => {
 
 //reducer
 const pagesReducer = (prevState = initialState, action) => {
-  const newState = Object.assign({}, prevState)
-
   switch (action.type){
     case LOAD_PAGES:
-      newState.pages = action.pages;
-      break;
+      return action.pages
   }
-  return newState;
+  return prevState;
 }
 
-<<<<<<< Updated upstream
 export default pagesReducer;
-=======
-
-export default pagesReducer;
->>>>>>> Stashed changes

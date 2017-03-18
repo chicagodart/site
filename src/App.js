@@ -14,10 +14,11 @@ class App extends Component {
 
   render() {
     const page = this.props.pages[0];
+    console.log('PAGE PROPS',this.props.pages)
 
     return (
       <div className="App">
-        <h1>{ page.title.rendered }</h1>
+        <h1>{ !!page && page.title.rendered }</h1>
       </div>
     );
   }
@@ -29,9 +30,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-<<<<<<< Updated upstream
-export default connect(mapStateToProps)(App);
-=======
+
 const mapDispatchToProps = (dispatch) => {
   return {
     loadPages: (pages) => dispatch(loadPages(pages))
@@ -39,4 +38,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
->>>>>>> Stashed changes
