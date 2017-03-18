@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Navbar = props => (
   <nav className="navbar">
     <div className="navbar-brand">
-      <Link to="/">Chicago D(ART)</Link>
+      <Link to="/"><div>Chicago</div><div>D(ART)</div></Link>
     </div>
     <div className="navbar-menu-right">
       <ul>
