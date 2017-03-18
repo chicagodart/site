@@ -26,7 +26,7 @@ class About extends Component {
           </div>
           
           <div className="max-width-12 mx-auto">
-            <div className="clearfix ml3">
+            <div className="clearfix mx3">
               <div className="col col-8">
                 <div>
                   <h2>Mission</h2>
@@ -49,7 +49,7 @@ class About extends Component {
                   <p>sponsers</p>
                 </div>
               </div>
-              <div className="col col-4">
+              <div className="col col-4 center">
                 <Sidebar items={this.state}/>
               </div>
             </div>
