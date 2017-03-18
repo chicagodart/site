@@ -5,12 +5,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 // components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Sidebar from './components/Sidebar';
 
 import Home from './components/Home';
 import About from './components/About';
 import Events from './components/Events';
-import SingleEvent from './components/SingleEvent';
 import Donate from './components/Donate';
 import Accessibility from './components/Accessibility';
 import Auditions from './components/Auditions';
