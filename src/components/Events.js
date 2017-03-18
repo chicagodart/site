@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 //components
 import Sidebar from './Sidebar';
-import SingleEvent from './SingleEvent';
 
 
 class Events extends Component {
@@ -102,7 +101,7 @@ class Events extends Component {
             past
           }
 
-          <Sidebar/>
+          <Sidebar />
 
         </div>
 

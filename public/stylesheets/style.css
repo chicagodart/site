@@ -42,6 +42,15 @@
 #art-parens {
   color: #345d8a; }
 
+.footer {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0; }
+
 * {
   box-sizing: border-box; }
 
