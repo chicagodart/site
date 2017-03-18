@@ -10,7 +10,6 @@ class Auditions extends Component {
   render(){
     return(
       <div>
-        <Navbar/>
       
         <div>
           <div>
@@ -25,7 +24,6 @@ class Auditions extends Component {
           
         </div>
         
-        <Footer/>
       </div>
     )
   }

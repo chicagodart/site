@@ -10,9 +10,7 @@ class About extends Component {
 
   render(){
     return(
-      <div>
-        <Navbar/>
-      
+      <div>      
         <div>
           <div>
             <h1>Hero Img</h1>
@@ -24,9 +22,7 @@ class About extends Component {
 
           <Sidebar/>
           
-        </div>
-        
-        <Footer/>
+        </div>        
       </div>
     )
   }

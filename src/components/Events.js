@@ -11,7 +11,6 @@ class Events extends Component {
   render(){
     return(
       <div>
-        <Navbar/>
       
         <div>
           <div>
@@ -28,7 +27,6 @@ class Events extends Component {
           
         </div>
         
-        <Footer/>
       </div>
     )
   }
