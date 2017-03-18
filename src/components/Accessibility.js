@@ -23,8 +23,8 @@ class Accessibility extends Component {
           <h1>Hero Img</h1>
         </div>
 
-        <div>
-          <div>
+        <div className="clearfix">
+          <div className="col col-2">
             <div>
               <h2>Protocols</h2>
               <p>protocols</p>
@@ -42,8 +42,10 @@ class Accessibility extends Component {
               <p>resource guide</p>
             </div>
           </div>
-
-          <Sidebar items={this.state}/>
+          <div className="col col-2">
+            <Sidebar items={this.state}/>
+          </div>
+          
         </div>
         
       </div>

@@ -23,8 +23,8 @@ class Auditions extends Component {
           <h1>Hero Img</h1>
         </div>
         
-        <div>
-          <div>
+       <div className="clearfix">
+          <div className="col col-2">
             <h2>Upcoming Auditions</h2>
 
             <div>
@@ -48,7 +48,10 @@ class Auditions extends Component {
             </div>
           </div>
 
-          <Sidebar items={this.state}/>
+          <div className="col col-2">
+            <Sidebar items={this.state}/>
+          </div>
+          
         </div>
         
       </div>

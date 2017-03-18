@@ -20,8 +20,8 @@ class Donate extends Component {
           <h1>Hero Img</h1>
         </div>
         
-        <div>
-          <div>
+        <div className="clearfix">
+          <div className="col col-2">
             <div>
               <h2>Why</h2>
               <p>why donate</p>
@@ -32,7 +32,10 @@ class Donate extends Component {
             </div>
           </div>
 
-          <Sidebar items={this.state}/>
+          <div className="col col-2">
+            <Sidebar items={this.state}/>
+          </div>
+          
         </div>
           
       </div>
