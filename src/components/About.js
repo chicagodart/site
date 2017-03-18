@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
 //components
-import Navbar from './Navbar';
-import Footer from './Footer';
 import Sidebar from './Sidebar'
 
 class About extends Component {
