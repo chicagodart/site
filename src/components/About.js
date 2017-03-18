@@ -25,8 +25,8 @@ class About extends Component {
             <h1>Hero Img</h1>
           </div>
           
-          <div>
-            <div>
+          <div className="clearfix">
+            <div className="col col-2">
               <div>
                 <h2>Mission</h2>
                 <p>mission + vision</p>
@@ -48,8 +48,9 @@ class About extends Component {
                 <p>sponsers</p>
               </div>
             </div>
-
-            <Sidebar items={this.state}/>
+            <div className="col col-2">
+              <Sidebar items={this.state}/>
+            </div>
           </div>
 
         </div>        
