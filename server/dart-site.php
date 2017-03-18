@@ -15,4 +15,5 @@ function include_react_files() {
     wp_enqueue_script( 'plugin-scripts', plugins_url('js/main.350b4a43cde67bd603fc.js', __FILE__),array(),  '0.0.1', true );
 }
  
+
 add_action( 'wp_enqueue_scripts', 'include_react_files' );
