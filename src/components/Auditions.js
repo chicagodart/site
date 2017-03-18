@@ -23,7 +23,7 @@ class Auditions extends Component {
           <img src="http://www.arshtcenter.org/Global/PressRoom/photos/hi/Spring%20Awakening%20photo%20by%20Paul%20Kolnick.jpg" alt="A scene from Spring Awakening" height="100%" width="100%" />
         </div>
         
-       <div className="clearfix ml3">
+       <div className="clearfix mx3">
           <div className="col col-8">
             <h2>Upcoming Auditions</h2>
 
