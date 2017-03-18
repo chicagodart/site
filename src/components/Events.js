@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
 //components
-import Navbar from './Navbar';
-import Footer from './Footer';
 import Sidebar from './Sidebar';
 import SingleEvent from './SingleEvent';
 
@@ -11,7 +9,6 @@ class Events extends Component {
   render(){
     return(
       <div>
-        <Navbar/>
       
         <div>
           <div>
@@ -28,7 +25,6 @@ class Events extends Component {
           
         </div>
         
-        <Footer/>
       </div>
     )
   }

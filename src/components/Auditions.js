@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
 //components
-import Navbar from './Navbar';
-import Footer from './Footer';
 import Sidebar from './Sidebar';
 
 class Auditions extends Component {
@@ -10,7 +8,6 @@ class Auditions extends Component {
   render(){
     return(
       <div>
-        <Navbar/>
       
         <div>
           <div>
@@ -25,7 +22,6 @@ class Auditions extends Component {
           
         </div>
         
-        <Footer/>
       </div>
     )
   }
