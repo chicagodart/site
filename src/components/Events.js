@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 //components
 import Sidebar from './Sidebar';
-// import SingleEvent from './SingleEvent';
-
+import SingleEvent from './SingleEvent';
 
 class Events extends Component {
   constructor(props) {
@@ -102,7 +101,7 @@ class Events extends Component {
             past
           }
 
-          <Sidebar/>
+          <Sidebar />
 
         </div>
 
