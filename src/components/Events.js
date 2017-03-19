@@ -95,7 +95,7 @@ class Events extends Component {
 
   renderEvents(events) {
     return events && events.map((event, i) => (
-      <div key={i} className="col col-6 p2">
+      <div key={i} className="event col col-6 p2">
         <img src={event.img} alt={event.desc} style={{ width: '100%' }} />
         <h2>{event.title}</h2>
         <h3>{event.dateRange}</h3>
@@ -189,12 +189,12 @@ class Events extends Component {
         </div>
 
         <div className="max-width-12 mx-auto">
-          <div className="clearfix m3 center">
+          <div className="clearfix center">
             <a onClick={this.toggleCalendarView}>
               {this.changeSelectedTab(this.selectedTab)}
             </a>
           </div>
-          <div className="clearfix mx3">
+          <div className="clearfix">
             <div>
               {this.showCalendarView(upcoming)}
             </div>
