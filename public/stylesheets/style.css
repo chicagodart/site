@@ -26,7 +26,13 @@ body {
 
 @media screen and (max-width: 40rem) {
   .container {
-    padding: 95px 20px 0px 20px; } }
+    padding: 95px 20px 0px 20px; }
+  .video {
+    margin: 0;
+    max-width: 23rem;
+    height: auto; }
+  iframe {
+    width: 100%; } }
 
 .hero-img {
   width: 100%;
@@ -70,11 +76,27 @@ body {
   color: #ffffff;
   border-width: 1px; }
 
+#menu-item {
+  padding-bottom: 6px; }
+
 #donate-button-text {
   padding: 10px;
   font-size: 2.4em;
   font-weight: 600;
   letter-spacing: 0.05em; }
+
+#toggle-video {
+  border-radius: 10px;
+  border-style: solid;
+  min-height: 40px;
+  background-color: #ffffff;
+  border-color: #1e90ff;
+  color: #1e90ff;
+  border-width: 1px;
+  margin-top: 15px; }
+
+.white {
+  color: #ffffff; }
 
 .large-font {
   font-size: 1.6em; }

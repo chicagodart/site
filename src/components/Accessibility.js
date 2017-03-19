@@ -11,11 +11,12 @@ class Accessibility extends Component {
   constructor(props){
     super(props);
     this.state = {
-      protocols: 'p',
-      interpreters: 'i',
-      captioning: 'cc',
-      resources: 'r',
+      video: false,
     }
+  }
+
+  toggleVideoButton() {
+    this.setState({ video: !this.state.video });
   }
 
   render(){
@@ -47,6 +48,7 @@ class Accessibility extends Component {
           </div>
           <div className="col col-4 center">
             <Sidebar listItems={this.props.page.acf}/>
+            <button id="toggle-video" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? 'Hide Video' : 'Show Video'}</button>
           </div>
           
         </div>

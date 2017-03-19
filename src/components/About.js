@@ -56,10 +56,8 @@ class About extends Component {
 
               </div>
               <div className="col col-4 center">
-                <div><Sidebar listItems={this.props.page.acf} /></div>
-                <div><button id="mc-embedded-subscribe" onClick={this.toggleVideoButton.bind(this)}>
-                  <span className="mailing-list-submit">{this.state.video ? 'Hide Video' : 'Show Video'}</span>
-                </button></div>
+                <Sidebar listItems={this.props.page.acf} />
+                <button id="toggle-video" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? 'Hide Video' : 'Show Video'}</button>
               </div>
             </div>
           </div>

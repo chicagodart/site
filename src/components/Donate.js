@@ -11,7 +11,7 @@ class Donate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      video: false,
+      video: false
     };
   }
 
@@ -32,16 +32,16 @@ class Donate extends Component {
           <img src="http://www.arshtcenter.org/Global/PressRoom/photos/hi/Spring%20Awakening%20photo%20by%20Paul%20Kolnick.jpg" alt="A scene from Spring Awakening" height="100%" width="100%" />
         </div>
 
-        <div className="clearfix mx3">
-          <div className="col col-8">
+        <div className="clearfix">
+          <div className="col sm-col-12 md-col-8">
             <div>
               {this.props.pages &&
                 Object.keys(this.props.page.acf).map((header, i) => {
                   if (header[0] !== '_') {
                     return (
-                      <div key={header}>
+                      <div key={i}>
                         <h2>{this.convertHeaders(header)}</h2><a name={header} />
-                        <div dangerouslySetInnerHTML={{ __html: this.state.video ? this.props.page.acf[header] : this.props.page.acf[header].slice(0, this.props.page.acf[header].indexOf('iframe') - 1) }} />
+                        <div className="video" dangerouslySetInnerHTML={{ __html: this.state.video ? this.props.page.acf[header] : this.props.page.acf[header].slice(0, this.props.page.acf[header].indexOf('iframe') - 1) }} />
                       </div>
                     );
                   }
@@ -59,10 +59,8 @@ class Donate extends Component {
                   </button>
                 </a>
               </div>
-              <div><Sidebar listItems={this.props.page.acf} /></div>
-              <div><button id="mc-embedded-subscribe" onClick={this.toggleVideoButton.bind(this)}>
-                <span className="mailing-list-submit">{this.state.video ? 'Hide Video' : 'Show Video'}</span>
-              </button></div>
+              <Sidebar listItems={this.props.page.acf} />
+              <button id="toggle-video" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? 'Hide Video' : 'Show Video'}</button>
             </div>
           </div>
 
