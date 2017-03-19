@@ -1,0 +1,26 @@
+{
+  "plugins": [
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    },
+    "sourceType": "module"
+  },
+  "parser": "espree",
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "rules": {
+    "import/extensions": [0],
+    "import/no-unresolved": [0],
+    "react/jsx-filename-extension": [0],
+    "react/prefer-stateless-function": [0],
+    "react/prop-types": [1],
+    "no-underscore-dangle": [0]
+  }
+}
