@@ -18,14 +18,13 @@ class RelativeRoutes extends Component {
       <div>
         {Object.keys(this.props.pages).map((pageId) => {
           const page = this.props.pages[pageId];
+          const Template = templates[page.template] || templates._default;
           console.log('path', page.slug);
           return (
             <Route
               path={`/${page.slug}`}
               key={page.id}
-              component={
-                templates[page.template]
-                || templates._default}
+              component={Template}
             />
           );
         })}

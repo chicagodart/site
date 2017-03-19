@@ -15,6 +15,8 @@ class DefaultPage extends Component {
 
   render() {
     console.log('hi props', this.props);
+    const page = this.props.pages[this.props.match.path.replace('/', '')];
+    console.log('PAGE', page, this.props.pages);
     return (
       <div>
         <div>
@@ -27,7 +29,7 @@ class DefaultPage extends Component {
             <div className="clearfix mx3">
               <div className="col col-8">
                 <div>
-                  <h2>HELLO</h2>
+                  <h2>{!!page && page.slug}</h2>
                   <p>sub-heading content</p>
                 </div>
 
