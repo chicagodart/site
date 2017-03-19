@@ -11,6 +11,9 @@ class About extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      video: false,
+    };
   }
 
   convertHeaders(header) {
@@ -19,8 +22,8 @@ class About extends Component {
     .join(' ');
   }
 
-  toggleVideoButton(){
-    this.setState({video: !this.state.video})
+  toggleVideoButton() {
+    this.setState({ video: !this.state.video });
   }
 
   render() {
@@ -41,13 +44,8 @@ class About extends Component {
                     if (header[0] !== '_') {
                       return (
                         <div key={header}>
-<<<<<<< HEAD
                           <h2>{this.convertHeaders(header)}</h2><a name={header} />
-                          <div dangerouslySetInnerHTML={{ __html: this.props.page.acf[header] }} />
-=======
-                          <h2>{this.convertHeaders(header)}</h2>
                           <div dangerouslySetInnerHTML={{ __html: this.state.video ? this.props.page.acf[header] : this.props.page.acf[header].slice(0, this.props.page.acf[header].indexOf('iframe') - 1) }} />
->>>>>>> master
                         </div>
                       );
                     }
@@ -58,12 +56,8 @@ class About extends Component {
 
               </div>
               <div className="col col-4 center">
-<<<<<<< HEAD
                 <Sidebar listItems={this.props.page.acf} />
-=======
-                <Sidebar items={this.state} />
-                <button id="mc-embedded-subscribe" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? "Hide Video" : "Show Video"}</button>
->>>>>>> master
+                <button id="mc-embedded-subscribe" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? 'Hide Video' : 'Show Video'}</button>
               </div>
             </div>
           </div>
@@ -76,8 +70,4 @@ class About extends Component {
 }
 const mapStateToProps = ({ pages }) => ({ pages });
 
-const mapDispatchToProps = {
-  loadPages
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(About);
+export default connect(mapStateToProps, { loadPages })(About);
