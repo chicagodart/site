@@ -30,6 +30,15 @@ body {
   .container {
     padding: 95px 20px 0px 20px;
   }
+  .video {
+    margin: 0;
+    max-width: 23rem;
+    height: auto;
+  }
+
+  iframe {
+    width: 100%;
+  }
 }
 
 .hero-img {
