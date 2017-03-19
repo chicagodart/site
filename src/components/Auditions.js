@@ -82,6 +82,11 @@ class Auditions extends Component {
     )
   }
 }
+const mapStateToProps = ({ pages }) => ({ pages });
+
+const mapDispatchToProps = {
+  loadPages
+};
 
 const mapStateToProps = ({pages}) => {
   return({ pages })
@@ -90,5 +95,4 @@ const mapStateToProps = ({pages}) => {
 const mapDispatchToProps = { loadPages }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Auditions);
-
 
