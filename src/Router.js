@@ -7,6 +7,7 @@ import RelativeRoutes from './components/RelativeRoutes';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './components/Home';
+import MailingList from './components/MailingList';
 
 const renderClass = (props) => {
   if (props.highContrast && props.largeFont) {
@@ -27,6 +28,7 @@ const Router = props => (
         <Switch>
           <Route exact path="/" component={Home} />
           <Redirect from="/home" to="/" />
+          <Route path="/mailing" component={MailingList} />
           <RelativeRoutes />
         </Switch>
       </div>

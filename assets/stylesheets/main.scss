@@ -18,37 +18,6 @@ body {
   font-size: 1em;
 }
 
-.large-font {
-  font-size: 3em;
-}
-
-.high-contrast {
-  background-color: $black;
-  color: $white;
-  a {
-    color: $yellow;
-  }
-
-  .navbar {
-    background-color: $black;
-    a {
-      color: $yellow;
-    }
-
-    #art-parens {
-      color: $white;
-    }
-  }
-
-  .footer {
-    background-color: $black;
-    color: $yellow;
-    a {
-      color: $yellow;
-    }
-  }
-}
-
 .container {
   padding: 95px 100px 0px 100px;
 }
@@ -67,15 +36,4 @@ body {
 
 .fixed-sidebar{
   position: sticky;
-}
-
-.mc-field-group {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-#mc_embed_signup_scroll {
-  display: flex;
-  flex-direction: column;
 }
