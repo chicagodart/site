@@ -104,9 +104,9 @@ body {
   position: absolute;
   width: 100%;
   bottom: 0;
+  min-height: 6em;
   font-size: 1em;
-  color: #ffffff;
-  padding: 20px 0px; }
+  color: #ffffff; }
   .footer ul {
     list-style-type: none;
     list-style-position: initial;
