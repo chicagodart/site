@@ -46,7 +46,6 @@ class About extends Component {
                   {this.props.page && 
                   Object.keys(this.props.page.acf).map((header, i) => {
                     if(header[0] !== "_") {
-                      console.log('nonembed', this.props.page.acf[header].slice(0, this.props.page.acf[header].indexOf('[embed') - 1))
                       return (
                         <div key={header}>
                           <h2>{this.convertHeaders(header)}</h2>
@@ -61,7 +60,7 @@ class About extends Component {
               </div>
               <div className="col col-4 center">
                 <Sidebar items={this.state} />
-                <button type="button" className="btn-primary" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? "Hide Video" : "Show Video"}</button>
+                <button id="mc-embedded-subscribe" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? "Hide Video" : "Show Video"}</button>
               </div>
             </div>
           </div>
