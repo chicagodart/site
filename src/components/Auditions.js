@@ -58,7 +58,7 @@ class Auditions extends Component {
                   if (header[0] !== '_') {
                     return (
                       <div key={i}>
-                        <h2>{this.convertHeaders(header)}</h2>
+                        <h2>{this.convertHeaders(header)}</h2><a name={header} />
                         <div dangerouslySetInnerHTML={{ __html: this.props.page.acf[header] }} />
                       </div>
                     );
