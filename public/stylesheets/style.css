@@ -32,6 +32,13 @@ body {
     max-width: 23rem;
     height: auto; }
   iframe {
+    width: 100%; }
+  .content-sidebar-container {
+    display: flex;
+    flex-direction: column-reverse; }
+  .content-sidebar-container div {
+    width: 100%; }
+  .event {
     width: 100%; } }
 
 .hero-img {
