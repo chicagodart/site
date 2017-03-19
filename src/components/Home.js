@@ -5,7 +5,7 @@ import { loadPosts } from '../reducers/posts';
 
 class Home extends Component {
   componentDidMount() {
-    this.props.loadPosts('uncategorized');
+    this.props.loadPosts('events');
   }
 
   render() {
