@@ -37,6 +37,8 @@ body {
     display: flex;
     flex-direction: column-reverse; }
   .content-sidebar-container div {
+    width: 100%; }
+  .event {
     width: 100%; } }
 
 .hero-img {

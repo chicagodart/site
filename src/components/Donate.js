@@ -29,9 +29,9 @@ class Donate extends Component {
           <img src="http://www.arshtcenter.org/Global/PressRoom/photos/hi/Spring%20Awakening%20photo%20by%20Paul%20Kolnick.jpg" alt="A scene from Spring Awakening" height="100%" width="100%" />
         </div>
 
-        <div className="clearfix">
-          <div className="col sm-col-12 md-col-8">
-            <div>
+        <div className="max-width-12">
+          <div className="clearfix content-sidebar-container">
+            <div className="col col-8">
               {this.props.pages &&
                 Object.keys(this.props.page.acf).map((header, i) => {
                   if (header[0] !== '_') {
@@ -45,19 +45,19 @@ class Donate extends Component {
                 }
                 )}
             </div>
-          </div>
 
-          <div className="col col-4 center">
-            <div >
-              <div className="clearfix my4">
-                <button type="button" name="donate" id="donate-button">
-                  <span id="donate-button-text">DONATE</span>
-                </button>
+
+            <div className="col col-4 center">
+              <div >
+                <div className="clearfix my1">
+                  <button type="button" name="donate" id="donate-button">
+                    <span id="donate-button-text">DONATE</span>
+                  </button>
+                </div>
+                <Sidebar items={this.state} />
               </div>
-              <Sidebar items={this.state} />
             </div>
           </div>
-
         </div>
 
       </div>
