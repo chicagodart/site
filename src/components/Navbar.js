@@ -11,6 +11,7 @@ class Navbar extends React.Component {
       menu: false
     };
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
     this.showHideMenu = this.showHideMenu.bind(this);
   }
 
@@ -21,6 +22,12 @@ class Navbar extends React.Component {
         menu: !this.state.menu
       });
     }
+  }
+
+  closeMenu() {
+    this.setState({
+      menu: false
+    });
   }
 
   showHideMenu() {
@@ -47,11 +54,11 @@ class Navbar extends React.Component {
           <nav className="navbar-menu-center">
             <i className="fa fa-bars toggle-nav fa-lg" onClick={this.toggleMenu} aria-hidden="true" />
             <ul id={this.showHideMenu()}>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/events">Tickets & Events</Link></li>
-              <li><Link to="/donate">Donate</Link></li>
-              <li><Link to="/auditions">Auditions</Link></li>
-              <li><Link to="/accessibility">Accessibility</Link></li>
+              <li onClick={this.closeMenu}><Link to="/about">About</Link></li>
+              <li onClick={this.closeMenu}><Link to="/events">Tickets & Events</Link></li>
+              <li onClick={this.closeMenu}><Link to="/donate">Donate</Link></li>
+              <li onClick={this.closeMenu}><Link to="/auditions">Auditions</Link></li>
+              <li onClick={this.closeMenu}><Link to="/accessibility">Accessibility</Link></li>
             </ul>
           </nav>
           <div className="navbar-menu-right">
