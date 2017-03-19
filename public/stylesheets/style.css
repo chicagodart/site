@@ -89,6 +89,16 @@ body {
   font-weight: 600;
   letter-spacing: 0.05em; }
 
+#toggle-video {
+  border-radius: 10px;
+  border-style: solid;
+  min-height: 40px;
+  background-color: #ffffff;
+  border-color: #1e90ff;
+  color: #1e90ff;
+  border-width: 1px;
+  margin-top: 15px; }
+
 .large-font {
   font-size: 1.6em; }
 

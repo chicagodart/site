@@ -8,14 +8,8 @@ class Auditions extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: 't',
-      showInfo: 's',
-      roles: 'ro',
-      rehersal: 're',
-      auditionDetails: 'a'
+      video: false,
     };
-
-    this.handleScroll = this.handleScroll.bind(this);
   }
 
   convertHeaders(header) {
@@ -24,23 +18,11 @@ class Auditions extends Component {
     .join(' ');
   }
 
-  handleScroll() {
-    console.log('SCROLLIN!!');
-    this.refs.sidebar.findDOMNode().style.pane = `${document.documentElement.scrollTop}px`;
-  }
-
-  componentDidMount() {
-    console.log('componentDidMount invoked');
-    document.addEventListener('scroll', this.handleScroll);
-  }
-
-  componentWillUnmount() {
-    console.log('componentWillUnmount invoked');
-    document.removeEventListener('scroll', this.handleScroll);
+  toggleVideoButton() {
+    this.setState({ video: !this.state.video });
   }
 
   render() {
-    // console.log('aud props: ', this.props.page.acf)
     return (
       <div>
 
@@ -54,12 +36,11 @@ class Auditions extends Component {
             <div>
               {this.props.pages &&
                 Object.keys(this.props.page.acf).map((header, i) => {
-                  console.log(header);
                   if (header[0] !== '_') {
                     return (
                       <div key={i}>
                         <h2>{this.convertHeaders(header)}</h2><a name={header} />
-                        <div dangerouslySetInnerHTML={{ __html: this.props.page.acf[header] }} />
+                        <div dangerouslySetInnerHTML={{ __html: this.state.video ? this.props.page.acf[header] : this.props.page.acf[header].slice(0, this.props.page.acf[header].indexOf('iframe') - 1) }}/>
                       </div>
                     );
                   }
@@ -69,8 +50,9 @@ class Auditions extends Component {
           </div>
 
           <div className="col col-4 center">
-            <div ref="sidebar" onScroll={this.handleScroll}>
+            <div >
               <Sidebar listItems={this.props.page.acf} />
+              <button id="toggle-video" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? 'Hide Video' : 'Show Video'}</button>
             </div>
           </div>
 
