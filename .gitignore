@@ -4,3 +4,5 @@ npm-debug.log
 server/dart-site
 build
 src/npm-debug.log
+public/stylesheets
+public/style
