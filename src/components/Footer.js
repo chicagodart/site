@@ -7,7 +7,7 @@ class Footer extends Component {
       <div className="footer">
         <ul className="footer-group">
           <li className="col sm-col-12 md-col-4 lg-col-4">
-            <h3 className="footer-text h4">Contact Us:</h3>
+            <h4 className="footer-text">Contact Us:</h4>
             <a href="mailto:info@chicagodart.com" rel="noopener noreferrer" target="_blank">info@chicagodart.com</a>
           </li>
           <li className="col sm-col-12 md-col-4 lg-col-4">

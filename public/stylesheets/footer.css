@@ -1,14 +1,14 @@
 .footer {
-  background-color: #ffffff;
+  background-color: #1e90ff;
   display: flex;
   flex-direction: row;
   align-items: center;
   position: absolute;
   width: 100%;
-  min-height: 6em;
   bottom: 0;
   font-size: 1em;
-  color: #1e90ff; }
+  color: #ffffff;
+  padding: 20px 0px; }
   .footer ul {
     list-style-type: none;
     list-style-position: initial;
@@ -32,5 +32,5 @@
     .footer li .footer-text {
       margin: 0; }
     .footer li a {
-      color: #1e90ff;
+      color: #ffffff;
       text-decoration: none; }
