@@ -1,16 +1,16 @@
 @import "variables";
 
 .footer {
-  background-color: $white;
+  background-color: $bright-blue;
   display: flex;
   flex-direction: row;
   align-items: center;
   position: absolute;
   width: 100%;
-  min-height: 6em;
   bottom: 0;
+  min-height: 6em;
   font-size: 1em;
-  color: $bright-blue;
+  color: $white;
 
   ul {
     list-style-type: none;
@@ -45,7 +45,7 @@
     }
 
     a {
-      color: $bright-blue;
+      color: $white;
       text-decoration: none;
     }
   }
