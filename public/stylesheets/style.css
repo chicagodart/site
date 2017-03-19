@@ -24,6 +24,11 @@ body {
 .container {
   padding: 95px 100px 0px 100px; }
 
+.fixed-sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 77px; }
+
 @media screen and (max-width: 40rem) {
   .container {
     padding: 95px 20px 0px 20px; }
@@ -39,7 +44,10 @@ body {
   .content-sidebar-container div {
     width: 100%; }
   .event {
-    width: 100%; } }
+    width: 100%; }
+  .fixed-sidebar {
+    position: auto;
+    top: auto; } }
 
 .hero-img {
   width: 100%;
@@ -59,11 +67,6 @@ body {
 
 .content {
   display: flex; }
-
-.fixed-sidebar {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 77px; }
 
 #big-calendar {
   z-index: 1; }
