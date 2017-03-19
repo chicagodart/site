@@ -16,7 +16,8 @@ body {
   margin: 0px;
   font-family: 'Karla', sans-serif;
   background-color: #ffffff;
-  font-size: 1em; }
+  font-size: 1em;
+  padding-bottom: 15em; }
   body a {
     color: #1e90ff;
     text-decoration: none; }
@@ -68,6 +69,9 @@ body {
 .content {
   display: flex; }
 
+.sidebar-item {
+  margin: 10px 0px; }
+
 #big-calendar {
   z-index: 1; }
 
@@ -101,6 +105,9 @@ body {
   color: #1e90ff;
   border-width: 1px;
   margin-top: 15px; }
+
+.white {
+  color: #ffffff; }
 
 .large-font {
   font-size: 1.6em; }

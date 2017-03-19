@@ -14,7 +14,11 @@ class Sidebar extends Component {
 
   editHeadings(menuItem) {
     return menuItem.split('_')
-    .map(word => word[0].toUpperCase() + word.slice(1))
+    .map(word => {
+      if(!!word){
+        return word[0].toUpperCase() + word.slice(1)
+      }
+    })
     .join(' ');
   }
 
@@ -23,15 +27,14 @@ class Sidebar extends Component {
       <div>
         {
           items && Object.keys(items).map((item, i) => {
-
-            if (item[0] !== '_'){
+            if (item[0] !== '_') {
               return (
                 <div id="menu-item" key={i}>
                   <a href={`#${item}`}>{this.editHeadings(item)}</a>
                 </div>
-                )
-              }
-            })
+              );
+            }
+          })
         }
       </div>
     );

@@ -15,6 +15,16 @@ class Accessibility extends Component {
     }
   }
 
+  convertHeaders(header) {
+    return header.split('_')
+    .map(word => {
+      if(!!word){
+        return word[0].toUpperCase() + word.slice(1)
+      }
+    })
+    .join(' ');
+  }
+
   toggleVideoButton() {
     this.setState({ video: !this.state.video });
   }
@@ -30,20 +40,19 @@ class Accessibility extends Component {
         <div className="clearfix mx3">
           <div className="col col-8">
             <div>
-              <h2>Protocols</h2>
-              <p>protocols</p>
-            </div>
-            <div>
-              <h2>DB of Interpreters</h2>
-              <p>DB</p>
-            </div>
-            <div>
-              <h2>Caption Company</h2>
-              <p>caption company</p>
-            </div>
-            <div>
-              <h2>Resource Guide</h2>
-              <p>resource guide</p>
+              {this.props.page &&
+              Object.keys(this.props.page.acf).map((header, i) => {
+                if (header[0] !== '_' && !!header) {
+                  return (
+                    <div key={header}>
+                      <h2>{this.convertHeaders(header)}</h2><a name={header} />
+                      <div dangerouslySetInnerHTML={{ __html: this.state.video ? this.props.page.acf[header] : this.props.page.acf[header].slice(0, this.props.page.acf[header].indexOf('iframe') - 1) }} />
+                    </div>
+                  );
+                }
+              }
+
+              )}
             </div>
           </div>
           <div className="col col-4 center">
