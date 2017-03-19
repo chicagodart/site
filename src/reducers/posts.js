@@ -30,7 +30,7 @@ const postsReducer = (prevState = initialState, action) => {
   switch (action.type) {
     case LOAD_POSTS:
       return action.posts.reduce((result, curr) => {
-        result[curr.slug] = curr;
+        if (curr.status === 'publish') result[curr.slug] = curr;
         return result;
       }, {});
     default:
