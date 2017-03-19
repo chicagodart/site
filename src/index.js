@@ -18,6 +18,7 @@ import Events from './components/Events';
 import Donate from './components/Donate';
 import Accessibility from './components/Accessibility';
 import Auditions from './components/Auditions';
+import MailingList from './components/MailingList';
 
 
 // render (
@@ -39,6 +40,7 @@ render(
         <Route path="/donate" component={Donate} />
         <Route path="/auditions" component={Auditions} />
         <Route path="/accessibility" component={Accessibility} />
+        <Route path="/mailing" component={MailingList} />
       </div>
       <Footer />
     </div>
