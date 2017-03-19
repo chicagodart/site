@@ -40,12 +40,12 @@ class About extends Component {
               <div className="col col-8">
                 <div>
                   {this.props.pages && 
-                  Object.keys(this.props.pages[4].acf).map((header, i) => {
+                  Object.keys(this.props.pages["about"].acf).map((header, i) => {
                     if(header[0] !== "_") {
                       return (
                         <div key={header}>
                           <h2>{this.convertHeaders(header)}</h2>
-                          <div dangerouslySetInnerHTML={{ __html: this.props.pages[4].acf[header] }} />
+                          <div dangerouslySetInnerHTML={{ __html: this.props.pages["about"].acf[header] }} />
                         </div>
                       )}
                     }
