@@ -49,21 +49,21 @@ class Donate extends Component {
                 )}
             </div>
 
-          <div className="col col-4 center">
-            <div >
-              <div className="clearfix my1">
-                <a href="https://www.paypal.me/ChicagoDART">
-                  <button type="button" name="donate" id="donate-button">
-                    <span id="donate-button-text">DONATE</span>
-                  </button>
-                </a>
+            <div className="col col-4 center">
+              <div>
+                <div className="clearfix my4">
+                  <a href="https://www.paypal.me/ChicagoDART">
+                    <button type="button" name="donate" id="donate-button">
+                      <span id="donate-button-text">DONATE</span>
+                    </button>
+                  </a>
+                </div>
+                <Sidebar listItems={this.props.page.acf} />
+                <button id="toggle-video" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? 'Hide Video' : 'Show Video'}</button>
               </div>
-              <Sidebar listItems={this.props.page.acf} />
-              <button id="toggle-video" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? 'Hide Video' : 'Show Video'}</button>
             </div>
           </div>
         </div>
-
       </div>
     );
   }
