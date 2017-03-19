@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-
-//components
+import { connect } from 'react-redux';
+import { loadPost } from '../reducers/posts';
 
 class SingleEvent extends Component {
 
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
       title: this.props.title,
       cast: this.props.cast,
@@ -13,23 +13,29 @@ class SingleEvent extends Component {
       img: this.props.img,
       dateRange: this.props.dateRange,
       reviews: this.props.reviews
-    }
+    };
   }
 
-  render(){
-    return(
+  componentDidMount() {
+    this.props.loadPost(this.props.match.params.slug);
+  }
+
+  render() {
+    const post = this.props.post;
+    if (!post) return <div />;
+    return (
       <div>
-      
+
         <div>
           <div>
-            <h1>About the Show</h1>
-            <p>{this.state.title}</p>
-            <p>{this.state.description}</p>
+            <h2>About the Show</h2>
+            <h3>{post.title.rendered}</h3>
+            <p dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
             <p>{this.state.dateRange}</p>
           </div>
 
           <div>
-            <h1>Cast/Artists</h1>
+            <h3>Cast/Artists</h3>
             <p>cast: {this.state.cast}</p>
           </div>
 
@@ -38,15 +44,19 @@ class SingleEvent extends Component {
           </div>
 
         </div>
-          
+
         <div>
           <h1>Buy Tix button</h1>
           <h1>Other Info</h1>
-        </div>        
-        
+        </div>
+
       </div>
-    )
+    );
   }
 }
 
-export default SingleEvent;
+const mapStateToProps = ({ posts }) => ({ posts });
+
+const mapDispatchToProps = { loadPost };
+
+export default connect(mapStateToProps, mapDispatchToProps)(SingleEvent);
