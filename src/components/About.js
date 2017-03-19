@@ -39,13 +39,17 @@ class About extends Component {
             <div className="clearfix mx3">
               <div className="col col-8">
                 <div>
-                  {this.props.pages &&
-                  Object.keys(this.props.pages[4].acf).map(header => (
-                    <div>
-                      <h2>{this.convertHeaders(header)}</h2>
-                      <div dangerouslySetInnerHTML={{ __html: this.props.pages[4].acf[header] }} />
-                    </div>
-                    )
+                  {this.props.pages && 
+                  Object.keys(this.props.pages[4].acf).map((header, i) => {
+                    if(header[0] !== "_") {
+                      return (
+                        <div key={header}>
+                          <h2>{this.convertHeaders(header)}</h2>
+                          <div dangerouslySetInnerHTML={{ __html: this.props.pages[4].acf[header] }} />
+                        </div>
+                      )}
+                    }
+
                   )}
                 </div>
 

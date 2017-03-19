@@ -14,6 +14,11 @@ class Auditions extends Component {
       auditionDetails: 'a'
     }
   }
+  convertHeaders(header) {
+    return header.split("_")
+    .map(word => word[0].toUpperCase() + word.slice(1)) 
+    .join(" ")
+  }
 
   render(){
     return(
@@ -26,25 +31,18 @@ class Auditions extends Component {
        <div className="clearfix mx3">
           <div className="col col-8">
             <h2>Upcoming Auditions</h2>
-
             <div>
-              <p>title</p>
-            </div>
-
-            <div>
-              <p>showInfo</p>
-            </div>
-
-            <div>
-              <p>roles</p>
-            </div>
-
-            <div>
-              <p>rehersal</p>
-            </div>
-
-            <div>
-              <p>auditionDetails</p>
+              {this.props.pages && 
+                Object.keys(this.props.pages[2].acf).map((header, i) => {
+                  if(header[0] !== "_") {
+                    return (
+                      <div>
+                        <h2 key={i}>{this.convertHeaders(header)}</h2>
+                        <div key={header} dangerouslySetInnerHTML={{ __html: this.props.pages[4].acf[header] }} />
+                      </div>
+                    )}
+                  }
+                )}
             </div>
           </div>
 

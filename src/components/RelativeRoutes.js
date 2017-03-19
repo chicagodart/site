@@ -15,6 +15,7 @@ class RelativeRoutes extends Component {
   render() {
     return (
       <div>
+
         <Route
           path={'/:slug'}
           render={(props) => {
