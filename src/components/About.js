@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
 // components
 import Sidebar from './Sidebar';
-import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 
 import { loadPages } from '../reducers/pages';
@@ -21,12 +20,13 @@ class About extends Component {
   }
 
   convertHeaders(header) {
-    return header.split("_")
-    .map(word => word[0].toUpperCase() + word.slice(1)) 
-    .join(" ")
+    return header.split('_')
+    .map(word => word[0].toUpperCase() + word.slice(1))
+    .join(' ');
   }
 
   render() {
+    console.log('hey props', this.props);
     return (
       <div>
         <div>
@@ -49,6 +49,7 @@ class About extends Component {
                         </div>
                       )}
                     }
+
                   )}
                 </div>
 
@@ -65,14 +66,10 @@ class About extends Component {
   }
 
 }
-
-const mapStateToProps = state => ({
-  pages: state.pages
-});
+const mapStateToProps = ({ pages }) => ({ pages });
 
 const mapDispatchToProps = {
   loadPages
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);
-
