@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import logo from '../public/images/logo.svg';
-import './App.css';
+// import './App.css';
 import { loadPages } from './reducers/pages';
 
 import DataActions from './DataActions';
