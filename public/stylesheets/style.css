@@ -71,3 +71,6 @@ body {
 
 .content {
   display: flex; }
+
+.fixed-sidebar {
+  position: sticky; }
