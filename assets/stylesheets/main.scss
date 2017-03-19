@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  padding-bottom: 6em;
+  min-height: 100%;
+  margin: 0px;
+  font-family: 'Karla', sans-serif;
+  background-color: $white;
+  font-size: 1em;
+}
+
+.large-font {
+  font-size: 3em;
+}
+
+.high-contrast {
+  background-color: $black;
+  color: $yellow;
+  a {
+    color: $light-blue;
+  }
+}
+
+.container {
+  padding: 90px 100px 0px 100px;
+}
+
+.hero-img {
+  width: 100%;
+  height: 400px;
+  img {
+    object-fit: cover;
+  }
+}
+
+.content {
+  display: flex;
+}
+
+.fixed-sidebar{
+  position: sticky;
+}
+
+.mc-field-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#mc_embed_signup_scroll {
+  display: flex;
+  flex-direction: column;
+}

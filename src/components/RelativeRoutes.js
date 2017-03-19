@@ -6,7 +6,7 @@ import { loadPages } from '../reducers/pages';
 
 import templates from './index.js';
 
-class Routes extends Component {
+class RelativeRoutes extends Component {
 
   componentDidMount() {
     this.props.loadPages();
@@ -18,7 +18,7 @@ class Routes extends Component {
       <div>
         {Object.keys(this.props.pages).map((pageId) => {
           const page = this.props.pages[pageId];
-          console.log('path');
+          console.log('path', page.slug);
           return (
             <Route
               path={`/${page.slug}`}
@@ -42,4 +42,4 @@ const mapDispatchToProps = {
   loadPages
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Routes);
+export default connect(mapStateToProps, mapDispatchToProps)(RelativeRoutes);

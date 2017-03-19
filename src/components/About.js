@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
 // components
 import Sidebar from './Sidebar';
-import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 
 import { loadPages } from '../reducers/pages';
@@ -21,12 +20,13 @@ class About extends Component {
   }
 
   convertHeaders(header) {
-    return header.split("_")
-    .map(word => word[0].toUpperCase() + word.slice(1)) 
-    .join(" ")
+    return header.split('_')
+    .map(word => word[0].toUpperCase() + word.slice(1))
+    .join(' ');
   }
 
   render() {
+    console.log('hey props', this.props);
     return (
       <div>
         <div>
@@ -39,14 +39,13 @@ class About extends Component {
             <div className="clearfix mx3">
               <div className="col col-8">
                 <div>
-                  {this.props.pages && 
-                  Object.keys(this.props.pages[4].acf).map(header => {
-                    return (
-                      <div>
-                        <h2>{this.convertHeaders(header)}</h2>
-                        <div dangerouslySetInnerHTML={{ __html: this.props.pages[4].acf[header] }} />
-                      </div>
-                    )}
+                  {this.props.pages &&
+                  Object.keys(this.props.pages[4].acf).map(header => (
+                    <div>
+                      <h2>{this.convertHeaders(header)}</h2>
+                      <div dangerouslySetInnerHTML={{ __html: this.props.pages[4].acf[header] }} />
+                    </div>
+                    )
                   )}
                 </div>
 
@@ -63,14 +62,10 @@ class About extends Component {
   }
 
 }
-
-const mapStateToProps = state => ({
-  pages: state.pages
-});
+const mapStateToProps = ({ pages }) => ({ pages });
 
 const mapDispatchToProps = {
   loadPages
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);
-

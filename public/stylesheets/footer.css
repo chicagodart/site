@@ -1,12 +1,12 @@
 .footer {
-  background-color: #ffffff;
   display: flex;
   flex-direction: row;
   align-items: center;
   position: absolute;
   width: 100%;
   min-height: 6em;
-  bottom: 0; }
+  bottom: 0;
+  font-size: 1em; }
   .footer ul {
     list-style-type: none;
     list-style-position: initial;
@@ -16,7 +16,6 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    font-size: 1.5em;
     width: 100%; }
   @media screen and (max-width: 40rem) {
     .footer ul {
