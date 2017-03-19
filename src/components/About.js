@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 // components
 import Sidebar from './Sidebar';
+import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
+
+import { loadPages } from '../reducers/pages';
 
 class About extends Component {
 
@@ -14,6 +18,12 @@ class About extends Component {
       company: 'c',
       sponsers: 's',
     };
+  }
+
+  convertHeaders(header) {
+    return header.split("_")
+    .map(word => word[0].toUpperCase() + word.slice(1)) 
+    .join(" ")
   }
 
   render() {
@@ -29,45 +39,15 @@ class About extends Component {
             <div className="clearfix mx3">
               <div className="col col-8">
                 <div>
-                  <h2>Mission</h2>
-                  <p>mission + vision</p>
-                </div>
-                <div>
-                  <h2>Values</h2>
-                  <p>values</p>
-                </div>
-                <div>
-                  <h2>Leadership</h2>
-                  <p>board members</p>
-                </div>
-                <div>
-                  <h2>Company</h2>
-                  <p>company / actors</p>
-                </div>
-                <div>
-                  <h2>Sponsers</h2>
-                  <p>sponsers</p>
-                </div>
-
-                <div>
-                  <h2>Mission</h2>
-                  <p>mission + vision</p>
-                </div>
-                <div>
-                  <h2>Values</h2>
-                  <p>values</p>
-                </div>
-                <div>
-                  <h2>Leadership</h2>
-                  <p>board members</p>
-                </div>
-                <div>
-                  <h2>Company</h2>
-                  <p>company / actors</p>
-                </div>
-                <div>
-                  <h2>Sponsers</h2>
-                  <p>sponsers</p>
+                  {this.props.pages && 
+                  Object.keys(this.props.pages[4].acf).map(header => {
+                    return (
+                      <div>
+                        <h2>{this.convertHeaders(header)}</h2>
+                        <div dangerouslySetInnerHTML={{ __html: this.props.pages[4].acf[header] }} />
+                      </div>
+                    )}
+                  )}
                 </div>
 
               </div>
@@ -84,4 +64,13 @@ class About extends Component {
 
 }
 
-export default About;
+const mapStateToProps = state => ({
+  pages: state.pages
+});
+
+const mapDispatchToProps = {
+  loadPages
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(About);
+
