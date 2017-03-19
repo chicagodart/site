@@ -23,6 +23,10 @@ export default (state = initialState, action) => {
       newState.largeFont = !state.largeFont;
       break;
     case TOGGLE_CONTRAST:
+      const body = document.getElementsByTagName('body')[0];
+      body.className = body.className.includes('high-contrast')
+        ? body.className.replace('high-contrast', '')
+        : `${body.className} high-contrast`;
       newState.highContrast = !state.highContrast;
       break;
     case TOGGLE_MENU:

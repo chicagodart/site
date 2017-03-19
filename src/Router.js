@@ -11,11 +11,7 @@ import MailingList from './components/MailingList';
 import NotFound from './components/NotFound';
 
 const renderClass = (props) => {
-  if (props.highContrast && props.largeFont) {
-    return 'high-contrast large-font';
-  } else if (props.highContrast) {
-    return 'high-contrast';
-  } else if (props.largeFont) {
+  if (props.largeFont) {
     return 'large-font';
   }
   return null;
