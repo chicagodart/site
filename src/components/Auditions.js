@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 
-import { loadPages } from '../reducers/pages';
-
+import { loadPages } from '../reducers/pages'
 //components
 import Sidebar from './Sidebar';
 
@@ -16,14 +16,34 @@ class Auditions extends Component {
       rehersal: 're',
       auditionDetails: 'a'
     }
+
+    this.handleScroll = this.handleScroll.bind(this)
   }
+
   convertHeaders(header) {
     return header.split("_")
     .map(word => word[0].toUpperCase() + word.slice(1)) 
     .join(" ")
   }
 
+  handleScroll(){
+    console.log('SCROLLIN!!')
+    this.refs.sidebar.findDOMNode().style.pane = document.documentElement.scrollTop + 'px';
+
+  }
+
+  componentDidMount() {
+    console.log('componentDidMount invoked');
+    document.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    console.log('componentWillUnmount invoked');
+    document.removeEventListener('scroll', this.handleScroll);
+  }
+
   render(){
+    //console.log('aud props: ', this.props.page.acf)
     return(
       <div>
                 
@@ -37,11 +57,12 @@ class Auditions extends Component {
             <div>
               {this.props.pages && 
                 Object.keys(this.props.page.acf).map((header, i) => {
+                  console.log(header)
                   if(header[0] !== "_") {
                     return (
                       <div key={i}>
                         <h2>{this.convertHeaders(header)}</h2>
-                        <div dangerouslySetInnerHTML={{ __html: this.props.page.acf[header] }} />
+                        <div key={header} dangerouslySetInnerHTML={{ __html: this.props.page.acf[header] }} />
                       </div>
                     )}
                   }
@@ -50,7 +71,9 @@ class Auditions extends Component {
           </div>
 
           <div className="col col-4 center">
-            <Sidebar items={this.state}/>
+            <div ref="sidebar" onScroll={this.handleScroll}>
+              <Sidebar listItems={this.props.page.acf}/>
+            </div>
           </div>
           
         </div>
@@ -65,4 +88,11 @@ const mapDispatchToProps = {
   loadPages
 };
 
+const mapStateToProps = ({pages}) => {
+  return({ pages })
+}
+
+const mapDispatchToProps = { loadPages }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Auditions);
+
