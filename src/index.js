@@ -8,39 +8,22 @@ import axios from 'axios';
 import store from './store';
 
 // components
+import RelativeRoutes from './components/RelativeRoutes';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
-import Home from './components/Home';
-import About from './components/About';
-import Events from './components/Events';
-import Donate from './components/Donate';
-import Accessibility from './components/Accessibility';
-import Auditions from './components/Auditions';
-
-
-// render (
-//   <Provider store={store}>
-//     <Router>
-//       <Route path='/' component={App} />
-
-//     </Router>
-// </Provider>,
 
 render(
-  <Router>
-    <div>
-      <Navbar />
-      <div className="container">
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/events" component={Events} />
-        <Route path="/donate" component={Donate} />
-        <Route path="/auditions" component={Auditions} />
-        <Route path="/accessibility" component={Accessibility} />
+  <Provider store={store}>
+    <Router>
+      <div>
+        <Navbar />
+        <div className="container">
+          <RelativeRoutes />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-  </Router>,
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
