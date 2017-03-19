@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import logo from './logo.svg';
+import logo from '../public/images/logo.svg';
 import './App.css';
 import { loadPages } from './reducers/pages';
 
