@@ -29,12 +29,12 @@ class Donate extends Component {
           <div className="col col-8">
             <div>
               {this.props.pages && 
-                Object.keys(this.props.pages["donate"].acf).map((header, i) => {
+                Object.keys(this.props.page.acf).map((header, i) => {
                   if(header[0] !== "_") {
                     return (
                       <div>
                         <h2 key={i}>{this.convertHeaders(header)}</h2>
-                        <div key={header} dangerouslySetInnerHTML={{ __html: this.props.pages["donate"].acf[header] }} />
+                        <div key={header} dangerouslySetInnerHTML={{ __html: this.props.page.acf[header] }} />
                       </div>
                     )}
                   }
