@@ -28,15 +28,6 @@ body {
 .fixed-sidebar {
   position: sticky; }
 
-.mc-field-group {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; }
-
-#mc_embed_signup_scroll {
-  display: flex;
-  flex-direction: column; }
-
 .large-font {
   font-size: 3em; }
 
@@ -140,3 +131,33 @@ body {
 
 #lil-about {
   font-size: 1.2em; }
+
+.mc-field-group {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0px;
+  align-items: center; }
+  .mc-field-group label {
+    flex: 1; }
+  .mc-field-group input {
+    flex: 2;
+    margin-left: 20px;
+    font-size: 1.2em;
+    border-radius: 4px; }
+
+#mc-embedded-subscribe {
+  border-radius: 10px;
+  border-style: solid;
+  min-height: 40px;
+  background-color: #ffffff;
+  border-color: #1e90ff;
+  color: #1e90ff;
+  border-width: 1px; }
+
+#mailing-list-submit {
+  padding: 10px;
+  font-size: 1.5em; }
+
+#mc_embed_signup_scroll {
+  display: flex;
+  flex-direction: column; }

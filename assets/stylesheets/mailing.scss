@@ -1,0 +1,41 @@
+@import "variables";
+
+.mc-field-group {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0px;
+  align-items: center;
+
+  label {
+    flex: 1;
+  }
+  input {
+    flex: 2;
+    margin-left: 20px;
+    font-size: 1.2em;
+    border-radius: 4px;
+  }
+  button {
+
+  }
+}
+
+#mc-embedded-subscribe { // button
+  border-radius: 10px;
+  border-style: solid;
+  min-height: 40px;
+  background-color: $white;
+  border-color: $bright-blue;
+  color: $bright-blue;
+  border-width: 1px;
+}
+
+#mailing-list-submit { // button text
+  padding: 10px;
+  font-size: 1.5em;
+}
+
+#mc_embed_signup_scroll {
+  display: flex;
+  flex-direction: column;
+}
