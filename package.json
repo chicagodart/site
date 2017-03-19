@@ -2,6 +2,13 @@
   "name": "dart-site",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "build:css": "node-sass -w assets/stylesheets/style.scss -o public/stylesheets",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "axios": "^0.15.3",
     "basscss": "^8.0.3",
@@ -33,12 +40,5 @@
     "node-sass": "^4.5.0",
     "react-scripts": "^0.7.0",
     "webpack": "^2.2.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "build:css": "node-sass -w assets/stylesheets/style.scss -o public/stylesheets",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
   }
 }

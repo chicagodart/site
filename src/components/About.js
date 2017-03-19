@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-//components
-import Sidebar from './Sidebar'
+// components
+import Sidebar from './Sidebar';
 
 class About extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       mission: 'm',
@@ -13,18 +13,18 @@ class About extends Component {
       leardership: 'l',
       company: 'c',
       sponsers: 's',
-    }
+    };
   }
 
-  render(){
-    return(
-      <div>      
+  render() {
+    return (
+      <div>
         <div>
 
           <div className="hero-img">
             <img src="http://www.arshtcenter.org/Global/PressRoom/photos/hi/Spring%20Awakening%20photo%20by%20Paul%20Kolnick.jpg" alt="A scene from Spring Awakening" height="100%" width="100%" />
           </div>
-          
+
           <div className="max-width-12 mx-auto">
             <div className="clearfix mx3">
               <div className="col col-8">
@@ -72,14 +72,14 @@ class About extends Component {
 
               </div>
               <div className="col col-4 center">
-                <Sidebar items={this.state}/>
+                <Sidebar items={this.state} />
               </div>
             </div>
           </div>
 
-        </div>        
+        </div>
       </div>
-    )
+    );
   }
 
 }
