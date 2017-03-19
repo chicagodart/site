@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { loadPages } from '../reducers/pages';
 
 //components
 import Sidebar from './Sidebar';
@@ -53,4 +56,11 @@ class Accessibility extends Component {
   }
 }
 
-export default Accessibility;
+
+const mapStateToProps = ({ pages }) => ({ pages });
+
+const mapDispatchToProps = {
+  loadPages
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Accessibility);
