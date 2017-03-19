@@ -3,6 +3,18 @@ import React, { Component } from 'react';
 class MailingList extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      EMAIL: '',
+      FNAME: '',
+      LNAME: '',
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(evt) {
+    this.setState({
+      [evt.target.name]: evt.target.value
+    });
   }
 
   render() {
@@ -25,15 +37,15 @@ class MailingList extends Component {
               <h1>Subscribe to our mailing list</h1>
               <div className="mc-field-group col sm-col-6">
                 <label htmlFor="mce-EMAIL">Email<span className="asterisk">*</span></label>
-                <input type="email" value="" name="EMAIL" className="required email" id="mce-EMAIL" />
+                <input type="email" value={this.state.EMAIL} name="EMAIL" className="required email" id="mce-EMAIL" onChange={this.handleChange} />
               </div>
               <div className="mc-field-group col sm-col-6">
                 <label htmlFor="mce-FNAME">First Name </label>
-                <input type="text" value="" name="FNAME" className="" id="mce-FNAME" />
+                <input type="text" value={this.state.FNAME} name="FNAME" id="mce-FNAME" onChange={this.handleChange} />
               </div>
               <div className="mc-field-group col sm-col-6">
                 <label htmlFor="mce-LNAME">Last Name </label>
-                <input type="text" value="" name="LNAME" className="" id="mce-LNAME" />
+                <input type="text" value={this.state.LNAME} name="LNAME" id="mce-LNAME" onChange={this.handleChange} />
               </div>
               <div id="mce-responses" className="clear">
                 <div className="response" id="mce-error-response" style={{ display: 'none' }} />
