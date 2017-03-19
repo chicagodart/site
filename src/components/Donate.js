@@ -29,8 +29,8 @@ class Donate extends Component {
           <img src="http://www.arshtcenter.org/Global/PressRoom/photos/hi/Spring%20Awakening%20photo%20by%20Paul%20Kolnick.jpg" alt="A scene from Spring Awakening" height="100%" width="100%" />
         </div>
 
-        <div className="clearfix mx3">
-          <div className="col col-8">
+        <div className="clearfix">
+          <div className="col sm-col-12 md-col-8">
             <div>
               {this.props.pages &&
                 Object.keys(this.props.page.acf).map((header, i) => {
@@ -38,7 +38,7 @@ class Donate extends Component {
                     return (
                       <div key={i}>
                         <h2>{this.convertHeaders(header)}</h2>
-                        <div dangerouslySetInnerHTML={{ __html: this.props.page.acf[header] }} />
+                        <div className="video" dangerouslySetInnerHTML={{ __html: this.props.page.acf[header] }} />
                       </div>
                     );
                   }

@@ -26,7 +26,13 @@ body {
 
 @media screen and (max-width: 40rem) {
   .container {
-    padding: 95px 20px 0px 20px; } }
+    padding: 95px 20px 0px 20px; }
+  .video {
+    margin: 0;
+    max-width: 23rem;
+    height: auto; }
+  iframe {
+    width: 100%; } }
 
 .hero-img {
   width: 100%;
