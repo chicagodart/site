@@ -25,12 +25,18 @@ export const loadPosts = slug => (dispatch) => {
       .then(posts => dispatch(receivePosts(posts.data)));
 };
 
+export const loadPost = slug => dispatch =>
+  axios.get(`${apiRoot}/posts`, { params: { slug } })
+    .then(({ data: posts }) => {
+      dispatch(receivePosts(posts));
+    });
+
 // reducer
 const postsReducer = (prevState = initialState, action) => {
   switch (action.type) {
     case LOAD_POSTS:
       return action.posts.reduce((result, curr) => {
-        result[curr.slug] = curr;
+        if (curr.status === 'publish') result[curr.slug] = curr;
         return result;
       }, {});
     default:

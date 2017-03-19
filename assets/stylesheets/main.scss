@@ -26,12 +26,29 @@ body {
   padding: 95px 100px 0px 100px;
 }
 
+@media screen and (max-width: 40rem) {
+  .container {
+    padding: 95px 20px 0px 20px;
+  }
+}
+
 .hero-img {
   width: 100%;
   height: 400px;
   img {
     object-fit: cover;
   }
+}
+
+#vid-btn {
+    background-color: $bright-blue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 .content {
@@ -42,4 +59,29 @@ body {
   position: -webkit-sticky;  // required for Safari
   position: sticky;
   top: 0; // required as well.
+}
+
+#big-calendar {
+  z-index: 1;
+}
+
+.active-events-view {
+  color: $bright-blue;
+}
+
+#donate-button { // button
+  border-radius: 10px;
+  border-style: solid;
+  min-height: 60px;
+  background-color: $bright-blue;
+  border-color: $white;
+  color: $white;
+  border-width: 1px;
+}
+
+#donate-button-text { // button text
+  padding: 10px;
+  font-size: 2.4em;
+  font-weight: 600;
+  letter-spacing: 0.05em;
 }

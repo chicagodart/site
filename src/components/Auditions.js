@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-
 import { loadPages } from '../reducers/pages'
 //components
 import Sidebar from './Sidebar';
@@ -22,7 +20,7 @@ class Auditions extends Component {
 
   convertHeaders(header) {
     return header.split("_")
-    .map(word => word[0].toUpperCase() + word.slice(1)) 
+    .map(word => word[0].toUpperCase() + word.slice(1))
     .join(" ")
   }
 
@@ -46,23 +44,27 @@ class Auditions extends Component {
     //console.log('aud props: ', this.props.page.acf)
     return(
       <div>
-                
+
         <div className="hero-img">
           <img src="http://www.arshtcenter.org/Global/PressRoom/photos/hi/Spring%20Awakening%20photo%20by%20Paul%20Kolnick.jpg" alt="A scene from Spring Awakening" height="100%" width="100%" />
         </div>
-        
+
        <div className="clearfix mx3">
           <div className="col col-8">
             <h2>Upcoming Auditions</h2>
             <div>
-              {this.props.pages && 
+              {this.props.pages &&
                 Object.keys(this.props.page.acf).map((header, i) => {
                   console.log(header)
                   if(header[0] !== "_") {
                     return (
                       <div key={i}>
                         <h2>{this.convertHeaders(header)}</h2>
+<<<<<<< HEAD
                         <div key={header} dangerouslySetInnerHTML={{ __html: this.props.page.acf[header] }} />
+=======
+                        <div dangerouslySetInnerHTML={{ __html: this.props.page.acf[header] }} />
+>>>>>>> master
                       </div>
                     )}
                   }
@@ -75,14 +77,20 @@ class Auditions extends Component {
               <Sidebar listItems={this.props.page.acf}/>
             </div>
           </div>
-          
+
         </div>
-        
+
       </div>
     )
   }
 }
+const mapStateToProps = ({ pages }) => ({ pages });
 
+const mapDispatchToProps = {
+  loadPages
+};
+
+<<<<<<< HEAD
 const mapStateToProps = ({pages}) => {
   return({ pages })
 }
@@ -92,3 +100,6 @@ const mapDispatchToProps = { loadPages }
 export default connect(mapStateToProps, mapDispatchToProps)(Auditions);
 
 
+=======
+export default connect(mapStateToProps, mapDispatchToProps)(Auditions);
+>>>>>>> master
