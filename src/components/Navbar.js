@@ -8,7 +8,8 @@ const Navbar = props => (
       <div className="navbar-brand">
         <Link to="/"><div>Chicago</div><div><span>D</span><span id="art-parens">(ART)</span></div></Link>
       </div>
-      <div className="navbar-menu-center">
+      <nav className="navbar-menu-center">
+        <i className="fa fa-bars menu-bars" aria-hidden="true" />
         <ul>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/events">Tickets & Events</Link></li>
@@ -16,7 +17,7 @@ const Navbar = props => (
           <li><Link to="/auditions">Auditions</Link></li>
           <li><Link to="/accessibility">Accessibility</Link></li>
         </ul>
-      </div>
+      </nav>
       <div className="navbar-menu-right">
         <ul>
           <li onClick={toggleContrast}>
