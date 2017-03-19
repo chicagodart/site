@@ -10,12 +10,16 @@ class Home extends Component {
         <div className="max-width-12 mx-auto">
           <div className="clearfix mx3">
             <div className="col col-8">
-              <h1>About</h1>
-              <h1>News Feed</h1>
+              <div id="lil-about">
+                <p>Chicago D(ART), or Deaf ART, is the creative home for artists looking to bridge the communication barrier between the d/Deaf and hearing worlds.</p>
+              </div>
+              <h2>News</h2>
             </div>
             <div className="col col-4 center">
-              <h1>Call to Action</h1>
-              <h1>Calender</h1>
+              <h2>Call to Action</h2>
+              <div id="mini-cal">
+                <h2>Calendar</h2>
+              </div>
             </div>
           </div>
         </div>

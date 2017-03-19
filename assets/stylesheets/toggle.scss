@@ -1,0 +1,32 @@
+@import "variables";
+
+.large-font {
+  font-size: 3em;
+}
+
+.high-contrast {
+  background-color: $black;
+  color: $white;
+  a {
+    color: $yellow;
+  }
+
+  .navbar {
+    background-color: $black;
+    a {
+      color: $yellow;
+    }
+
+    #art-parens {
+      color: $white;
+    }
+  }
+
+  .footer {
+    background-color: $black;
+    color: $yellow;
+    a {
+      color: $yellow;
+    }
+  }
+}
