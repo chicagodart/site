@@ -1,0 +1,20 @@
+{
+  "extends": "airbnb",
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "script"
+  },
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "import/extensions": [0],
+    "import/no-unresolved": [0],
+    "class-methods-use-this": [0],
+    "comma-dangle": [0],
+    "no-console": [0],
+    "no-multi-assign": [0],
+    "strict": [1, "safe"],
+    "no-underscore-dangle": [0]
+  }
+}
