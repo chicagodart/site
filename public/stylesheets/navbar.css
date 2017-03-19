@@ -44,26 +44,3 @@
 
 #art-parens {
   color: #345d8a; }
-
-.footer {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: absolute;
-  width: 100%;
-  bottom: 0; }
-
-* {
-  box-sizing: border-box; }
-
-body {
-  margin: 0px;
-  font-family: 'Karla', sans-serif;
-  background-color: #fbfdf1; }
-
-.container {
-  padding: 0px 100px; }
-
-.content {
-  display: flex; }
