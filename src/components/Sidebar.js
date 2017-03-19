@@ -21,7 +21,7 @@ class Sidebar extends Component {
       <div>
         {
           items && Object.keys(items).map((item, i) => (
-            <div key={i}>
+            <div key={i} className="sidebar-item">
               <a href={`#${item}`}>{this.editHeadings(item)}</a>
             </div>
             ))

@@ -11,8 +11,7 @@ class Donate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      why: 'why donate',
-      where: 'where it goes',
+      video: false,
     };
   }
 
@@ -20,6 +19,10 @@ class Donate extends Component {
     return header.split('_')
     .map(word => word[0].toUpperCase() + word.slice(1))
     .join(' ');
+  }
+
+  toggleVideoButton() {
+    this.setState({ video: !this.state.video });
   }
 
   render() {
@@ -36,9 +39,9 @@ class Donate extends Component {
                 Object.keys(this.props.page.acf).map((header, i) => {
                   if (header[0] !== '_') {
                     return (
-                      <div key={i}>
-                        <h2>{this.convertHeaders(header)}</h2>
-                        <div dangerouslySetInnerHTML={{ __html: this.props.page.acf[header] }} />
+                      <div key={header}>
+                        <h2>{this.convertHeaders(header)}</h2><a name={header} />
+                        <div dangerouslySetInnerHTML={{ __html: this.state.video ? this.props.page.acf[header] : this.props.page.acf[header].slice(0, this.props.page.acf[header].indexOf('iframe') - 1) }} />
                       </div>
                     );
                   }
@@ -50,11 +53,16 @@ class Donate extends Component {
           <div className="col col-4 center">
             <div >
               <div className="clearfix my4">
-                <button type="button" name="donate" id="donate-button">
-                  <span id="donate-button-text">DONATE</span>
-                </button>
+                <a href="https://www.paypal.me/ChicagoDART">
+                  <button type="button" name="donate" id="donate-button">
+                    <span id="donate-button-text">DONATE</span>
+                  </button>
+                </a>
               </div>
-              <Sidebar items={this.state} />
+              <div><Sidebar listItems={this.props.page.acf} /></div>
+              <div><button id="mc-embedded-subscribe" onClick={this.toggleVideoButton.bind(this)}>
+                <span className="mailing-list-submit">{this.state.video ? 'Hide Video' : 'Show Video'}</span>
+              </button></div>
             </div>
           </div>
 
