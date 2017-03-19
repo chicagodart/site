@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { toggleFontSize, toggleContrast } from '../reducers/toggle';
+import { toggleFontSize, toggleContrast, toggleMenu } from '../reducers/toggle';
 
-const Navbar = ({ toggleFontSize, toggleContrast }) => (
+const Navbar = ({ toggleFontSize, toggleContrast, toggleMenu }) => (
   <div className="clearfix">
     <nav className="navbar col col-12">
       <div className="navbar-brand">
@@ -13,8 +13,8 @@ const Navbar = ({ toggleFontSize, toggleContrast }) => (
         </Link>
       </div>
       <nav className="navbar-menu-center">
-        <i className="fa fa-bars menu-bars" aria-hidden="true" />
-        <ul>
+        <i className="fa fa-bars toggle-nav" onClick={toggleMenu} aria-hidden="true" />
+        <ul ref={el => {this.menu = el;}}>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/events">Tickets & Events</Link></li>
           <li><Link to="/donate">Donate</Link></li>
@@ -43,6 +43,7 @@ const Navbar = ({ toggleFontSize, toggleContrast }) => (
 Navbar.propTypes = {
   toggleFontSize: PropTypes.func,
   toggleContrast: PropTypes.func,
+  toggleMenu: PropTypes.func
 };
 
-export default connect(() => ({}), { toggleFontSize, toggleContrast })(Navbar);
+export default connect(() => ({}), { toggleFontSize, toggleContrast, toggleMenu })(Navbar);
