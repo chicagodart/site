@@ -1,7 +1,5 @@
-@import "variables";
-
 .navbar {
-  background-color: $white;
+  background-color: #ffffff;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -9,53 +7,41 @@
   position: fixed;
   top: 0;
   width: 100%;
-  justify-content: space-between;
-
-  ul {
+  justify-content: space-between; }
+  .navbar ul {
     list-style-type: none;
     list-style-position: initial;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: row;
-    font-size: 1em;
-  }
-
-  li {
+    font-size: 1em; }
+  .navbar li {
     display: flex;
     margin: 0px 0px 0px 50px;
-    color: $bright-blue;
-    a {
-      color: $bright-blue;
-      text-decoration: none;
-    }
-  }
-}
+    color: #1e90ff; }
+    .navbar li a {
+      color: #1e90ff;
+      text-decoration: none; }
 
 .navbar-brand {
   font-family: 'Unica One', cursive;
   font-size: 1.5em;
   font-weight: 800;
-  color: $yellow;
-  margin-left: 100px;
-  a {
-    color: $bright-blue;
-    text-decoration: none;
-  }
-}
+  color: #f5d76e;
+  margin-left: 100px; }
+  .navbar-brand a {
+    color: #1e90ff;
+    text-decoration: none; }
 
 .navbar-menu-center {
-  align-self: center;
-}
+  align-self: center; }
 
 .navbar-menu-right {
-  margin-right: 100px;
-}
+  margin-right: 100px; }
 
 .fa {
-  color: $bright-blue;
-}
+  color: #1e90ff; }
 
 #art-parens {
-  color: $medium-blue;
-}
+  color: #345d8a; }
