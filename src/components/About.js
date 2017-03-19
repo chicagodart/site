@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-//components
-import Sidebar from './Sidebar'
+// components
+import Sidebar from './Sidebar';
 
 class About extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       mission: 'm',
@@ -13,11 +13,11 @@ class About extends Component {
       leardership: 'l',
       company: 'c',
       sponsers: 's',
-    }
+    };
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <div>
         <div>
 
@@ -72,14 +72,14 @@ class About extends Component {
 
               </div>
               <div className="col col-4 center">
-                <Sidebar items={this.state}/>
+                <Sidebar items={this.state} />
               </div>
             </div>
           </div>
 
         </div>
       </div>
-    )
+    );
   }
 
 }

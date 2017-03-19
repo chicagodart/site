@@ -1,49 +1,27 @@
 import React from 'react';
 import { render } from 'react-dom';
-import {BrowserRouter as Router, Route} from 'react-router-dom'
-import {connect, Provider} from 'react-redux'
-// import App from './App';
-
-// import './index.css';
-import axios from 'axios';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import store from './store';
 
 // components
+import RelativeRoutes from './components/RelativeRoutes';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
-import Home from './components/Home';
-import About from './components/About';
-import Events from './components/Events';
-import Donate from './components/Donate';
-import Accessibility from './components/Accessibility';
-import Auditions from './components/Auditions';
-import MailingList from './components/MailingList';
-
-
-// render (
-//   <Provider store={store}>
-//     <Router>
-//       <Route path='/' component={App} />
-
-//     </Router>
-// </Provider>,
-
 render(
-  <Router>
-    <div>
-      <Navbar />
-      <div className="container">
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/events" component={Events} />
-        <Route path="/donate" component={Donate} />
-        <Route path="/auditions" component={Auditions} />
-        <Route path="/accessibility" component={Accessibility} />
-        <Route path="/mailing" component={MailingList} />
-      </div>
-      <Footer />
-    </div>
-  </Router>,
+  <Provider store={store}>
+    <Router>
+      <Route path="/">
+        <div>
+          <Navbar />
+          <div className="container">
+            <RelativeRoutes />
+          </div>
+          <Footer />
+        </div>
+      </Route>
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );

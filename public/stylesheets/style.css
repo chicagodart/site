@@ -40,9 +40,6 @@
 .navbar-menu-right {
   margin-right: 100px; }
 
-.fa {
-  color: #1e90ff; }
-
 #art-parens {
   color: #345d8a; }
 
@@ -99,6 +96,12 @@ body {
 
 .container {
   padding: 0px 100px; }
+
+.hero-img {
+  width: 100%;
+  height: 400px; }
+  .hero-img img {
+    object-fit: cover; }
 
 .content {
   display: flex; }

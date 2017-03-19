@@ -1,34 +1,29 @@
-import axios from 'axios'
+import axios from 'axios';
+import IPaddress from '../../IPaddress';
 
 const initialState = [];
 
-//constants
+// constants
 const LOAD_PAGES = 'LOAD_PAGES';
 
-//actions creators
-const receivePages = (pages) => {
-  return {
-    type: LOAD_PAGES,
-    pages
-  }
-}
+// actions creators
+const receivePages = pages => ({
+  type: LOAD_PAGES,
+  pages
+});
 
-export const loadPages = () => {
-  return dispatch => 
-    axios.get('http://localhost:8888/dart-site/wp-json/wp/v2/pages')
-      .then(pages =>{
-        console.log('PAGES res', pages)
-        return dispatch(receivePages(pages.data))
-      })
-}
+export const loadPages = () => dispatch =>
+    axios.get(`http://${IPaddress}:8888/dart-site/wp-json/wp/v2/pages`)
+      .then(pages => dispatch(receivePages(pages.data)));
 
-//reducer
+// reducer
 const pagesReducer = (prevState = initialState, action) => {
-  switch (action.type){
+  switch (action.type) {
     case LOAD_PAGES:
-      return action.pages
+      return action.pages;
+    default:
+      return prevState;
   }
-  return prevState;
-}
+};
 
 export default pagesReducer;
