@@ -14,7 +14,11 @@ class Sidebar extends Component {
 
   editHeadings(menuItem) {
     return menuItem.split('_')
-    .map(word => word[0].toUpperCase() + word.slice(1))
+    .map(word => {
+      if(!!word){
+        return word[0].toUpperCase() + word.slice(1)
+      }
+    })
     .join(' ');
   }
 
