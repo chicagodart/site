@@ -17,6 +17,19 @@ body {
   margin: 0px;
   font-family: 'Karla', sans-serif;
   background-color: $beige;
+  // font-size: 1em;
+}
+
+.large-font {
+  font-size: 3em;
+}
+
+.high-contrast {
+  background-color: $black;
+  color: $yellow;
+  a {
+    color: $light-blue;
+  }
 }
 
 .container {
