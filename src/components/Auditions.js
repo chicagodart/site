@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { loadPages } from '../reducers/pages';
 
 //components
 import Sidebar from './Sidebar';
@@ -56,5 +59,10 @@ class Auditions extends Component {
     )
   }
 }
+const mapStateToProps = ({ pages }) => ({ pages });
 
-export default Auditions;
+const mapDispatchToProps = {
+  loadPages
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Auditions);

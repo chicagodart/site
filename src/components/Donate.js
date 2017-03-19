@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { loadPages } from '../reducers/pages';
 
 //components
 import Sidebar from './Sidebar';
@@ -56,4 +59,10 @@ class Donate extends Component {
   }
 }
 
-export default Donate;
+const mapStateToProps = ({ pages }) => ({ pages });
+
+const mapDispatchToProps = {
+  loadPages
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Donate);
