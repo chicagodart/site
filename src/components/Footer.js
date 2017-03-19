@@ -14,17 +14,17 @@ class Footer extends Component {
             <ul className="social">
               <li>
                 <a href="https://www.facebook.com/chicagoDART/" rel="noopener noreferrer" target="_blank">
-                  <i className="fa fa-facebook-official" aria-hidden="true" />
+                  <i className="fa fa-facebook-official fa-lg" aria-hidden="true" />
                 </a>
               </li>
               <li>
                 <a href="https://twitter.com/chicagodart?lang=en" rel="noopener noreferrer" target="_blank">
-                  <i className="fa fa-twitter-square" aria-hidden="true" />
+                  <i className="fa fa-twitter-square fa-lg" aria-hidden="true" />
                 </a>
               </li>
               <li>
                 <a href="https://www.instagram.com/chicagodart/" rel="noopener noreferrer" target="_blank">
-                  <i className="fa fa-instagram" aria-hidden="true" />
+                  <i className="fa fa-instagram fa-lg" aria-hidden="true" />
                 </a>
               </li>
             </ul>
