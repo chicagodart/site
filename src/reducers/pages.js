@@ -14,8 +14,8 @@ const receivePages = (pages) => {
 }
 
 export const loadPages = () => {
-  return dispatch => 
-    axios.get('http://localhost:8888/dart-site/wp-json/wp/v2/pages')
+  return dispatch =>
+    axios.get('http://192.168.0.108:8888/dart-site/wp-json/wp/v2/pages')
       .then(pages =>{
         console.log('PAGES res', pages)
         return dispatch(receivePages(pages.data))

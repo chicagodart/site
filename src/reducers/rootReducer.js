@@ -1,7 +1,8 @@
 import {combineReducers} from 'redux';
-
-import  pagesReducer from './pages'
+import  pagesReducer from './pages';
+import postsReducer from './posts'
 
 export default combineReducers({
- pages: pagesReducer
+ pages: pagesReducer,
+ posts: postsReducer,
 });

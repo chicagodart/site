@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import logo from '../public/images/logo.svg';
 // import './App.css';
 import { loadPages } from './reducers/pages';
+import { loadPosts } from './reducers/posts';
 
-import DataActions from './DataActions';
 
 class App extends Component {
 
   componentWillMount() {
     this.props.loadPages();
+    this.props.loadPosts();
   }
 
   render() {
@@ -32,7 +33,8 @@ const mapStateToProps = state => ({
 
 
 const mapDispatchToProps = dispatch => ({
-  loadPages: pages => dispatch(loadPages(pages))
+  loadPages: pages => dispatch(loadPages(pages)),
+  loadPosts: posts => dispatch(loadPosts(posts)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

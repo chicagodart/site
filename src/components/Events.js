@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 //components
 import Sidebar from './Sidebar';
@@ -64,7 +65,7 @@ class Events extends Component {
       return (
         <div key={i}>
           <h2>{event.title}</h2>
-          <img src={event.img} alt={event.desc}/>
+            <img src={event.img} alt={event.desc}/>
           <h3>{event.dateRange}</h3>
           {event.reviews.map((review, i) => {
             return <h4 key={i}>{review}</h4>
