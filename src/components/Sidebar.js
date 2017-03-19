@@ -27,15 +27,14 @@ class Sidebar extends Component {
       <div>
         {
           items && Object.keys(items).map((item, i) => {
-
-            if (item[0] !== '_'){
+            if (item[0] !== '_') {
               return (
                 <div id="menu-item" key={i}>
                   <a href={`#${item}`}>{this.editHeadings(item)}</a>
                 </div>
-                )  
-              }
-            })
+              );
+            }
+          })
         }
       </div>
     );

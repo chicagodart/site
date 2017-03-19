@@ -81,6 +81,10 @@ body {
   top: 0; // required as well.
 }
 
+.sidebar-item {
+  margin: 10px 0px;
+}
+
 #big-calendar {
   z-index: 1;
 }
@@ -118,4 +122,8 @@ body {
   color: $bright-blue;
   border-width: 1px;
   margin-top: 15px;
+}
+
+.white {
+  color: $white;
 }
