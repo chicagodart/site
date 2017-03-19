@@ -1,7 +1,9 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 
-import  pagesReducer from './pages'
+import pages from './pages';
+import toggle from './toggle';
 
 export default combineReducers({
- pages: pagesReducer
+  pages,
+  toggle,
 });
