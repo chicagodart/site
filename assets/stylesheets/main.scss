@@ -1,3 +1,5 @@
+@import "variables";
+
 * {
   box-sizing: border-box;
 }
@@ -22,14 +24,33 @@ body {
 
 .high-contrast {
   background-color: $black;
-  color: $yellow;
+  color: $white;
   a {
-    color: $light-blue;
+    color: $yellow;
+  }
+
+  .navbar {
+    background-color: $black;
+    a {
+      color: $yellow;
+    }
+
+    #art-parens {
+      color: $white;
+    }
+  }
+
+  .footer {
+    background-color: $black;
+    color: $yellow;
+    a {
+      color: $yellow;
+    }
   }
 }
 
 .container {
-  padding: 90px 100px 0px 100px;
+  padding: 95px 100px 0px 100px;
 }
 
 .hero-img {
