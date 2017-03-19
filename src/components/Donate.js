@@ -33,7 +33,10 @@ class Donate extends Component {
           </div>
 
           <div className="col col-4 center">
-            <Sidebar items={this.state}/>
+            <div >
+              <div className="clearfix my4">Add Donations link</div>
+              <Sidebar items={this.state}/>
+            </div>
           </div>
           
         </div>
