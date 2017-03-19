@@ -31,6 +31,9 @@ body {
 #big-calendar {
   z-index: 1; }
 
+.active-events-view {
+  color: #1e90ff; }
+
 .large-font {
   font-size: 3em; }
 

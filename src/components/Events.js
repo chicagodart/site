@@ -24,7 +24,7 @@ class Events extends Component {
 
     this.renderEvents = this.renderEvents.bind(this);
     this.showCalendarView = this.showCalendarView.bind(this);
-    this.toggleCalenderView = this.toggleCalenderView.bind(this);
+    this.toggleCalendarView = this.toggleCalendarView.bind(this);
     this.changeSelectedTab = this.changeSelectedTab.bind(this);
 
     // dummy data
@@ -139,7 +139,7 @@ class Events extends Component {
     );
   }
 
-  toggleCalenderView() {
+  toggleCalendarView() {
     this.setState({ showCalendar: !this.state.showCalendar });
 
     if (this.selectedTab === 'events' && this.showCalendar === false) {
@@ -160,22 +160,20 @@ class Events extends Component {
 
   // Clean this up
   changeSelectedTab() {
-    const activeColor = '#345D8A';
-
     if (this.state.selectedTab === 'events' && this.state.showCalendar) {
       return (
         <div className="flex justify-around">
           <h2>Events List</h2>
           <h2>|</h2>
-          <h2 style={{ color: activeColor }}>Calender View</h2>
+          <h2 className="active-events-view">Calendar View</h2>
         </div>
       );
     }
     return (
       <div className="flex justify-around">
-        <h2 style={{ color: activeColor }}>Events List</h2>
+        <h2 className="active-events-view">Events List</h2>
         <h2>|</h2>
-        <h2>Calender View</h2>
+        <h2>Calendar View</h2>
       </div>
     );
   }
@@ -192,7 +190,7 @@ class Events extends Component {
 
         <div className="max-width-12 mx-auto">
           <div className="clearfix m3 center">
-            <a onClick={this.toggleCalenderView}>
+            <a onClick={this.toggleCalendarView}>
               {this.changeSelectedTab(this.selectedTab)}
             </a>
           </div>
