@@ -33,12 +33,12 @@ class Auditions extends Component {
             <h2>Upcoming Auditions</h2>
             <div>
               {this.props.pages && 
-                Object.keys(this.props.pages[2].acf).map((header, i) => {
+                Object.keys(this.props.page.acf).map((header, i) => {
                   if(header[0] !== "_") {
                     return (
                       <div>
                         <h2 key={i}>{this.convertHeaders(header)}</h2>
-                        <div key={header} dangerouslySetInnerHTML={{ __html: this.props.pages[4].acf[header] }} />
+                        <div key={header} dangerouslySetInnerHTML={{ __html: this.props.page.acf[header] }} />
                       </div>
                     )}
                   }
