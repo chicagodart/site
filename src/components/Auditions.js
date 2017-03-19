@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { loadPages } from '../reducers/pages';
 
 //components
 import Sidebar from './Sidebar';
@@ -36,9 +39,9 @@ class Auditions extends Component {
                 Object.keys(this.props.page.acf).map((header, i) => {
                   if(header[0] !== "_") {
                     return (
-                      <div>
-                        <h2 key={i}>{this.convertHeaders(header)}</h2>
-                        <div key={header} dangerouslySetInnerHTML={{ __html: this.props.page.acf[header] }} />
+                      <div key={i}>
+                        <h2>{this.convertHeaders(header)}</h2>
+                        <div dangerouslySetInnerHTML={{ __html: this.props.page.acf[header] }} />
                       </div>
                     )}
                   }
@@ -56,5 +59,10 @@ class Auditions extends Component {
     )
   }
 }
+const mapStateToProps = ({ pages }) => ({ pages });
 
-export default Auditions;
+const mapDispatchToProps = {
+  loadPages
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Auditions);
