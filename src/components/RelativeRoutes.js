@@ -21,7 +21,7 @@ class RelativeRoutes extends Component {
           render={(props) => {
             const slug = props.match.params.slug;
             const page = this.props.pages[slug];
-            const Template = !!page && templates[page.template] || templates._default;
+            const Template = !!page && templates[page.acf._template] || templates._default;
             return <Template {...props} page={page} />;
           }}
         />
