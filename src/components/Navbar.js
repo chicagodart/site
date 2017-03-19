@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { toggleFontSize, toggleContrast } from '../reducers/toggle';
 
 const Navbar = props => (
   <div className="clearfix">
@@ -18,11 +19,11 @@ const Navbar = props => (
       </div>
       <div className="navbar-menu-right">
         <ul>
-          <li>
-            <i className="fa fa-adjust fa-lg" title="Toggle light/dark view" />
+          <li onClick={toggleContrast}>
+            <a href="#"><i className="fa fa-adjust fa-lg" title="Toggle light/dark view" /></a>
           </li>
-          <li>
-            <i className="fa fa-font fa-lg" title="Toggle to large font view" />
+          <li onClick={toggleFontSize}>
+            <a href="#"><i className="fa fa-font fa-lg" title="Toggle to large font view" /></a>
           </li>
         </ul>
       </div>
