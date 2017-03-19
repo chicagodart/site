@@ -54,14 +54,16 @@ class Home extends Component {
 
 function PostInList(props) {
   const post = props.post;
+  const img = post.content.rendered.slice(0, post.content.rendered.indexOf('</') + 4)
+  const content = post.content.rendered.slice(post.content.rendered.indexOf('</') + 4)
   return (
     <li className="event-in-list">
       <Link to={`/events/${post.slug}`}>
         <div className="event-in-list__display-img">
-          <img src="http://lorempixel.com/400/300" alt="" />
+          <div dangerouslySetInnerHTML={{ __html: img }} />
         </div>
         <h3 className="event-in-list__title">{post.title.rendered}</h3>
-        <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+        <div dangerouslySetInnerHTML={{ __html: content }} />
       </Link>
     </li>
   );
