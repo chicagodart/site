@@ -61,7 +61,7 @@ class About extends Component {
               </div>
               <div className="col col-4 center">
                 <Sidebar items={this.state} />
-                <button className="btn.btn-primary" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? "Hide Video" : "Show Video"}</button>
+                <button type="button" className="btn-primary" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? "Hide Video" : "Show Video"}</button>
               </div>
             </div>
           </div>
