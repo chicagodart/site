@@ -8,7 +8,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import MailingList from './components/MailingList';
-import NotFound from './components/NotFound';
 
 const renderClass = (props) => {
   if (props.largeFont) {

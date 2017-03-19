@@ -1,41 +1,44 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Sidebar extends Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
-
-    }
+      items: props.listItems
+    };
 
     this.renderSidebarItems = this.renderSidebarItems.bind(this);
+    this.editHeadings = this.editHeadings.bind(this);
   }
 
-  renderSidebarItems(items){
-    return(
+  editHeadings(menuItem) {
+    return menuItem.split('_').join(' ');
+  }
+
+  renderSidebarItems(items) {
+    return (
       <div>
         {
-          items && Object.values(items).map( (item, i) => {
-            return(
-              <div key={i}>
-                <h3>{item}</h3>
-              </div>
-            )
-          })
+          items && Object.keys(items).map((item, i) => (
+            <div key={i}>
+              <a href={`#${item}`}>{this.editHeadings(item)}</a>
+            </div>
+            ))
         }
       </div>
-    )
+    );
   }
 
-  render(){
+  render() {
+    const sidebarItems = this.props.listItems;
 
-    let sidebarItems = this.props.items;
-
-    return(
-      <div>
-        <h1>--SIDEBAR--</h1>
+    return (
+      <div id="fixed-sidebar">
+        <h3>Jump to:</h3>
         {this.renderSidebarItems(sidebarItems)}
       </div>
-    )
+    );
   }
 }
 

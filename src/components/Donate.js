@@ -15,6 +15,7 @@ class Donate extends Component {
       where: 'where it goes',
     };
   }
+
   convertHeaders(header) {
     return header.split('_')
     .map(word => word[0].toUpperCase() + word.slice(1))
