@@ -7,7 +7,8 @@
   position: fixed;
   top: 0;
   width: 100%;
-  justify-content: space-between; }
+  justify-content: space-between;
+  z-index: 5; }
   .navbar ul {
     list-style-type: none;
     list-style-position: initial;
