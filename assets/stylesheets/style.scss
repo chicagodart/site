@@ -1,48 +1,4 @@
 @import "variables";
+@import "main";
 @import "navbar";
 @import "footer";
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  height: 100%;
-}
-
-body {
-  position: relative;
-  padding-bottom: 6em;
-  min-height: 100%;
-  margin: 0px;
-  font-family: 'Karla', sans-serif;
-  background-color: $beige;
-  // font-size: 1em;
-}
-
-.large-font {
-  font-size: 3em;
-}
-
-.high-contrast {
-  background-color: $black;
-  color: $yellow;
-  a {
-    color: $light-blue;
-  }
-}
-
-.container {
-  padding: 0px 100px;
-}
-
-.hero-img {
-}
-
-.content {
-  display: flex;
-}
-
-.fixed-sidebar{
-  position: sticky;
-}

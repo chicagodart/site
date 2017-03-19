@@ -1,16 +1,12 @@
 import React, { PropTypes } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 // Components
+import RelativeRoutes from './components/RelativeRoutes';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './components/Home';
-import About from './components/About';
-import Events from './components/Events';
-import Donate from './components/Donate';
-import Accessibility from './components/Accessibility';
-import Auditions from './components/Auditions';
 
 const renderClass = (props) => {
   if (props.highContrast && props.largeFont) {
@@ -28,12 +24,11 @@ const Router = props => (
     <div className={renderClass(props)} id="toggler-div">
       <Navbar />
       <div className="container">
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/events" component={Events} />
-        <Route path="/donate" component={Donate} />
-        <Route path="/auditions" component={Auditions} />
-        <Route path="/accessibility" component={Accessibility} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Redirect from="/home" to="/" />
+          <RelativeRoutes />
+        </Switch>
       </div>
       <Footer />
     </div>
