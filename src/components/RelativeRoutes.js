@@ -13,12 +13,10 @@ class Routes extends Component {
   }
 
   render() {
-    console.log(this.props.pages);
     return (
       <div>
         {Object.keys(this.props.pages).map((pageId) => {
           const page = this.props.pages[pageId];
-          console.log('path');
           return (
             <Route
               path={`/${page.slug}`}
