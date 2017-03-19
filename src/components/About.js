@@ -12,12 +12,7 @@ class About extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mission: 'm',
-      values: 'v',
-      leardership: 'l',
-      company: 'c',
-      sponsers: 's',
-      video: true
+      video: false,
     };
   }
 
@@ -27,8 +22,8 @@ class About extends Component {
     .join(' ');
   }
 
-  toggleVideoButton(){
-    this.setState({video: !this.state.video})
+  toggleVideoButton() {
+    this.setState({ video: !this.state.video });
   }
 
   render() {
@@ -44,24 +39,25 @@ class About extends Component {
             <div className="clearfix mx3">
               <div className="col col-8">
                 <div>
-                  {this.props.page && 
+                  {this.props.page &&
                   Object.keys(this.props.page.acf).map((header, i) => {
-                    if(header[0] !== "_") {
+                    if (header[0] !== '_') {
                       return (
                         <div key={header}>
-                          <h2>{this.convertHeaders(header)}</h2>
+                          <h2>{this.convertHeaders(header)}</h2><a name={header} />
                           <div dangerouslySetInnerHTML={{ __html: this.state.video ? this.props.page.acf[header] : this.props.page.acf[header].slice(0, this.props.page.acf[header].indexOf('iframe') - 1) }} />
                         </div>
-                      )}
+                      );
                     }
+                  }
 
                   )}
                 </div>
 
               </div>
               <div className="col col-4 center">
-                <Sidebar items={this.state} />
-                <button id="mc-embedded-subscribe" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? "Hide Video" : "Show Video"}</button>
+                <Sidebar listItems={this.props.page.acf} />
+                <button id="mc-embedded-subscribe" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? 'Hide Video' : 'Show Video'}</button>
               </div>
             </div>
           </div>
@@ -74,8 +70,4 @@ class About extends Component {
 }
 const mapStateToProps = ({ pages }) => ({ pages });
 
-const mapDispatchToProps = {
-  loadPages
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(About);
+export default connect(mapStateToProps, { loadPages })(About);

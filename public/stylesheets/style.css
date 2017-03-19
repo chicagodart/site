@@ -17,6 +17,9 @@ body {
   font-family: 'Karla', sans-serif;
   background-color: #ffffff;
   font-size: 1em; }
+  body a {
+    color: #1e90ff;
+    text-decoration: none; }
 
 .container {
   padding: 95px 100px 0px 100px; }
@@ -44,8 +47,10 @@ body {
 .content {
   display: flex; }
 
-.fixed-sidebar {
-  position: sticky; }
+#fixed-sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0; }
 
 #big-calendar {
   z-index: 1; }

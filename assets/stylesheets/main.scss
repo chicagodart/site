@@ -16,6 +16,10 @@ body {
   font-family: 'Karla', sans-serif;
   background-color: $white;
   font-size: 1em;
+  a {
+    color: $bright-blue;
+    text-decoration: none;
+  }
 }
 
 .container {
@@ -51,8 +55,10 @@ body {
   display: flex;
 }
 
-.fixed-sidebar{
+#fixed-sidebar {
+  position: -webkit-sticky;  // required for Safari
   position: sticky;
+  top: 0; // required as well.
 }
 
 #big-calendar {
