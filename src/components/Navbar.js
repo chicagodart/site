@@ -16,7 +16,6 @@ class Navbar extends React.Component {
 
   toggleMenu() {
     const mq = window.matchMedia('(max-width: 640px)');
-    console.log('clicked', this.state.menu);
     if (mq.matches) {
       this.setState({
         menu: !this.state.menu
@@ -25,7 +24,6 @@ class Navbar extends React.Component {
   }
 
   showHideMenu() {
-    console.log('showHideMenu');
     const mq = window.matchMedia('(max-width: 640px)');
     if (!mq.matches) return '';
     if (mq.matches && this.state.menu) {
