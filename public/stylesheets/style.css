@@ -16,13 +16,19 @@ body {
   margin: 0px;
   font-family: 'Karla', sans-serif;
   background-color: #ffffff;
-  font-size: 1em; }
+  font-size: 1em;
+  padding-bottom: 15em; }
   body a {
     color: #1e90ff;
     text-decoration: none; }
 
 .container {
   padding: 95px 100px 0px 100px; }
+
+.fixed-sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 77px; }
 
 @media screen and (max-width: 40rem) {
   .container {
@@ -39,7 +45,10 @@ body {
   .content-sidebar-container div {
     width: 100%; }
   .event {
-    width: 100%; } }
+    width: 100%; }
+  .fixed-sidebar {
+    position: auto;
+    top: auto; } }
 
 .hero-img {
   width: 100%;
@@ -59,11 +68,6 @@ body {
 
 .content {
   display: flex; }
-
-#fixed-sidebar {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0; }
 
 .sidebar-item {
   margin: 10px 0px; }

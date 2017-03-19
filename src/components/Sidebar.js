@@ -44,7 +44,7 @@ class Sidebar extends Component {
     const sidebarItems = this.props.listItems;
 
     return (
-      <div id="fixed-sidebar">
+      <div >
         <h3>Jump to:</h3>
         {this.renderSidebarItems(sidebarItems)}
       </div>

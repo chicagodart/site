@@ -49,9 +49,10 @@ class Donate extends Component {
                 )}
             </div>
 
-            <div className="col col-4 center">
+
+            <div className="col col-4 center fixed-sidebar">
               <div>
-                <div className="clearfix my4">
+                <div className="clearfix my1">
                   <a href="https://www.paypal.me/ChicagoDART">
                     <button type="button" name="donate" id="donate-button">
                       <span id="donate-button-text">DONATE</span>
