@@ -12,6 +12,7 @@ class Donate extends Component {
       where: 'where it goes',
     }
   }
+  
   convertHeaders(header) {
     return header.split("_")
     .map(word => word[0].toUpperCase() + word.slice(1)) 
@@ -45,7 +46,7 @@ class Donate extends Component {
           <div className="col col-4 center">
             <div >
               <div className="clearfix my4">Add Donations link</div>
-              <Sidebar items={this.state}/>
+              <Sidebar listItems={this.props.page.acf}/>
             </div>
           </div>
           

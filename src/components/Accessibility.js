@@ -43,7 +43,7 @@ class Accessibility extends Component {
             </div>
           </div>
           <div className="col col-4 center">
-            <Sidebar items={this.state}/>
+            <Sidebar listItems={this.props.page.acf}/>
           </div>
           
         </div>
