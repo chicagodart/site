@@ -23,7 +23,7 @@ body {
     color: #acc4de; }
 
 .container {
-  padding: 90px 100px 0px 100px; }
+  padding: 100px 100px 0px 100px; }
 
 .hero-img {
   width: 100%;
@@ -36,6 +36,15 @@ body {
 
 .fixed-sidebar {
   position: sticky; }
+
+.mc-field-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+#mc_embed_signup_scroll {
+  display: flex;
+  flex-direction: column; }
 
 .navbar {
   background-color: #ffffff;

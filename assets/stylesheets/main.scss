@@ -47,3 +47,14 @@ body {
 .fixed-sidebar{
   position: sticky;
 }
+
+.mc-field-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#mc_embed_signup_scroll {
+  display: flex;
+  flex-direction: column;
+}
