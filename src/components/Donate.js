@@ -11,7 +11,7 @@ class Donate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      video:false
+      video: false
     };
   }
 
@@ -40,7 +40,7 @@ class Donate extends Component {
                   if (header[0] !== '_') {
                     return (
                       <div key={i}>
-                        <h2>{this.convertHeaders(header)}</h2>
+                        <h2>{this.convertHeaders(header)}</h2><a name={header} />
                         <div className="video" dangerouslySetInnerHTML={{ __html: this.state.video ? this.props.page.acf[header] : this.props.page.acf[header].slice(0, this.props.page.acf[header].indexOf('iframe') - 1) }} />
                       </div>
                     );
@@ -49,21 +49,22 @@ class Donate extends Component {
                 )}
             </div>
 
-
             <div className="col col-4 center">
-              <div >
-                <div className="clearfix my1">
-                  <button type="button" name="donate" id="donate-button">
-                    <span id="donate-button-text">DONATE</span>
-                  </button>
+              <div>
+                <div className="clearfix my4">
+                  <a href="https://www.paypal.me/ChicagoDART">
+                    <button type="button" name="donate" id="donate-button">
+                      <span id="donate-button-text">DONATE</span>
+                    </button>
+                  </a>
                 </div>
+                <Sidebar listItems={this.props.page.acf} />
+                <button id="toggle-video" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? 'Hide Video' : 'Show Video'}</button>
+
               </div>
-              <Sidebar listItems={this.props.page.acf} />
-              <button id="toggle-video" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? 'Hide Video' : 'Show Video'}</button>
             </div>
           </div>
         </div>
-
       </div>
     );
   }
