@@ -1,6 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { render } from 'react-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {connect, Provider} from 'react-redux'
+import App from './App';
+import './index.css';
+import axios from 'axios';
+import store from './store';
 
 // components
 import Navbar from './components/Navbar';
@@ -13,10 +18,16 @@ import Donate from './components/Donate';
 import Accessibility from './components/Accessibility';
 import Auditions from './components/Auditions';
 
-// import App from './App';
-// import './index.css';
 
-ReactDOM.render(
+// render (
+//   <Provider store={store}>
+//     <Router>
+//       <Route path='/' component={App} />
+        
+//     </Router>
+// </Provider>,
+
+render(
   <Router>
     <div>
       <Navbar />
