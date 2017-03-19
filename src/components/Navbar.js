@@ -16,7 +16,7 @@ class Navbar extends React.Component {
 
   toggleMenu() {
     const mq = window.matchMedia('(max-width: 640px)');
-    console.log('clicked', this.state.menu)
+    console.log('clicked', this.state.menu);
     if (mq.matches) {
       this.setState({
         menu: !this.state.menu
@@ -25,7 +25,7 @@ class Navbar extends React.Component {
   }
 
   showHideMenu() {
-    console.log('showHideMenu')
+    console.log('showHideMenu');
     const mq = window.matchMedia('(max-width: 640px)');
     if (!mq.matches) return '';
     if (mq.matches && this.state.menu) {
@@ -47,7 +47,7 @@ class Navbar extends React.Component {
             </Link>
           </div>
           <nav className="navbar-menu-center">
-            <i className="fa fa-bars toggle-nav" onClick={this.toggleMenu} aria-hidden="true" />
+            <i className="fa fa-bars toggle-nav fa-lg" onClick={this.toggleMenu} aria-hidden="true" />
             <ul id={this.showHideMenu()}>
               <li><Link to="/about">About</Link></li>
               <li><Link to="/events">Tickets & Events</Link></li>
@@ -82,4 +82,3 @@ Navbar.propTypes = {
 };
 
 export default connect(() => ({}), { toggleFontSize, toggleContrast })(Navbar);
-

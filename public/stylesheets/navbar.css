@@ -52,6 +52,8 @@
   display: none; }
 
 @media screen and (max-width: 40rem) {
+  .navbar-brand {
+    margin-left: 20px; }
   .navbar-menu-center {
     position: relative;
     display: inline-block; }
