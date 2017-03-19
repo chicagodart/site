@@ -42,7 +42,7 @@ class Accessibility extends Component {
               <p>resource guide</p>
             </div>
           </div>
-          <div className="col col-4">
+          <div className="col col-4 center">
             <Sidebar items={this.state}/>
           </div>
           
