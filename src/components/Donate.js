@@ -57,7 +57,6 @@ class Donate extends Component {
                     <span id="donate-button-text">DONATE</span>
                   </button>
                 </div>
-                <Sidebar items={this.state} />
               </div>
               <Sidebar listItems={this.props.page.acf} />
               <button id="toggle-video" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? 'Hide Video' : 'Show Video'}</button>
