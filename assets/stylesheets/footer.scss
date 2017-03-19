@@ -9,6 +9,8 @@
   width: 100%;
   min-height: 6em;
   bottom: 0;
+  font-size: 1em;
+  color: $bright-blue;
 
   ul {
     list-style-type: none;
@@ -19,7 +21,6 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    font-size: 1.5em;
     width: 100%;
   }
 
@@ -39,7 +40,6 @@
   li {
     display: block;
     text-align: center;
-    color: $bright-blue;
     .footer-text {
       margin: 0;
     }

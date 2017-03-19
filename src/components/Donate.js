@@ -12,6 +12,11 @@ class Donate extends Component {
       where: 'where it goes',
     }
   }
+  convertHeaders(header) {
+    return header.split("_")
+    .map(word => word[0].toUpperCase() + word.slice(1)) 
+    .join(" ")
+  }
 
   render(){
     return(
@@ -23,12 +28,17 @@ class Donate extends Component {
         <div className="clearfix mx3">
           <div className="col col-8">
             <div>
-              <h2>Why</h2>
-              <p>why donate</p>
-            </div>
-            <div>
-              <h2>Where</h2>
-              <p>where the $ goes</p>
+              {this.props.pages && 
+                Object.keys(this.props.pages[2].acf).map((header, i) => {
+                  if(header[0] !== "_") {
+                    return (
+                      <div>
+                        <h2 key={i}>{this.convertHeaders(header)}</h2>
+                        <div key={header} dangerouslySetInnerHTML={{ __html: this.props.pages[2].acf[header] }} />
+                      </div>
+                    )}
+                  }
+                )}
             </div>
           </div>
 

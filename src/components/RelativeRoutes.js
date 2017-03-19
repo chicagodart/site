@@ -6,33 +6,41 @@ import { loadPages } from '../reducers/pages';
 
 import templates from './index.js';
 
-class Routes extends Component {
+class RelativeRoutes extends Component {
 
   componentDidMount() {
     this.props.loadPages();
   }
 
   render() {
-    console.log(this.props.pages);
     return (
       <div>
-        {Object.keys(this.props.pages).map((pageId) => {
-          const page = this.props.pages[pageId];
-          console.log('path');
-          return (
-            <Route
-              path={`/${page.slug}`}
-              key={page.id}
-              component={
-                templates[page.template]
-                || templates._default}
-            />
-          );
-        })}
+
+        <Route
+          path={'/:slug'}
+          render={(props) => {
+            const slug = props.match.params.slug;
+            const page = this.props.pages[slug];
+            const Template = !!page && templates[page.template] || templates._default;
+            return <Template {...props} page={page} />;
+          }}
+        />
       </div>
     );
   }
 }
+// {Object.keys(this.props.pages).map((pageId) => {
+//   const page = this.props.pages[pageId];
+//   const Template = templates[page.template] || templates._default;
+//   console.log('path', page.slug);
+//   return (
+//     <Route
+//       path={`/${page.slug}`}
+//       key={page.id}
+//       component={Template}
+//       />
+//   );
+// })}
 
 const mapStateToProps = state => ({
   pages: state.pages
@@ -42,4 +50,4 @@ const mapDispatchToProps = {
   loadPages
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Routes);
+export default connect(mapStateToProps, mapDispatchToProps)(RelativeRoutes);
