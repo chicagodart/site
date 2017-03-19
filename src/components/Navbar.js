@@ -18,7 +18,12 @@ const Navbar = props => (
       </div>
       <div className="navbar-menu-right">
         <ul>
-          <li><Link to="/hi">Hi</Link></li>
+          <li>
+            <i className="fa fa-adjust fa-lg" title="Toggle light/dark view" />
+          </li>
+          <li>
+            <i className="fa fa-font fa-lg" title="Toggle to large font view" />
+          </li>
         </ul>
       </div>
     </nav>
