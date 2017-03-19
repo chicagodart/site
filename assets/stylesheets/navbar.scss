@@ -1,3 +1,5 @@
+@import "variables";
+
 .navbar {
   background-color: $white;
   display: flex;
@@ -7,6 +9,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+  justify-content: space-between;
 
   ul {
     list-style-type: none;
@@ -34,7 +37,7 @@
   font-size: 1.5em;
   font-weight: 800;
   color: $yellow;
-  margin: 0px 0px 0px 50px;
+  margin-left: 100px;
   a {
     color: $bright-blue;
     text-decoration: none;
@@ -42,16 +45,15 @@
 }
 
 .navbar-menu-center {
-
+  align-self: center;
 }
 
 .navbar-menu-right {
-  display: flex;
-  justify-content: flex-end;
-  flex: 1;
-  margin: 0px 50px 0px 5px;
-  // position: relative;
+  margin-right: 100px;
+}
 
+.fa {
+  color: $bright-blue;
 }
 
 #art-parens {
