@@ -74,10 +74,11 @@ body {
   display: flex;
 }
 
-#fixed-sidebar {
+// didn't work, needs some effort
+.fixed-sidebar {
   position: -webkit-sticky;  // required for Safari
   position: sticky;
-  top: 0; // required as well.
+  top: 77px; // required as well.
 }
 
 #big-calendar {
