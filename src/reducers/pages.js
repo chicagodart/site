@@ -21,7 +21,7 @@ const pagesReducer = (prevState = initialState, action) => {
   switch (action.type) {
     case LOAD_PAGES:
       return action.pages.reduce((result, curr) => {
-        result[curr.id] = curr;
+        result[curr.slug] = curr;
         return result;
       }, {});
     default:
