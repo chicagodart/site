@@ -11,8 +11,7 @@ class Donate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      why: 'why donate',
-      where: 'where it goes',
+      video:false
     };
   }
 
@@ -20,6 +19,10 @@ class Donate extends Component {
     return header.split('_')
     .map(word => word[0].toUpperCase() + word.slice(1))
     .join(' ');
+  }
+
+  toggleVideoButton() {
+    this.setState({ video: !this.state.video });
   }
 
   render() {
@@ -38,7 +41,7 @@ class Donate extends Component {
                     return (
                       <div key={i}>
                         <h2>{this.convertHeaders(header)}</h2>
-                        <div className="video" dangerouslySetInnerHTML={{ __html: this.props.page.acf[header] }} />
+                        <div className="video" dangerouslySetInnerHTML={{ __html: this.state.video ? this.props.page.acf[header] : this.props.page.acf[header].slice(0, this.props.page.acf[header].indexOf('iframe') - 1) }} />
                       </div>
                     );
                   }
@@ -54,7 +57,8 @@ class Donate extends Component {
                   <span id="donate-button-text">DONATE</span>
                 </button>
               </div>
-              <Sidebar items={this.state} />
+              <Sidebar listItems={this.props.page.acf} />
+              <button id="toggle-video" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? 'Hide Video' : 'Show Video'}</button>
             </div>
           </div>
 
