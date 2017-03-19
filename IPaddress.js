@@ -1,3 +1,3 @@
-const IPaddress = '192.168.0.108';
+'use strict';
 
-export default IPaddress;
+module.exports = '192.168.0.108';
