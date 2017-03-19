@@ -10,13 +10,6 @@ class About extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      mission: 'm',
-      values: 'v',
-      leardership: 'l',
-      company: 'c',
-      sponsers: 's',
-    };
   }
 
   convertHeaders(header) {
@@ -38,23 +31,24 @@ class About extends Component {
             <div className="clearfix mx3">
               <div className="col col-8">
                 <div>
-                  {this.props.page && 
+                  {this.props.page &&
                   Object.keys(this.props.page.acf).map((header, i) => {
-                    if(header[0] !== "_") {
+                    if (header[0] !== '_') {
                       return (
                         <div key={header}>
-                          <h2>{this.convertHeaders(header)}</h2>
+                          <h2>{this.convertHeaders(header)}</h2><a name={header} />
                           <div dangerouslySetInnerHTML={{ __html: this.props.page.acf[header] }} />
                         </div>
-                      )}
+                      );
                     }
+                  }
 
                   )}
                 </div>
 
               </div>
               <div className="col col-4 center">
-                <Sidebar listItems={this.props.page.acf}/>
+                <Sidebar listItems={this.props.page.acf} />
               </div>
             </div>
           </div>
