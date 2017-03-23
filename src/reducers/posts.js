@@ -1,7 +1,6 @@
 import axios from 'axios';
-import IPaddress from '../../IPaddress';
 
-const apiRoot = `http://${IPaddress}:8888/dart-site/wp-json/wp/v2`;
+const apiRoot = '/wp-json/wp/v2';
 const initialState = {};
 
 // constants
