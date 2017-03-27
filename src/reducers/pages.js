@@ -1,5 +1,4 @@
 import axios from 'axios';
-import IPaddress from '../../IPaddress';
 
 const initialState = {};
 
@@ -13,7 +12,7 @@ const receivePages = pages => ({
 });
 
 export const loadPages = () => dispatch =>
-    axios.get(`http://${IPaddress}:8888/dart-site/wp-json/wp/v2/pages`)
+    axios.get('/wp-json/wp/v2/pages')
       .then(pages => dispatch(receivePages(pages.data)));
 
 // reducer
