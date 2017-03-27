@@ -1,7 +1,7 @@
 <?php
 
 function include_react_files() {
-  $asset_manifest = json_decode(file_get_contents(get_template_directory_uri() . '/build/asset-manifest.json'), true);
+  $asset_manifest = json_decode(file_get_contents(__DIR__ . '/build/asset-manifest.json'), true);
 
   $build_dir = '/build/';
   $main_css = $build_dir. $asset_manifest['main.css'];
