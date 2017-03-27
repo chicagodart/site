@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:css": "node-sass -w assets/stylesheets/style.scss -o public/stylesheets",
+    "build:css": "node-sass assets/stylesheets/style.scss -o src/",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
@@ -48,6 +48,9 @@
     "webpack": "^2.2.1"
   },
   "dependencies": {
-    "axios": "^0.15.3"
+    "axios": "^0.15.3",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3"
   }
 }

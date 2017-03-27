@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import store from './store';
 import Router from './Router';
 
+import './style.css';
+
 render(
   <Provider store={store}>
     <Router />
