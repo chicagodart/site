@@ -1,54 +1,69 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 // components
 import Sidebar from './Sidebar';
+import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { loadPages } from '../reducers/pages';
+
+import HeroImage from './HeroImage';
 
 class DefaultPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      video: false,
     };
   }
 
+  convertHeading(heading) {
+    return heading.slice(8).split('_')
+    .map(word => word[0].toUpperCase() + word.slice(1))
+    .join(' ');
+  }
+
+  toggleVideoButton() {
+    this.setState({ video: !this.state.video });
+  }
+
   render() {
-    console.log('propsies', this.props);
-    const page = this.props.page;
+    const { page } = this.props;
+    const sections = page
+      ? Object.keys(page.acf)
+        .filter(key => key.slice(0, 8) === 'heading_')
+        .map(key => ({ heading: this.convertHeading(key), content: page.acf[key], key }))
+      : [];
     return (
       <div>
-        <div>
 
-          <div className="hero-img">
-            <img src="http://www.arshtcenter.org/Global/PressRoom/photos/hi/Spring%20Awakening%20photo%20by%20Paul%20Kolnick.jpg" alt="A scene from Spring Awakening" height="100%" width="100%" />
-          </div>
+        <HeroImage src={page ? page.acf.hero_image.sizes.medium_large : ' '} alt={page ? page.acf.hero_image.title : ''} />
 
-          <div className="max-width-12 mx-auto">
-            <div className="clearfix mx3">
-              <div className="col col-8">
-                <div>
-                  <h2>{!!page && page.title.rendered}</h2>
-                  <p>sub-heading content</p>
-                </div>
-
-                <div>
-                  <h2>Fill Sub-heading2</h2>
-                  <p>sub-heading2 content</p>
-                </div>
-
+        <div className="max-width-12">
+          <div className="clearfix content-sidebar-container">
+            <div className="col col-8">
+              <div>
+                <div dangerouslySetInnerHTML={{ __html: page ? page.content.rendered : '' }} />
+                {page &&
+                  sections.map(({ heading, content }) => (<div key={heading}>
+                    <h2>{heading}</h2><a name={heading} />
+                    <div dangerouslySetInnerHTML={{ __html: this.state.video ? content : content.slice(0, content.indexOf('iframe') - 1) }} />
+                  </div>))}
               </div>
-              <div className="col col-4 center">
-                <Sidebar items={this.state} />
-              </div>
+
+            </div>
+            <div className="col col-4 center fixed-sidebar">
+              <Sidebar listItems={sections.map(section => section.heading)} />
+              <button id="toggle-video" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? 'Hide Video' : 'Show Video'}</button>
             </div>
           </div>
-
         </div>
+
       </div>
     );
   }
 
 }
-
 const mapStateToProps = ({ pages }) => ({ pages });
 
-export default connect(mapStateToProps)(DefaultPage);
+export default connect(mapStateToProps, { loadPages })(DefaultPage);

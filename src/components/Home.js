@@ -3,12 +3,15 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { loadPosts } from '../reducers/posts';
 
+import HeroImage from './HeroImage';
+
 class Home extends Component {
   componentDidMount() {
     this.props.loadPosts('events');
   }
 
   render() {
+    const { page } = this.props;
     const posts = Object.keys(this.props.posts).map(key => this.props.posts[key]).sort((a, b) => {
       const dateA = new Date(a.date_gmt);
       const dateB = new Date(b.date_gmt);
@@ -20,18 +23,16 @@ class Home extends Component {
       }
       return 0;
     });
-
+    console.log('page', page);
     return (
       <div>
-        <div className="hero-img">
-          <img src="http://www.arshtcenter.org/Global/PressRoom/photos/hi/Spring%20Awakening%20photo%20by%20Paul%20Kolnick.jpg" alt="A scene from Spring Awakening" height="100%" width="100%" />
-        </div>
+
+        <HeroImage src={page ? page.acf.hero_image.sizes.medium_large : ' '} alt={page ? page.acf.hero_image.title : ' '} />
+
         <div className="max-width-12">
           <div className="clearfix content-sidebar-container">
             <div className="col col-8">
-              <div id="lil-about">
-                <p>Chicago D(ART), or Deaf ART, is the creative home for artists looking to bridge the communication barrier between the d/Deaf and hearing worlds.</p>
-              </div>
+              <div id="lil-about" dangerouslySetInnerHTML={{ __html: page ? page.content.rendered : '' }} />
               <h2>News</h2>
               <ol className="event-list">
                 {posts.map(post =>
@@ -40,10 +41,11 @@ class Home extends Component {
               </ol>
             </div>
             <div className="col col-4 center">
-              <h2>Call to Action</h2>
-              <div id="mini-cal">
-                <h2>Calendar</h2>
-              </div>
+              {/* TODO: Homepage sidebar
+                <h2>Call to Action</h2>
+                <div id="mini-cal">
+                  <h2>Calendar</h2>
+                </div>*/}
             </div>
           </div>
         </div>
@@ -54,8 +56,8 @@ class Home extends Component {
 
 function PostInList(props) {
   const post = props.post;
-  const img = post.content.rendered.slice(0, post.content.rendered.indexOf('</') + 4)
-  const content = post.content.rendered.slice(post.content.rendered.indexOf('</') + 4)
+  const img = post.content.rendered.slice(0, post.content.rendered.indexOf('</') + 4);
+  const content = post.content.rendered.slice(post.content.rendered.indexOf('</') + 4);
   return (
     <li className="event-in-list">
       <Link to={`/events/${post.slug}`}>
