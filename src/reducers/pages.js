@@ -12,8 +12,10 @@ const receivePages = pages => ({
 });
 
 export const loadPages = () => dispatch =>
-    axios.get('/wp-json/wp/v2/pages')
-      .then(pages => dispatch(receivePages(pages.data)));
+    axios.get('http://chicagodart.azurewebsites.net/wp-json/wp/v2/pages')
+      .then(data => data)
+      .then(pages => dispatch(receivePages(pages.data)))
+      .catch(err => console.error(err));
 
 // reducer
 const pagesReducer = (prevState = initialState, action) => {

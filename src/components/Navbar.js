@@ -55,7 +55,7 @@ class Navbar extends React.Component {
             <i className="fa fa-bars toggle-nav fa-lg" onClick={this.toggleMenu} aria-hidden="true" />
             <ul id={this.showHideMenu()}>
               <li onClick={this.closeMenu}><Link to="/about">About</Link></li>
-              // <li onClick={this.closeMenu}><Link to="/events">Tickets & Events</Link></li>
+              <li onClick={this.closeMenu}><Link to="/events">Tickets & Events</Link></li>
               <li onClick={this.closeMenu}><Link to="/donate">Donate</Link></li>
               <li onClick={this.closeMenu}><Link to="/auditions">Auditions</Link></li>
               <li onClick={this.closeMenu}><Link to="/accessibility">Accessibility</Link></li>

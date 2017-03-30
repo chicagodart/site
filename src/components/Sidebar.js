@@ -7,46 +7,29 @@ class Sidebar extends Component {
     this.state = {
       items: props.listItems
     };
-
-    this.renderSidebarItems = this.renderSidebarItems.bind(this);
-    this.editHeadings = this.editHeadings.bind(this);
-  }
-
-  editHeadings(menuItem) {
-    return menuItem.split('_')
-    .map(word => {
-      if(!!word){
-        return word[0].toUpperCase() + word.slice(1)
-      }
-    })
-    .join(' ');
-  }
-
-  renderSidebarItems(items) {
-    return (
-      <div>
-        {
-          items && Object.keys(items).map((item, i) => {
-            if (item[0] !== '_') {
-              return (
-                <div id="menu-item" key={i}>
-                  <a href={`#${item}`}>{this.editHeadings(item)}</a>
-                </div>
-              );
-            }
-          })
-        }
-      </div>
-    );
   }
 
   render() {
-    const sidebarItems = this.props.listItems;
+    const { listItems } = this.props;
 
     return (
       <div >
         <h3>Jump to:</h3>
-        {this.renderSidebarItems(sidebarItems)}
+        {
+          listItems && listItems.map((item) => {
+            let value;
+            let label;
+            if (Array.isArray(item)) {
+              label = item[0];
+              value = item[1];
+            } else label = value = item;
+            return (
+              <div id="menu-item" key={value}>
+                <a href={`#${value}`}>{label}</a>
+              </div>
+            );
+          })
+        }
       </div>
     );
   }

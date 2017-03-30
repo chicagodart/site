@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { loadPages } from './reducers/pages';
+
 // Components
 import RelativeRoutes from './components/RelativeRoutes';
 import Navbar from './components/Navbar';
@@ -16,31 +18,48 @@ const renderClass = (props) => {
   return null;
 };
 
-const Router = props => (
-  <BrowserRouter>
-    <div className={renderClass(props)} id="toggler-div">
-      <Navbar />
-      <div className="container">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Redirect from="/home" to="/" />
-          <Route path="/mailing" component={MailingList} />
-          <RelativeRoutes />
-        </Switch>
-      </div>
-      <Footer />
-    </div>
-  </BrowserRouter>
-);
+class Router extends React.Component {
 
-const mapStateToProps = ({ toggle }) => {
+  componentDidMount() {
+    this.props.loadPages();
+  }
+
+  render() {
+    return (
+      <BrowserRouter>
+        <div className={renderClass(this.props)} id="toggler-div">
+          <Navbar />
+          <div className="container">
+            <Switch>
+              <Route
+                exact path="/" render={(p) => {
+                  console.log('dsgsadgsadgsad', p);
+                  const slug = p.match.params.slug;
+                  const page = this.props.pages.home;
+                  return <Home {...p} page={page} />;
+                }}
+              />
+              <Redirect from="/home" to="/" />
+              <Route path="/mailing" component={MailingList} />
+              <RelativeRoutes />
+            </Switch>
+          </div>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    );
+  }
+}
+
+const mapStateToProps = ({ toggle, pages, posts }) => {
   const { largeFont, highContrast } = toggle;
-  return { largeFont, highContrast };
+  return { largeFont, highContrast, pages, posts };
 };
+const mapDispatchToProps = { loadPages };
 
 Router.propTypes = {
   largeFont: PropTypes.bool,
   highContrast: PropTypes.bool,
 };
 
-export default connect(mapStateToProps)(Router);
+export default connect(mapStateToProps, mapDispatchToProps)(Router);

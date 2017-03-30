@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiRoot = '/wp-json/wp/v2';
+const apiRoot = 'http://chicagodart.azurewebsites.net/wp-json/wp/v2';
 const initialState = {};
 
 // constants
