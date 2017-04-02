@@ -1,11 +1,15 @@
 import React from 'react';
+import { resolve } from 'uri-js';
+import { apiDomain } from '../../.config.json';
+
+
+const root = apiDomain || '/';
 
 export default function HeroImage(props) {
-  console.log(props);
   const { src, alt } = props;
   return (
     <div className="hero-img">
-      <img src={`http://chicagodart.azurewebsites.net${src}`} alt={alt} />
+      <img src={resolve(root, src)} alt={alt} />
     </div>
   );
 }

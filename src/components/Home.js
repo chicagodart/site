@@ -23,7 +23,7 @@ class Home extends Component {
       }
       return 0;
     });
-    console.log('page', page);
+
     return (
       <div>
 

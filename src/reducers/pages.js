@@ -1,4 +1,9 @@
 import axios from 'axios';
+import { resolve } from 'uri-js';
+
+import { apiDomain } from '../../.config.json';
+
+const root = apiDomain || '/';
 
 const initialState = {};
 
@@ -12,7 +17,7 @@ const receivePages = pages => ({
 });
 
 export const loadPages = () => dispatch =>
-    axios.get('http://chicagodart.azurewebsites.net/wp-json/wp/v2/pages')
+    axios.get(resolve(root, '/wp-json/wp/v2/pages'))
       .then(data => data)
       .then(pages => dispatch(receivePages(pages.data)))
       .catch(err => console.error(err));
