@@ -7,6 +7,7 @@ const root = apiDomain || '/';
 
 export default function HeroImage(props) {
   const { src, alt } = props;
+
   return (
     <div className="hero-img">
       <img src={resolve(root, src)} alt={alt} />

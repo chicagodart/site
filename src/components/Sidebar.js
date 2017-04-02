@@ -17,15 +17,15 @@ class Sidebar extends Component {
         <h3>Jump to:</h3>
         {
           listItems && listItems.map((item) => {
-            let value;
-            let label;
+            let href;
+            let content;
             if (Array.isArray(item)) {
-              label = item[0];
-              value = item[1];
-            } else label = value = item;
+              content = item[0];
+              href = item[1];
+            } else content = href = item;
             return (
-              <div id="menu-item" key={value}>
-                <a href={`#${value}`}>{label}</a>
+              <div id="menu-item" key={href}>
+                <a href={`${href}`}>{content}</a>
               </div>
             );
           })
