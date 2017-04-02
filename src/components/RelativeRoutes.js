@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 
+import PageLayout from './PageLayout';
 import templates from './index.js';
 
 class RelativeRoutes extends Component {
@@ -20,9 +21,14 @@ class RelativeRoutes extends Component {
           render={(props) => {
             const slug = props.match.params.slug;
             const page = this.props.pages[slug];
+            if (!page) return (<div />);
             console.log('TEMPLATE: ', !page ? 'no page yet' : page.acf._template);
             const Template = !!page && templates[page.acf._template] || templates._default;
-            return <Template {...props} page={page} />;
+            return (
+              <PageLayout page={page}>
+                <Template />
+              </PageLayout>
+            );
           }}
         />
 

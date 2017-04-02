@@ -1,6 +1,10 @@
 import axios from 'axios';
+import { resolve } from 'uri-js';
 
-const apiRoot = 'http://chicagodart.azurewebsites.net/wp-json/wp/v2';
+import { apiDomain } from '../../.config.json';
+
+const root = apiDomain || '/';
+const apiRoot = './wp-json/wp/v2/';
 const initialState = {};
 
 // constants
@@ -14,14 +18,19 @@ const receivePosts = posts => ({
 
 export const loadPosts = slug => (dispatch) => {
   const catReq = slug
-    ? axios.get(`${apiRoot}/categories`, { params: { slug } })
+    ? axios.get(resolve(resolve(root, apiRoot), './categories'), { params: { slug } })
     : Promise.resolve({});
-  return catReq.then(({ data: cats }) => {
-    const query = cats[0] ? { categories: cats[0].id } : {};
-    return axios.get(`${apiRoot}/posts`, {
-      params: query });
-  })
-      .then(posts => dispatch(receivePosts(posts.data)));
+  return catReq
+    .then(({ data: cats }) => {
+      const query = cats[0] ? { categories: cats[0].id } : {};
+      return axios.get(resolve(resolve(root, apiRoot), './posts'), {
+        params: query });
+    })
+    .then((res) => {
+      console.log('posts', resolve(resolve(root, apiRoot), './posts'), res);
+      return res.data;
+    })
+    .then(posts => dispatch(receivePosts(posts)));
 };
 
 export const loadPost = slug => dispatch =>
