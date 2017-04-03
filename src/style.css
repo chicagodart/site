@@ -348,3 +348,12 @@ body {
 
 .event-card-text {
   padding: 0em 2em 1em 2em; }
+
+.event-calendar-toggle {
+  margin-bottom: 2em; }
+
+.event-calendar-toggle-button {
+  border: none;
+  background: none;
+  outline: none;
+  font: inherit; }
