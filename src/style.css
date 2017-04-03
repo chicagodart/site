@@ -11,7 +11,8 @@ html {
   box-sizing: inherit; }
 
 html {
-  height: 100%; }
+  height: 100%;
+  color: #313131; }
 
 body {
   position: relative;
@@ -132,27 +133,38 @@ body {
 .white {
   color: #ffffff; }
 
+.content-excerpt-section {
+  padding: 3em 0;
+  margin: 2em 0;
+  margin-bottom: 4em;
+  background: #cecfd4;
+  font-size: 1.3em;
+  text-align: center; }
+
+.high-contrast .content-excerpt-section {
+  background: #454545; }
+
 .large-font {
   font-size: 1.6em; }
 
 .high-contrast {
-  background-color: #000000;
+  background-color: #313131;
   color: #ffffff; }
   .high-contrast a {
     color: #f5d76e; }
   .high-contrast .navbar {
-    background-color: #000000; }
+    background-color: #313131; }
     .high-contrast .navbar a {
       color: #f5d76e; }
     .high-contrast .navbar #art-parens {
       color: #ffffff; }
     .high-contrast .navbar .navbar-menu-center ul {
-      background-color: #000000; }
+      background-color: #313131; }
   .high-contrast .footer {
     background-color: #f5d76e;
-    color: #000000; }
+    color: #313131; }
     .high-contrast .footer a {
-      color: #000000; }
+      color: #313131; }
 
 .navbar {
   position: fixed;
@@ -207,7 +219,7 @@ body {
   align-items: flex-end; }
 
 #art-parens {
-  color: #000000; }
+  color: #313131; }
 
 .toggle-nav {
   display: none; }
