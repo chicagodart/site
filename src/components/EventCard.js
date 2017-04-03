@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import dateFormat from 'dateformat';
+import { resolve } from 'uri-js';
+
+import { apiDomain } from '../../.config.json';
+const root = apiDomain || '/';
 
 const EventCard = ({ event }) => (
-  <div className="event-in-list">
-    <img src={event.img} alt={event.desc} style={{ width: '100%' }} />
-    <h2><a href={event.link}>{event.title.rendered}</a></h2>
-    <h3>{getEventDisplayDate(event)}</h3>
-    <h4>{getEventDisplayTime(event)}</h4>
-    <p dangerouslySetInnerHTML={{ __html: event.excerpt.rendered }} />
-    {!!event.reviews && event.reviews.map((review, i) => <h4 key={i}>{review}</h4>)}
+  <div className="event-card">
+    <img src={resolve(root, event.acf.hero_image.url)} alt={event.desc} style={{ width: '100%' }} />
+    <div className="event-card-text">
+      <h2><a href={event.link}>{event.title.rendered}</a></h2>
+      <h3>{getEventDisplayDate(event)}</h3>
+      <h4>{getEventDisplayTime(event)}</h4>
+      <p dangerouslySetInnerHTML={{ __html: event.excerpt.rendered }} />
+      {!!event.reviews && event.reviews.map((review, i) => <h4 key={i}>{review}</h4>)}
+    </div>
   </div>
 );
 
