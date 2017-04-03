@@ -5,7 +5,6 @@ import Sidebar from './Sidebar';
 import { connect } from 'react-redux';
 
 function DefaultPage({ content, videoCount, page, toggleVideo, anchors, toggle }) {
-  console.log(page);
   return (
     <div className="max-width-12">
       <div className="clearfix content-sidebar-container">

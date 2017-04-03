@@ -3,16 +3,25 @@
   position: fixed;
   z-index: 5;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
-  width: $page-width;
-  max-width: $max-page-width;
+  width: 100%;
   padding: 10px 0;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   background-color: $white;
+}
+
+.navbar-container {
+  width: $page-width;
+  max-width: $max-page-width;
+  background-color: inherit;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
   ul {
     list-style-type: none;
     list-style-position: initial;
@@ -26,11 +35,11 @@
   }
   li {
     display: flex;
-    margin: 0px 0px 0px 50px;
-    a {
-      color: $bright-blue;
-      text-decoration: none;
-    }
+    margin: 0px 0px 0px 45px;
+  }
+  a {
+    color: $bright-blue;
+    text-decoration: none;
   }
 }
 
@@ -39,7 +48,6 @@
   font-size: 1.5em;
   font-weight: 800;
   color: $yellow;
-  // margin-left: 100px;
   a {
     color: $bright-blue;
     text-decoration: none;
@@ -47,11 +55,13 @@
 }
 
 .navbar-menu-center {
-  align-self: center;
+
 }
 
 .navbar-menu-right {
-  // margin-right: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 #art-parens {
@@ -67,22 +77,19 @@
 }
 
 @media screen and (max-width: 60rem) {
-  .navbar-brand {
-    margin-left: 20px;
-  }
   .navbar-menu-center {
     position: relative;
     display: inline-block;
   }
   .navbar-menu-center ul {
     position: fixed;
-    top: 60px;
+    top: 3em;
     right: 5px;
     padding: 10px 18px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
     border-radius: 2px;
     display: block;
-    background: white;
+    background-color: $white;
   }
   .navbar-menu-center li {
     margin: 5px 0px 5px 0px;
@@ -93,13 +100,9 @@
     display: block;
   }
   .toggle-nav {
-    padding: 20px;
     display: inline-block;
-    color: $bright-blue;
-    font-size: 20px;
+    font-size: 1.2em;
     transition: color linear 0.15s;
-    position: fixed;
-    right: 1em;
-    top: 10px;
+    margin-left: 45px;
   }
 }

@@ -7,14 +7,9 @@ import templates from './index.js';
 
 class RelativeRoutes extends Component {
 
-  componentDidMount() {
-    // this.props.loadPages();
-  }
-
   render() {
     return (
       <div>
-
         <Route
           exact
           path={'/:slug'}
@@ -22,8 +17,7 @@ class RelativeRoutes extends Component {
             const slug = props.match.params.slug;
             const page = this.props.pages[slug];
             if (!page) return (<div />);
-            console.log('TEMPLATE: ', !page ? 'no page yet' : page.acf._template);
-            const Template = !!page && templates[page.acf._template] || templates._default;
+            const Template = templates[page.acf._template] || templates._default;
             return (
               <PageLayout page={page}>
                 <Template />
