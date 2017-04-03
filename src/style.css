@@ -125,6 +125,8 @@ body {
       color: #f5d76e; }
     .high-contrast .navbar #art-parens {
       color: #ffffff; }
+    .high-contrast .navbar .navbar-menu-center ul {
+      background-color: #000000; }
   .high-contrast .footer {
     background-color: #f5d76e;
     color: #000000; }
@@ -133,16 +135,19 @@ body {
 
 .navbar {
   background-color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 10px 0px;
+  z-index: 5;
   position: fixed;
   top: 0;
-  width: 100%;
+  padding: 10px 0px; }
+
+.navbar-container {
+  background-color: inherit;
+  margin: 0px 100px;
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  z-index: 5; }
-  .navbar ul {
+  align-items: center; }
+  .navbar-container ul {
     list-style-type: none;
     list-style-position: initial;
     margin: 0;
@@ -152,28 +157,26 @@ body {
     font-size: 1em;
     align-items: center;
     text-align: center; }
-  .navbar li {
+  .navbar-container li {
     display: flex;
-    margin: 0px 0px 0px 50px; }
-    .navbar li a {
-      color: #1e90ff;
-      text-decoration: none; }
+    margin: 0px 0px 0px 45px; }
+  .navbar-container a {
+    color: #1e90ff;
+    text-decoration: none; }
 
 .navbar-brand {
   font-family: 'Unica One', cursive;
   font-size: 1.5em;
   font-weight: 800;
-  color: #f5d76e;
-  margin-left: 100px; }
+  color: #f5d76e; }
   .navbar-brand a {
     color: #1e90ff;
     text-decoration: none; }
 
-.navbar-menu-center {
-  align-self: center; }
-
 .navbar-menu-right {
-  margin-right: 100px; }
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end; }
 
 #art-parens {
   color: #000000; }
@@ -185,20 +188,20 @@ body {
   display: none; }
 
 @media screen and (max-width: 40rem) {
-  .navbar-brand {
-    margin-left: 20px; }
+  .navbar-container {
+    margin: 0px 20px; }
   .navbar-menu-center {
     position: relative;
     display: inline-block; }
   .navbar-menu-center ul {
     position: fixed;
-    top: 60px;
+    top: 3em;
     right: 5px;
     padding: 10px 18px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
     border-radius: 2px;
     display: block;
-    background: white; }
+    background-color: #ffffff; }
   .navbar-menu-center li {
     margin: 5px 0px 5px 0px;
     float: none;
@@ -206,14 +209,10 @@ body {
   .navbar-menu-center i {
     display: block; }
   .toggle-nav {
-    padding: 20px;
     display: inline-block;
-    color: #1e90ff;
-    font-size: 20px;
+    font-size: 1.2em;
     transition: color linear 0.15s;
-    position: fixed;
-    right: 1em;
-    top: 10px; } }
+    margin-left: 45px; } }
 
 .footer {
   background-color: #1e90ff;
