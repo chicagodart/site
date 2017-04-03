@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 function DefaultPage({ content, videoCount, page, toggleVideo, anchors, toggle }) {
   return (
     <div className="max-width-12">
+      <h1>{page.title.rendered}</h1>
       <div className="clearfix content-sidebar-container">
         <div className="col col-8" dangerouslySetInnerHTML={{ __html: content }} />
         <div className="col col-4 center fixed-sidebar">
