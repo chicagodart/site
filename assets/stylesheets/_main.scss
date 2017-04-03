@@ -2,6 +2,7 @@
 
 html {
   height: 100%;
+  color: $black;
 }
 
 body {
@@ -153,4 +154,18 @@ body {
 
 .white {
   color: $white;
+}
+
+.content-excerpt-section {
+  padding: 3em 0;
+  margin: 2em 0;
+  margin-bottom: 4em;
+  background: $gray;
+  font-size: 1.3em;
+  text-align: center;
+}
+.high-contrast {
+  .content-excerpt-section {
+    background: lighten($black, 8);
+  }
 }

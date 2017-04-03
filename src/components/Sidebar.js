@@ -2,7 +2,7 @@ import React from 'react';
 
 function Sidebar({ listItems }) {
   return (
-    <div >
+    <div className="sidebar" >
       {!!listItems.length && <h3>Jump to:</h3> }
       { listItems && listItems.map((item) => {
         let href;
@@ -16,15 +16,18 @@ function Sidebar({ listItems }) {
             <a href={`${href}`}>{content}</a>
           </div>
         );
-      })
-        }
+      })}
     </div>
   );
 }
 Sidebar.propTypes = {
   listItems: React.PropTypes.arrayOf(
     React.PropTypes.arrayOf(React.PropTypes.string)
-  ).isRequired
+  )
+};
+
+Sidebar.defaultProps = {
+  listItems: []
 };
 
 export default Sidebar;
