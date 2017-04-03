@@ -10,24 +10,22 @@ html {
   position: relative;
   box-sizing: inherit; }
 
-* {
-  box-sizing: border-box; }
-
 html {
   height: 100%; }
 
 body {
   position: relative;
-  padding-bottom: 6em;
   min-height: 100%;
   margin: 0px;
   font-family: 'Karla', sans-serif;
   background-color: #ffffff;
-  font-size: 1em;
-  padding-bottom: 15em; }
+  font-size: 1em; }
   body a {
     color: #1e90ff;
     text-decoration: none; }
+
+.app-container {
+  min-height: 100vh; }
 
 .container {
   width: 85vw;
@@ -246,7 +244,6 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  position: absolute;
   width: 100%;
   bottom: 0;
   min-height: 6em;
