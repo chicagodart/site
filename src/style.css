@@ -158,9 +158,9 @@ body {
   .navbar-container li {
     display: flex;
     margin: 0px 0px 0px 45px; }
-    .navbar-container li a {
-      color: #1e90ff;
-      text-decoration: none; }
+  .navbar-container a {
+    color: #1e90ff;
+    text-decoration: none; }
 
 .navbar-brand {
   font-family: 'Unica One', cursive;
@@ -208,7 +208,6 @@ body {
     display: block; }
   .toggle-nav {
     display: inline-block;
-    color: #1e90ff;
     font-size: 1.2em;
     transition: color linear 0.15s;
     margin-left: 45px; } }

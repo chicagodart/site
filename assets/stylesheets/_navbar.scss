@@ -28,10 +28,10 @@
   li {
     display: flex;
     margin: 0px 0px 0px 45px;
-    a {
-      color: $bright-blue;
-      text-decoration: none;
-    }
+  }
+  a {
+    color: $bright-blue;
+    text-decoration: none;
   }
 }
 
@@ -96,7 +96,7 @@
   }
   .toggle-nav {
     display: inline-block;
-    color: $bright-blue;
+    // color: $bright-blue;
     font-size: 1.2em;
     transition: color linear 0.15s;
     margin-left: 45px;
