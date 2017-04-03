@@ -15,12 +15,13 @@ class Navbar extends React.Component {
   }
 
   toggleMenu() {
-    const mq = window.matchMedia('(max-width: 640px)');
-    if (mq.matches) {
-      this.setState({
-        menu: !this.state.menu
-      });
-    }
+    console.log('MENU TOGGLE', this.state.menu);
+    // const mq = window.matchMedia('(max-width: 640px)');
+    // if (mq.matches) {
+    this.setState({
+      menu: !this.state.menu
+    });
+    // }
   }
 
   closeMenu() {
@@ -30,9 +31,9 @@ class Navbar extends React.Component {
   }
 
   showHideMenu() {
-    const mq = window.matchMedia('(max-width: 640px)');
-    if (!mq.matches) return '';
-    if (mq.matches && this.state.menu) {
+    // const mq = window.matchMedia('(max-width: 640px)');
+    // if (!mq.matches) return '';
+    if (this.state.menu) {
       return '';
     }
     return 'hide-menu';
