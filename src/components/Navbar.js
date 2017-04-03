@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { toggleFontSize, toggleContrast } from '../reducers/toggle';
 
-
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
