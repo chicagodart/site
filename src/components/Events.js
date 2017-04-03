@@ -78,7 +78,7 @@ class Events extends Component {
             endAccessor="end"
             defaultView="month"
             views={{ month: true, week: true }}
-            eventPropGetter={(this.eventStyleGetter)}
+            eventPropGetter={this.eventStyleGetter}
             style={{ height: 800 }}
           />
         </div>
@@ -137,21 +137,15 @@ class Events extends Component {
 
   render() {
     return (
-      <div>
-
-        <div className="max-width-12 mx-auto">
-          <div className="clearfix center">
-            <button onClick={this.toggleCalendarView}>
-              {this.changeSelectedTab(this.selectedTab)}
-            </button>
-          </div>
-          <div className="clearfix">
-            <div>
-              {this.showCalendarView()}
-            </div>
-          </div>
+      <div className="max-width-12 mx-auto">
+        <div className="clearfix center">
+          <button onClick={this.toggleCalendarView}>
+            {this.changeSelectedTab(this.selectedTab)}
+          </button>
         </div>
-
+        <div className="clearfix">
+          {this.showCalendarView()}
+        </div>
       </div>
     );
   }
