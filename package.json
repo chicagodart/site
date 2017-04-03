@@ -6,6 +6,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build:css": "node-sass assets/stylesheets/style.scss -o src/",
+    "watch:css": "npm run build:css -- -w",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

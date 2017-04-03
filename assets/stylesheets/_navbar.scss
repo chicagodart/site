@@ -1,15 +1,18 @@
   @import "variables";
 .navbar {
-  background-color: $white;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
+  width: $page-width;
+  max-width: $max-page-width;
+  padding: 10px 0;
   flex-direction: row;
   align-items: center;
-  padding: 10px 0px;
-  position: fixed;
-  top: 0;
-  width: 100%;
   justify-content: space-between;
-  z-index: 5;
+  background-color: $white;
   ul {
     list-style-type: none;
     list-style-position: initial;
@@ -36,7 +39,7 @@
   font-size: 1.5em;
   font-weight: 800;
   color: $yellow;
-  margin-left: 100px;
+  // margin-left: 100px;
   a {
     color: $bright-blue;
     text-decoration: none;
@@ -48,7 +51,7 @@
 }
 
 .navbar-menu-right {
-  margin-right: 100px;
+  // margin-right: 100px;
 }
 
 #art-parens {
@@ -63,7 +66,7 @@
   display: none;
 }
 
-@media screen and (max-width: 40rem) {
+@media screen and (max-width: 60rem) {
   .navbar-brand {
     margin-left: 20px;
   }

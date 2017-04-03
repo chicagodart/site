@@ -3,6 +3,13 @@
   display: block;
   clear: both; }
 
+html {
+  box-sizing: border-box; }
+
+*, *::before, *::after {
+  position: relative;
+  box-sizing: inherit; }
+
 * {
   box-sizing: border-box; }
 
@@ -23,7 +30,10 @@ body {
     text-decoration: none; }
 
 .container {
-  padding: 95px 100px 0px 100px; }
+  width: 85vw;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding-top: 95px; }
 
 .fixed-sidebar {
   position: -webkit-sticky;
@@ -52,11 +62,14 @@ body {
 
 .hero-img {
   width: 100%;
-  height: 400px; }
+  height: 50vw;
+  max-height: 35rem;
+  overflow: hidden; }
   .hero-img img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%; }
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%; }
 
 #vid-btn {
   background-color: #1e90ff;
@@ -132,16 +145,19 @@ body {
       color: #000000; }
 
 .navbar {
-  background-color: #ffffff;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
+  width: 85vw;
+  max-width: 70rem;
+  padding: 10px 0;
   flex-direction: row;
   align-items: center;
-  padding: 10px 0px;
-  position: fixed;
-  top: 0;
-  width: 100%;
   justify-content: space-between;
-  z-index: 5; }
+  background-color: #ffffff; }
   .navbar ul {
     list-style-type: none;
     list-style-position: initial;
@@ -163,17 +179,13 @@ body {
   font-family: 'Unica One', cursive;
   font-size: 1.5em;
   font-weight: 800;
-  color: #f5d76e;
-  margin-left: 100px; }
+  color: #f5d76e; }
   .navbar-brand a {
     color: #1e90ff;
     text-decoration: none; }
 
 .navbar-menu-center {
   align-self: center; }
-
-.navbar-menu-right {
-  margin-right: 100px; }
 
 #art-parens {
   color: #000000; }
@@ -184,7 +196,7 @@ body {
 #hide-menu {
   display: none; }
 
-@media screen and (max-width: 40rem) {
+@media screen and (max-width: 60rem) {
   .navbar-brand {
     margin-left: 20px; }
   .navbar-menu-center {
