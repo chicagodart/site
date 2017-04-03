@@ -61,7 +61,7 @@ body {
 
 .hero-img {
   width: 100%;
-  height: 50vw;
+  height: 35vw;
   max-height: 35rem;
   overflow: hidden; }
   .hero-img img {
@@ -355,7 +355,7 @@ body {
     transform: translateY(-50%); }
 
 .event-card {
-  border: 0.1em solid #000000;
+  border: 0.1em solid #313131;
   min-height: 35em; }
 
 .event-card-text {
