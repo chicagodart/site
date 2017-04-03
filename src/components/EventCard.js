@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import dateFormat from 'dateformat';
 
 const EventCard = ({ event }) => (
-  <div>
+  <div className="event-in-list">
     <img src={event.img} alt={event.desc} style={{ width: '100%' }} />
     <h2><a href={event.link}>{event.title.rendered}</a></h2>
     <h3>{getEventDisplayDate(event)}</h3>

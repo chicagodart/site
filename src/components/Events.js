@@ -70,6 +70,7 @@ class Events extends Component {
       }));
       return (
         <div id="big-calendar">
+          <h1>Upcoming Events</h1>
           <BigCalendar
             events={events}
             defaultDate={new Date()}
@@ -119,17 +120,17 @@ class Events extends Component {
     if (this.state.selectedTab === 'events' && this.state.showCalendar) {
       return (
         <div className="flex justify-around">
-          <h2>Events List</h2>
+          <h2>Events List </h2>
           <h2>|</h2>
-          <h2 className="active-events-view">Calendar View</h2>
+          <h2 className="active-events-view"> Calendar View</h2>
         </div>
       );
     }
     return (
       <div className="flex justify-around">
-        <h2 className="active-events-view">Events List</h2>
+        <h2 className="active-events-view">Events List </h2>
         <h2>|</h2>
-        <h2>Calendar View</h2>
+        <h2> Calendar View</h2>
       </div>
     );
   }
