@@ -4,17 +4,17 @@ import React, { Component } from 'react';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
+import _ from 'lodash';
 
 import { connect } from 'react-redux';
 import { loadPosts } from '../reducers/posts';
-
 
 BigCalendar.setLocalizer(
   BigCalendar.momentLocalizer(moment)
 );
 
 // Components
-import SingleEvent from './SingleEvent';
+import EventCard from './EventCard';
 
 class Events extends Component {
   constructor(props) {
@@ -51,13 +51,12 @@ class Events extends Component {
     };
   }
 
+
   renderEvents(events) {
-    return events.map((event, i) => (
+    const eventsOrdered = _.orderBy(events, [event => event.acf.end_date], ['desc']);
+    return eventsOrdered.map((event, i) => (
       <div key={i} className="event col col-6 p2">
-        <img src={event.img} alt={event.desc} style={{ width: '100%' }} />
-        <h2>{event.title.rendered}</h2>
-        <h3>{event.dateRange}</h3>
-        {!!event.reviews && event.reviews.map((review, i) => <h4 key={i}>{review}</h4>)}
+        <EventCard event={event} />
       </div>
       ));
   }
@@ -71,6 +70,7 @@ class Events extends Component {
       }));
       return (
         <div id="big-calendar">
+          <h1>Upcoming Events</h1>
           <BigCalendar
             events={events}
             defaultDate={new Date()}
@@ -120,17 +120,17 @@ class Events extends Component {
     if (this.state.selectedTab === 'events' && this.state.showCalendar) {
       return (
         <div className="flex justify-around">
-          <h2>Events List</h2>
+          <h2>Events List </h2>
           <h2>|</h2>
-          <h2 className="active-events-view">Calendar View</h2>
+          <h2 className="active-events-view"> Calendar View</h2>
         </div>
       );
     }
     return (
       <div className="flex justify-around">
-        <h2 className="active-events-view">Events List</h2>
+        <h2 className="active-events-view">Events List </h2>
         <h2>|</h2>
-        <h2>Calendar View</h2>
+        <h2> Calendar View</h2>
       </div>
     );
   }

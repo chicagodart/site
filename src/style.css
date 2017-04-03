@@ -187,7 +187,7 @@ body {
     text-align: center; }
   .navbar-container li {
     display: flex;
-    margin: 0px 0px 0px 45px; }
+    margin: 0px 0px 0px 50px; }
   .navbar-container a {
     color: #1e90ff;
     text-decoration: none; }
@@ -341,3 +341,10 @@ body {
     width: 100%;
     top: 50%;
     transform: translateY(-50%); }
+
+.event-card {
+  border: 0.1em solid #000000;
+  min-height: 35em; }
+
+.event-card-text {
+  padding: 0em 2em 1em 2em; }

@@ -1,3 +1,5 @@
+// Home page
+
 .event-list {
   @extend .clearfix;
   display: block;
@@ -42,4 +44,14 @@
     top: 50%;
     transform: translateY(-50%);
   }
+}
+
+//  Events page
+.event-card {
+  border: 0.1em solid $black;
+  min-height: 35em;
+}
+
+.event-card-text {
+  padding: 0em 2em 1em 2em;
 }
