@@ -26,10 +26,7 @@ export const loadPosts = slug => (dispatch) => {
       return axios.get(resolve(resolve(root, apiRoot), './posts'), {
         params: query });
     })
-    .then((res) => {
-      console.log('posts', resolve(resolve(root, apiRoot), './posts'), res);
-      return res.data;
-    })
+    .then(res => res.data)
     .then(posts => dispatch(receivePosts(posts)));
 };
 
