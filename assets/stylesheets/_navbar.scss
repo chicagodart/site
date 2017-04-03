@@ -1,19 +1,27 @@
   @import "variables";
 .navbar {
-  background-color: $white;
-  z-index: 5;
   position: fixed;
+  z-index: 5;
   top: 0;
-  padding: 10px 0px;
+  display: flex;
+  width: 100%;
+  padding: 10px 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $white;
 }
 
 .navbar-container {
+  width: $page-width;
+  max-width: $max-page-width;
   background-color: inherit;
-  margin: 0px 100px;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
   ul {
     list-style-type: none;
     list-style-position: initial;
@@ -68,10 +76,7 @@
   display: none;
 }
 
-@media screen and (max-width: 40rem) {
-  .navbar-container {
-    margin: 0px 20px;
-  }
+@media screen and (max-width: 60rem) {
   .navbar-menu-center {
     position: relative;
     display: inline-block;
