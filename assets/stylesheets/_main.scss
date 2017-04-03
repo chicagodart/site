@@ -73,10 +73,24 @@ body {
   img {
     display: block;
     position: absolute;
-    top: 0;
-    // top: 50%;
-    // transform: translateY(-50%);
+    top: 50%;
+    transform: translateY(-50%);
     width: 100%;
+  }
+}
+
+.hero-img--top {
+  img {
+    top: 0;
+    transform: none;
+  }
+}
+
+.hero-img--bottom {
+  img {
+    top: auto;
+    bottom: 0;
+    transform: none;
   }
 }
 

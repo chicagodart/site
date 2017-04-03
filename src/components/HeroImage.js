@@ -6,10 +6,11 @@ import { apiDomain } from '../../.config.json';
 const root = apiDomain || '/';
 
 export default function HeroImage(props) {
-  const { src, alt } = props;
+  const { src, alt, align } = props;
+  const alignClass = align ? `hero-img--${align}` : '';
 
   return (
-    <div className="hero-img">
+    <div className={`hero-img ${alignClass}`}>
       <img src={resolve(root, src)} alt={alt} />
     </div>
   );
@@ -17,5 +18,10 @@ export default function HeroImage(props) {
 
 HeroImage.propTypes = {
   src: React.PropTypes.string.isRequired,
-  alt: React.PropTypes.string.isRequired
+  alt: React.PropTypes.string.isRequired,
+  align: React.PropTypes.string
+};
+
+HeroImage.defaultProps = {
+  align: ''
 };
