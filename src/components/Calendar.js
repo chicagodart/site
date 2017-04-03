@@ -1,7 +1,48 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import BigCalendar from 'react-big-calendar';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+import moment from 'moment';
+import { connect } from 'react-redux';
+import { loadPosts } from '../reducers/posts';
 
-class Calender extends Component {
+BigCalendar.setLocalizer(
+  BigCalendar.momentLocalizer(moment)
+);
 
+
+class Calendar extends Component{
+	componentDidMount() {
+    this.props.loadPosts('events');
+  }
+
+	render(){
+		const events = this.props.events.map(event => {
+			return {
+				'title': event.title.rendered,
+				'start': new Date(event.acf.start_date),
+				'end': new Date(event.acf.end_date)
+			}
+		})
+		return(
+			<div id="big-calendar">
+		    <BigCalendar
+		      events={events}
+		      startAccessor='start'
+		      views={{ month: true, week: true}}
+		      endAccessor='end'
+		      defaultView="month"
+		      style={{ height: 800 }}
+		    />
+		  </div>
+
+		)
+	}
 }
 
-export default Calender;
+const mapStateToProps = (state) => ({
+	events: Object.values(state.posts).filter(post => post.categories.indexOf(11) !== -1)
+});
+const mapDispatchtoProps = { loadPosts };
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Calendar);
+

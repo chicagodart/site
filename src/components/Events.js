@@ -5,6 +5,10 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 
+import { connect } from 'react-redux';
+import { loadPosts } from '../reducers/posts';
+
+
 BigCalendar.setLocalizer(
   BigCalendar.momentLocalizer(moment)
 );
@@ -26,55 +30,10 @@ class Events extends Component {
     this.showCalendarView = this.showCalendarView.bind(this);
     this.toggleCalendarView = this.toggleCalendarView.bind(this);
     this.changeSelectedTab = this.changeSelectedTab.bind(this);
+  }
 
-    // dummy data
-    this.events = [
-      {
-        title: 'Uncle Vanya',
-        img: 'http://lorempixel.com/400/200',
-        desc: 'alt text desc',
-        dateRange: 'March 12th - March 30th',
-        reviews: ['good', 'great', 'awesome']
-      },
-      {
-        title: 'The Seagull',
-        img: 'http://lorempixel.com/400/200',
-        desc: 'alt text desc',
-        dateRange: 'April 12th - April 30th',
-        reviews: ['good', 'great', 'awesome']
-      },
-      {
-        title: 'Our Town',
-        img: 'http://lorempixel.com/400/200',
-        desc: 'alt text desc',
-        dateRange: 'May 12th - May 30th',
-        reviews: ['good', 'great', 'awesome']
-      }
-    ];
-
-    this.pastEvents = [
-      {
-        title: 'Hamlet',
-        img: 'http://lorempixel.com/400/200',
-        desc: 'alt text desc',
-        dateRange: 'November 12th - November 30th',
-        reviews: ['good', 'great', 'awesome']
-      },
-      {
-        title: 'Fences',
-        img: 'http://lorempixel.com/400/200',
-        desc: 'alt text desc',
-        dateRange: 'December 12th - December 30th',
-        reviews: ['good', 'great', 'awesome']
-      },
-      {
-        title: 'Chicago',
-        img: 'http://lorempixel.com/400/200',
-        desc: 'alt text desc',
-        dateRange: 'October 12th - October 30th',
-        reviews: ['good', 'great', 'awesome']
-      }
-    ];
+  componentDidMount() {
+    this.props.loadPosts('events');
   }
 
   // calendar event style
@@ -107,13 +66,22 @@ class Events extends Component {
       ));
   }
 
-  showCalendarView(events) {
+  showCalendarView() {
     if (this.state.showCalendar) {
+      const events = this.props.events.map(event => {
+        return {
+          'title': event.title.rendered,
+          'start': new Date(event.acf.start_date),
+          'end': new Date(event.acf.end_date)
+        }
+      })
       return (
         <div id="big-calendar">
           <BigCalendar
-            events={this.renderEvents(this.events)}
+            events={events}
             defaultDate={new Date()}
+            startAccessor='start'
+            endAccessor='end'
             defaultView="month"
             views={{ month: true, week: true }}
             eventPropGetter={(this.eventStyleGetter)}
@@ -127,12 +95,7 @@ class Events extends Component {
 
         <h1>Upcoming Events</h1>
         <div className="clearfix">
-          {this.renderEvents(this.events)}
-        </div>
-
-        <h1>Past Events</h1>
-        <div className="clearfix">
-          {this.renderEvents(this.pastEvents)}
+          {this.renderEvents(this.props.events)}
         </div>
 
       </div>
@@ -146,14 +109,14 @@ class Events extends Component {
       this.setState({ showCalendar: !this.state.showCalendar, selectedTab: 'calendar' });
       return (
         <div>
-          {this.showCalendarView(this.events)}
+          {this.showCalendarView(this.props.events)}
         </div>
       );
     }
     this.setState({ showCalendar: !this.state.showCalendar, selectedTab: 'events' });
     return (
       <div>
-        {this.showCalendarView(this.events)}
+        {this.showCalendarView(this.props.events)}
       </div>
     );
   }
@@ -179,14 +142,8 @@ class Events extends Component {
   }
 
   render() {
-    const upcoming = this.renderEvents(this.events);
-    const past = this.renderEvents(this.pastEvents);
     return (
       <div>
-
-        <div className="hero-img">
-          <img src="http://www.arshtcenter.org/Global/PressRoom/photos/hi/Spring%20Awakening%20photo%20by%20Paul%20Kolnick.jpg" alt="A scene from Spring Awakening" height="100%" width="100%" />
-        </div>
 
         <div className="max-width-12 mx-auto">
           <div className="clearfix center">
@@ -196,7 +153,7 @@ class Events extends Component {
           </div>
           <div className="clearfix">
             <div>
-              {this.showCalendarView(upcoming)}
+              {this.showCalendarView()}
             </div>
           </div>
         </div>
@@ -206,4 +163,9 @@ class Events extends Component {
   }
 }
 
-export default Events;
+const mapStateToProps = (state) => ({
+  events: Object.values(state.posts).filter(post => post.categories.indexOf(11) !== -1)
+});
+const mapDispatchtoProps = { loadPosts };
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Events);
