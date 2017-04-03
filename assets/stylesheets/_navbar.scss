@@ -1,19 +1,27 @@
   @import "variables";
 .navbar {
-  background-color: $white;
-  z-index: 5;
   position: fixed;
+  z-index: 5;
   top: 0;
-  padding: 10px 0px;
+  display: flex;
+  width: 100%;
+  padding: 10px 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $white;
 }
 
 .navbar-container {
+  width: $page-width;
+  max-width: $max-page-width;
   background-color: inherit;
-  margin: 0px 100px;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
   ul {
     list-style-type: none;
     list-style-position: initial;
@@ -64,27 +72,26 @@
   display: none;
 }
 
-#hide-menu {
-  display: none;
-}
-
-@media screen and (max-width: 40rem) {
-  .navbar-container {
-    margin: 0px 20px;
-  }
+@media screen and (max-width: 60rem) {
   .navbar-menu-center {
     position: relative;
     display: inline-block;
   }
-  .navbar-menu-center ul {
-    position: fixed;
-    top: 3em;
-    right: 5px;
-    padding: 10px 18px;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
-    border-radius: 2px;
-    display: block;
-    background-color: $white;
+  .navbar-menu-center {
+    ul {
+      position: fixed;
+      top: 3em;
+      right: 5px;
+      padding: 10px 18px;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+      border-radius: 2px;
+      display: block;
+      background-color: $white;
+    }
+
+    .hide-menu {
+      display: none;
+    }
   }
   .navbar-menu-center li {
     margin: 5px 0px 5px 0px;
@@ -100,4 +107,5 @@
     transition: color linear 0.15s;
     margin-left: 45px;
   }
+
 }

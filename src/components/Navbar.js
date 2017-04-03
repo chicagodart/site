@@ -15,12 +15,9 @@ class Navbar extends React.Component {
   }
 
   toggleMenu() {
-    const mq = window.matchMedia('(max-width: 640px)');
-    if (mq.matches) {
-      this.setState({
-        menu: !this.state.menu
-      });
-    }
+    this.setState({
+      menu: !this.state.menu
+    });
   }
 
   closeMenu() {
@@ -30,9 +27,7 @@ class Navbar extends React.Component {
   }
 
   showHideMenu() {
-    const mq = window.matchMedia('(max-width: 640px)');
-    if (!mq.matches) return '';
-    if (mq.matches && this.state.menu) {
+    if (this.state.menu) {
       return '';
     }
     return 'hide-menu';
@@ -52,7 +47,7 @@ class Navbar extends React.Component {
               </Link>
             </div>
             <nav className="navbar-menu-center">
-              <ul id={this.showHideMenu()}>
+              <ul className={this.showHideMenu()}>
                 <li onClick={this.closeMenu}><Link to="/about">About</Link></li>
                 <li onClick={this.closeMenu}><Link to="/events">Tickets & Events</Link></li>
                 <li onClick={this.closeMenu}><Link to="/donate">Donate</Link></li>

@@ -3,27 +3,35 @@
   display: block;
   clear: both; }
 
-* {
+html {
   box-sizing: border-box; }
+
+*, *::before, *::after {
+  position: relative;
+  box-sizing: inherit; }
 
 html {
   height: 100%; }
 
 body {
   position: relative;
-  padding-bottom: 6em;
   min-height: 100%;
   margin: 0px;
   font-family: 'Karla', sans-serif;
   background-color: #ffffff;
-  font-size: 1em;
-  padding-bottom: 15em; }
+  font-size: 1em; }
   body a {
     color: #1e90ff;
     text-decoration: none; }
 
+.app-container {
+  min-height: 100vh; }
+
 .container {
-  padding: 95px 100px 0px 100px; }
+  width: 85vw;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding-top: 95px; }
 
 .fixed-sidebar {
   position: -webkit-sticky;
@@ -52,11 +60,24 @@ body {
 
 .hero-img {
   width: 100%;
-  height: 400px; }
+  height: 50vw;
+  max-height: 35rem;
+  overflow: hidden; }
   .hero-img img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%; }
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%; }
+
+.hero-img--top img {
+  top: 0;
+  transform: none; }
+
+.hero-img--bottom img {
+  top: auto;
+  bottom: 0;
+  transform: none; }
 
 #vid-btn {
   background-color: #1e90ff;
@@ -134,15 +155,22 @@ body {
       color: #000000; }
 
 .navbar {
-  background-color: #ffffff;
-  z-index: 5;
   position: fixed;
+  z-index: 5;
   top: 0;
-  padding: 10px 0px; }
+  display: flex;
+  width: 100%;
+  padding: 10px 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff; }
 
 .navbar-container {
+  width: 85vw;
+  max-width: 70rem;
   background-color: inherit;
-  margin: 0px 100px;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -184,12 +212,7 @@ body {
 .toggle-nav {
   display: none; }
 
-#hide-menu {
-  display: none; }
-
-@media screen and (max-width: 40rem) {
-  .navbar-container {
-    margin: 0px 20px; }
+@media screen and (max-width: 60rem) {
   .navbar-menu-center {
     position: relative;
     display: inline-block; }
@@ -202,6 +225,8 @@ body {
     border-radius: 2px;
     display: block;
     background-color: #ffffff; }
+  .navbar-menu-center .hide-menu {
+    display: none; }
   .navbar-menu-center li {
     margin: 5px 0px 5px 0px;
     float: none;
@@ -219,7 +244,6 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  position: absolute;
   width: 100%;
   bottom: 0;
   min-height: 6em;
