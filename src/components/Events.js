@@ -4,10 +4,10 @@ import React, { Component } from 'react';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
+import dateFormat from 'dateformat';
 
 import { connect } from 'react-redux';
 import { loadPosts } from '../reducers/posts';
-
 
 BigCalendar.setLocalizer(
   BigCalendar.momentLocalizer(moment)
@@ -51,12 +51,43 @@ class Events extends Component {
     };
   }
 
+  getEventDisplayDate(event) {
+    const startDate = new Date(event.acf.start_date);
+    const endDate = new Date(event.acf.end_date);
+
+    // Return one date and a time range
+    if (startDate.toDateString() === endDate.toDateString()) {
+      return dateFormat(startDate, 'dddd, mmmm dS, yyyy');
+    }
+    // Return a date range and no times
+    if (startDate.getYear() !== endDate.getYear()) {
+      return `${dateFormat(startDate, 'mmmm dS, yyyy')}-${dateFormat(endDate, 'mmmm dS, yyyy')}`;
+    } else if (startDate.getMonth() !== endDate.getMonth()) {
+      return `${dateFormat(startDate, 'mmmm dS')}-${dateFormat(endDate, 'mmmm dS')}, ${dateFormat(endDate, 'yyyy')}`;
+    }
+    return `${dateFormat(startDate, 'mmmm dS')}-${dateFormat(endDate, 'dS')}, ${dateFormat(endDate, 'yyyy')}`;
+  }
+
+  getEventDisplayTime(event) {
+    const startDate = new Date(event.acf.start_date);
+    const endDate = new Date(event.acf.end_date);
+    if (startDate.toDateString() === endDate.toDateString()) {
+      const startTime = dateFormat(startDate, 'h:MM tt');
+      const endTime = dateFormat(endDate, 'h:MM tt');
+      return `${startTime}-${endTime} `;
+    }
+    return null;
+  }
+
   renderEvents(events) {
+    console.log('events', events);
     return events.map((event, i) => (
       <div key={i} className="event col col-6 p2">
         <img src={event.img} alt={event.desc} style={{ width: '100%' }} />
-        <h2>{event.title.rendered}</h2>
-        <h3>{event.dateRange}</h3>
+        <h2><a href={event.link}>{event.title.rendered}</a></h2>
+        <h3>{this.getEventDisplayDate(event)}</h3>
+        <h4>{this.getEventDisplayTime(event)}</h4>
+        <p dangerouslySetInnerHTML={{ __html: event.excerpt.rendered }} />
         {!!event.reviews && event.reviews.map((review, i) => <h4 key={i}>{review}</h4>)}
       </div>
       ));
