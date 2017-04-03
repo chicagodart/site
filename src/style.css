@@ -204,9 +204,6 @@ body {
 .toggle-nav {
   display: none; }
 
-#hide-menu {
-  display: none; }
-
 @media screen and (max-width: 60rem) {
   .navbar-menu-center {
     position: relative;
@@ -220,6 +217,8 @@ body {
     border-radius: 2px;
     display: block;
     background-color: #ffffff; }
+  .navbar-menu-center .hide-menu {
+    display: none; }
   .navbar-menu-center li {
     margin: 5px 0px 5px 0px;
     float: none;
