@@ -70,7 +70,7 @@ class Events extends Component {
       }));
       return (
         <div id="big-calendar">
-          <h1>Upcoming Events</h1>
+          {/* <h1>Upcoming Events</h1> */}
           <BigCalendar
             events={events}
             defaultDate={new Date()}
@@ -87,7 +87,7 @@ class Events extends Component {
     return (
       <div className="col col-12">
 
-        <h1>Upcoming Events</h1>
+        {/* <h1>Upcoming Events</h1> */}
         <div className="clearfix">
           {this.renderEvents(this.props.events)}
         </div>
@@ -120,17 +120,17 @@ class Events extends Component {
     if (this.state.selectedTab === 'events' && this.state.showCalendar) {
       return (
         <div className="flex justify-around">
-          <h2>Events List </h2>
-          <h2>|</h2>
-          <h2 className="active-events-view"> Calendar View</h2>
+          <button className="event-calendar-toggle-button" onClick={this.toggleCalendarView}><span>Events List</span></button>
+          <span>|</span>
+          <button className="event-calendar-toggle-button" onClick={this.toggleCalendarView}><span className="active-events-view">Calendar View</span></button>
         </div>
       );
     }
     return (
       <div className="flex justify-around">
-        <h2 className="active-events-view">Events List </h2>
-        <h2>|</h2>
-        <h2> Calendar View</h2>
+        <button className="event-calendar-toggle-button" onClick={this.toggleCalendarView}><span className="active-events-view">Events List</span></button>
+        <span>|</span>
+        <button className="event-calendar-toggle-button" onClick={this.toggleCalendarView}><span> Calendar View</span></button>
       </div>
     );
   }
@@ -139,9 +139,8 @@ class Events extends Component {
     return (
       <div className="max-width-12 mx-auto">
         <div className="clearfix center">
-          <button onClick={this.toggleCalendarView}>
-            {this.changeSelectedTab(this.selectedTab)}
-          </button>
+          <h1>Upcoming Events</h1>
+          <div className="event-calendar-toggle">{this.changeSelectedTab(this.selectedTab)}</div>
         </div>
         <div className="clearfix">
           {this.showCalendarView()}
