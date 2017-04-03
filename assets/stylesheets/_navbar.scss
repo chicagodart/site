@@ -72,24 +72,26 @@
   display: none;
 }
 
-#hide-menu {
-  display: none;
-}
-
 @media screen and (max-width: 60rem) {
   .navbar-menu-center {
     position: relative;
     display: inline-block;
   }
-  .navbar-menu-center ul {
-    position: fixed;
-    top: 3em;
-    right: 5px;
-    padding: 10px 18px;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
-    border-radius: 2px;
-    display: block;
-    background-color: $white;
+  .navbar-menu-center {
+    ul {
+      position: fixed;
+      top: 3em;
+      right: 5px;
+      padding: 10px 18px;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+      border-radius: 2px;
+      display: block;
+      background-color: $white;
+    }
+
+    .hide-menu {
+      display: none;
+    }
   }
   .navbar-menu-center li {
     margin: 5px 0px 5px 0px;
@@ -105,4 +107,5 @@
     transition: color linear 0.15s;
     margin-left: 45px;
   }
+
 }

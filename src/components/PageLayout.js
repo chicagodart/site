@@ -26,11 +26,14 @@ function PageLayout(props) {
       anchors.push([p2, `#${id}`]);
       return `${p1} id="${id}">${p2}${p3}`;
     });
-
   return (
     <div>
 
-      <HeroImage src={page ? page.acf.hero_image.sizes.medium_large : ' '} alt={page ? page.acf.hero_image.title : ''} />
+      <HeroImage
+        src={page ? page.acf.hero_image.sizes.medium_large : ' '}
+        alt={page ? page.acf.hero_image.title : ''}
+        align={page ? page.acf.hero_image_align : ''}
+      />
 
       <div className="max-width-12">
         {React.Children.map(props.children, child =>
