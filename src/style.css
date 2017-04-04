@@ -152,6 +152,8 @@ body {
   color: #ffffff; }
   .high-contrast a {
     color: #f5d76e; }
+  .high-contrast .navbar-button {
+    color: #f5d76e; }
   .high-contrast .navbar {
     background-color: #313131; }
     .high-contrast .navbar a {
@@ -223,6 +225,14 @@ body {
 
 .toggle-nav {
   display: none; }
+
+.navbar-button {
+  border: none;
+  background: none;
+  outline: none;
+  font: inherit;
+  color: #1e90ff;
+  cursor: pointer; }
 
 @media screen and (max-width: 60rem) {
   .navbar-menu-center {
@@ -368,4 +378,5 @@ body {
   border: none;
   background: none;
   outline: none;
-  font: inherit; }
+  font: inherit;
+  cursor: pointer; }

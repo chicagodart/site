@@ -1,14 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import _ from 'lodash';
 import { loadPosts } from '../reducers/posts';
 
 import HeroImage from './HeroImage';
 import Sidebar from './Sidebar';
+import EventCard from './EventCard';
 
 class Home extends Component {
   componentDidMount() {
     this.props.loadPosts('events');
+  }
+
+  renderNews(posts) {
+    const postsOrdered = _.orderBy(posts, [post => post.acf.end_date], ['desc']);
+    return postsOrdered.map((post, i) => (
+      <div key={i} className="event col col-6 p2">
+        <EventCard event={post} />
+      </div>
+      ));
   }
 
   render() {
@@ -44,9 +55,10 @@ class Home extends Component {
         </div>
         <h2>News</h2>
         <ol className="event-list">
-          {!!posts && posts.map(post =>
+          {!!posts && this.renderNews(posts) }
+          {/* {!!posts && posts.map(post =>
             <PostInList key={!!post && post.id} post={post} />
-          )}
+          )} */}
         </ol>
       </div>
     );

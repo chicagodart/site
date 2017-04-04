@@ -72,6 +72,15 @@
   display: none;
 }
 
+.navbar-button {
+  border: none;
+  background: none;
+  outline: none;
+  font: inherit;
+  color: $bright-blue;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 60rem) {
   .navbar-menu-center {
     position: relative;
