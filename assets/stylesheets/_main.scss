@@ -1,5 +1,3 @@
-@import "variables";
-
 html {
   height: 100%;
   color: $black;
@@ -103,6 +101,10 @@ body {
 
 .content {
   display: flex;
+}
+
+.page-wrapper {
+  padding-bottom: 5em;
 }
 
 

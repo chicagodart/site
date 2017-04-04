@@ -15,14 +15,12 @@ function Donate({ content, videoCount, page, toggleVideo, anchors, toggle }) {
 
           <div className="clearfix my1">
             <a href="https://www.paypal.me/ChicagoDART">
-              <button type="button" name="donate" id="donate-button">
-                <span id="donate-button-text">DONATE</span>
-              </button>
+              <button type="button" name="donate" className="btn btn--large btn--invert">DONATE</button>
             </a>
           </div>
           <Sidebar listItems={anchors} />
           {!!videoCount &&
-            <button id="toggle-video" onClick={toggleVideo}>
+            <button className="btn" onClick={toggleVideo}>
               {toggle.video ? 'Hide Video' : 'Show Video'}
             </button>
           }

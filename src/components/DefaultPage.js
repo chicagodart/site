@@ -13,7 +13,7 @@ function DefaultPage({ content, videoCount, page, toggleVideo, anchors, toggle }
         <div className="col col-4 center fixed-sidebar">
           <Sidebar listItems={anchors} />
           {!!videoCount &&
-            <button id="toggle-video" onClick={toggleVideo}>
+            <button className="btn" onClick={toggleVideo}>
               {toggle.video ? 'Hide Video' : 'Show Video'}
             </button>
           }
