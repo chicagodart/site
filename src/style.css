@@ -133,17 +133,6 @@ body {
 .white {
   color: #ffffff; }
 
-.content-excerpt-section {
-  padding: 3em 0;
-  margin: 2em 0;
-  margin-bottom: 4em;
-  background: #cecfd4;
-  font-size: 1.3em;
-  text-align: center; }
-
-.high-contrast .content-excerpt-section {
-  background: #141414; }
-
 .anchor-adjust {
   padding-top: 4.6em;
   margin-top: -4.6em;
@@ -307,6 +296,16 @@ body {
 
 #lil-about {
   font-size: 1.2em; }
+
+.content-excerpt-section {
+  padding: 3em 0;
+  margin: 1em 0;
+  background: #cecfd4;
+  font-size: 1.3em;
+  text-align: center; }
+
+.high-contrast .content-excerpt-section {
+  background: #141414; }
 
 .mc-field-group {
   display: flex;

@@ -1,3 +1,17 @@
 #lil-about {
   font-size: 1.2em;
 }
+
+.content-excerpt-section {
+  padding: 3em 0;
+  margin: 1em 0;
+  background: $gray;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.high-contrast {
+  .content-excerpt-section {
+    background: lighten($black, 8);
+  }
+}
