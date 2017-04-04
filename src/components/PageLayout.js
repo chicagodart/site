@@ -16,9 +16,10 @@ function PageLayout(props) {
   const anchors = [];
   let videoCount = 0;
   const content = page.content.rendered
-    .replace(/\[vimeo=(https?:\/\/[^\]]+)\]/, (match, p1) => {
+    .replace(/\[vimeo=https?:\/\/([^\]]+)\]/g, (match, p1) => {
+      const videoId = p1.replace(/^.*\/(\d+)$/, '$1');
       videoCount++;
-      return video ? `<iframe src="${p1}?portrait=0&badge=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>`
+      return video ? `<iframe src="https://player.vimeo.com/video/${videoId}" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>`
         : '';
     })
     .replace(/(<h\d)>(.+?)(<\/h\d>)/g, (match, p1, p2, p3) => {
