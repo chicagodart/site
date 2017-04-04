@@ -40,12 +40,12 @@ class Navbar extends React.Component {
       <div className="clearfix">
         <nav className="navbar col col-12">
           <div className="navbar-container">
-            <div className="navbar-brand">
+            <h1 className="navbar-brand">
               <Link to="/">
                 <div>Chicago</div>
                 <div><span>D</span><span id="art-parens">(ART)</span></div>
               </Link>
-            </div>
+            </h1>
             <nav className="navbar-menu-center">
               <ul className={this.showHideMenu()}>
                 <li onClick={this.closeMenu}><Link to="/about">About</Link></li>
@@ -58,18 +58,18 @@ class Navbar extends React.Component {
             <div className="navbar-menu-right">
               <ul>
                 <li onClick={toggleContrast}>
-                  <a href="#">
+                  <button className="navbar-button">
                     <i className="fa fa-adjust fa-lg" title="Toggle light/dark view" />
-                  </a>
+                  </button>
                 </li>
                 <li onClick={toggleFontSize}>
-                  <a href="#">
+                  <button className="navbar-button">
                     <i className="fa fa-font fa-lg" title="Toggle to large font view" />
-                  </a>
+                  </button>
                 </li>
-                <a href="#">
+                <button className="navbar-button">
                   <i className="fa fa-bars fa-lg toggle-nav" onClick={this.toggleMenu} aria-hidden="true" />
-                </a>
+                </button>
               </ul>
             </div>
           </div>

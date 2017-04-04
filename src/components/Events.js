@@ -70,7 +70,6 @@ class Events extends Component {
       }));
       return (
         <div id="big-calendar">
-          {/* <h1>Upcoming Events</h1> */}
           <BigCalendar
             events={events}
             defaultDate={new Date()}
@@ -87,7 +86,6 @@ class Events extends Component {
     return (
       <div className="col col-12">
 
-        {/* <h1>Upcoming Events</h1> */}
         <div className="clearfix">
           {this.renderEvents(this.props.events)}
         </div>
@@ -139,7 +137,7 @@ class Events extends Component {
     return (
       <div className="max-width-12 mx-auto">
         <div className="clearfix center">
-          <h1>Upcoming Events</h1>
+          <h2 className="page-title">Upcoming Events</h2>
           <div className="event-calendar-toggle">{this.changeSelectedTab(this.selectedTab)}</div>
         </div>
         <div className="clearfix">

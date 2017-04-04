@@ -48,6 +48,7 @@
   font-size: 1.5em;
   font-weight: 800;
   color: $yellow;
+  margin: 0;
   a {
     color: $bright-blue;
     text-decoration: none;
@@ -70,6 +71,15 @@
 
 .toggle-nav {
   display: none;
+}
+
+.navbar-button {
+  border: none;
+  background: none;
+  outline: none;
+  font: inherit;
+  color: $bright-blue;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 60rem) {

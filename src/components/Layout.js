@@ -16,15 +16,16 @@ function Layout(props) {
   const anchors = [];
   let videoCount = 0;
   const content = page.content.rendered
-    .replace(/\[vimeo=(https?:\/\/[^\]]+)\]/, (match, p1) => {
+    .replace(/\[vimeo=https?:\/\/([^\]]+)\]/g, (match, p1) => {
+      const videoId = p1.replace(/^.*\/(\d+)$/, '$1');
       videoCount++;
-      return video ? `<iframe src="${p1}?portrait=0&badge=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>`
+      return video ? `<iframe src="https://player.vimeo.com/video/${videoId}" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>`
         : '';
     })
     .replace(/(<h\d)>(.+?)(<\/h\d>)/g, (match, p1, p2, p3) => {
       const id = stringToId(p2);
       anchors.push([p2, `#${id}`]);
-      return `${p1} id="${id}">${p2}${p3}`;
+      return `${p1}><div id="${id}" class="anchor-adjust"></div>${p2}${p3}`;
     });
   return (
     <main className="page-wrapper">
@@ -48,6 +49,6 @@ Layout.propTypes = {
   toggle: React.PropTypes.object.isRequired
 };
 
-const mapStateToProps = ({ pages, toggle }) => ({ pages, toggle });
+const mapStateToProps = ({ toggle }) => ({ toggle });
 
 export default connect(mapStateToProps, { loadPages, toggleVideo })(Layout);

@@ -1,4 +1,4 @@
-.clearfix::before, .event-list::before, .event-in-list::before, .clearfix::after, .event-list::after, .event-in-list::after {
+.clearfix::before, .event-row::before, .event-list::before, .event-in-list::before, .clearfix::after, .event-row::after, .event-list::after, .event-in-list::after {
   content: '';
   display: block;
   clear: both; }
@@ -12,7 +12,7 @@ html {
 
 html {
   height: 100%;
-  color: #313131; }
+  color: #000000; }
 
 body {
   position: relative;
@@ -32,16 +32,14 @@ body {
   width: 85vw;
   max-width: 70rem;
   margin: 0 auto;
-  padding-top: 95px; }
+  padding-top: 4.6em; }
 
 .fixed-sidebar {
   position: -webkit-sticky;
   position: sticky;
-  top: 77px; }
+  top: 4.2em; }
 
 @media screen and (max-width: 40rem) {
-  .container {
-    padding: 95px 20px 0px 20px; }
   .video {
     margin: 0;
     max-width: 23rem;
@@ -61,7 +59,7 @@ body {
 
 .hero-img {
   width: 100%;
-  height: 50vw;
+  height: 35vw;
   max-height: 35rem;
   overflow: hidden; }
   .hero-img img {
@@ -136,38 +134,40 @@ body {
 .white {
   color: #ffffff; }
 
-.content-excerpt-section {
-  padding: 3em 0;
-  margin: 2em 0;
-  margin-bottom: 4em;
-  background: #cecfd4;
-  font-size: 1.3em;
-  text-align: center; }
+.anchor-adjust {
+  padding-top: 4.6em;
+  margin-top: -4.6em;
+  width: 0;
+  position: absolute; }
 
-.high-contrast .content-excerpt-section {
-  background: #454545; }
+.page-title {
+  font-size: 2em; }
 
 .large-font {
   font-size: 1.6em; }
 
 .high-contrast {
-  background-color: #313131;
+  background-color: #000000;
   color: #ffffff; }
   .high-contrast a {
     color: #f5d76e; }
+  .high-contrast .navbar-button {
+    color: #f5d76e; }
   .high-contrast .navbar {
-    background-color: #313131; }
+    background-color: #000000; }
     .high-contrast .navbar a {
       color: #f5d76e; }
     .high-contrast .navbar #art-parens {
       color: #ffffff; }
     .high-contrast .navbar .navbar-menu-center ul {
-      background-color: #313131; }
+      background-color: #000000; }
+  .high-contrast .event-card {
+    border-color: #ffffff; }
   .high-contrast .footer {
     background-color: #f5d76e;
-    color: #313131; }
+    color: #000000; }
     .high-contrast .footer a {
-      color: #313131; }
+      color: #000000; }
 
 .navbar {
   position: fixed;
@@ -211,7 +211,8 @@ body {
   font-family: 'Unica One', cursive;
   font-size: 1.5em;
   font-weight: 800;
-  color: #f5d76e; }
+  color: #f5d76e;
+  margin: 0; }
   .navbar-brand a {
     color: #1e90ff;
     text-decoration: none; }
@@ -222,10 +223,18 @@ body {
   align-items: flex-end; }
 
 #art-parens {
-  color: #313131; }
+  color: #000000; }
 
 .toggle-nav {
   display: none; }
+
+.navbar-button {
+  border: none;
+  background: none;
+  outline: none;
+  font: inherit;
+  color: #1e90ff;
+  cursor: pointer; }
 
 @media screen and (max-width: 60rem) {
   .navbar-menu-center {
@@ -290,8 +299,30 @@ body {
       color: #ffffff;
       text-decoration: none; }
 
-#lil-about {
-  font-size: 1.2em; }
+.home-content {
+  margin: 1em 0; }
+
+.high-contrast .home-content {
+  background: #141414; }
+
+#lil-about-box {
+  font-size: 1.4em; }
+
+#lil-about-text {
+  padding: 1em; }
+  #lil-about-text p {
+    margin: 0; }
+
+#call-to-action-box {
+  background-color: #f8e294;
+  color: #141414; }
+
+#call-to-action-text {
+  padding: 1em; }
+  #call-to-action-text h3 {
+    margin: 0; }
+  #call-to-action-text a {
+    color: #345d8a; }
 
 .mc-field-group {
   display: flex;
@@ -323,6 +354,9 @@ body {
 #mc_embed_signup_scroll {
   display: flex;
   flex-direction: column; }
+
+.event-row {
+  padding-bottom: 2em; }
 
 .event-list {
   display: block;
@@ -358,7 +392,7 @@ body {
     transform: translateY(-50%); }
 
 .event-card {
-  border: 0.1em solid #313131;
+  border: 0.1em solid #000000;
   min-height: 35em; }
 
 .event-card-text {
@@ -371,7 +405,8 @@ body {
   border: none;
   background: none;
   outline: none;
-  font: inherit; }
+  font: inherit;
+  cursor: pointer; }
 
 .btn {
   display: inline-block;
@@ -395,7 +430,7 @@ body {
   border-color: #f5d76e;
   color: #f5d76e; }
   .high-contrast .btn:hover {
-    color: #313131;
+    color: #000000;
     background: #f5d76e; }
   .high-contrast .btn:focus {
     box-shadow: 0 0 1em -0.1em #f5d76e; }
@@ -411,7 +446,7 @@ body {
     background: #ffffff; }
 
 .high-contrast .btn--invert {
-  color: #313131;
+  color: #000000;
   background: #f5d76e; }
   .high-contrast .btn--invert:hover {
     color: #f5d76e;

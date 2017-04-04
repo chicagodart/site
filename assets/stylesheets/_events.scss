@@ -1,4 +1,8 @@
 // Home page
+.event-row {
+  @extend .clearfix;
+  padding-bottom: 2em;
+}
 
 .event-list {
   @extend .clearfix;
@@ -65,4 +69,5 @@
   background: none;
   outline: none;
   font: inherit;
+  cursor: pointer;
 }

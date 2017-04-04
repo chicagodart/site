@@ -1,5 +1,7 @@
 @import "variables";
 
+
+
 .large-font {
   font-size: 1.6em;
 }
@@ -8,6 +10,10 @@
   background-color: $black;
   color: $white;
   a {
+    color: $yellow;
+  }
+
+  .navbar-button {
     color: $yellow;
   }
 
@@ -24,6 +30,10 @@
     .navbar-menu-center ul {
       background-color: $black;
     }
+  }
+
+  .event-card {
+    border-color: $white;
   }
 
   .footer {

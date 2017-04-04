@@ -24,19 +24,16 @@ body {
   width: $page-width;
   max-width: $max-page-width;
   margin: 0 auto;
-  padding-top: 95px;
+  padding-top: 4.6em;
 }
 
 .fixed-sidebar {
   position: -webkit-sticky;  // required for Safari
   position: sticky;
-  top: 77px; // required as well.
+  top: 4.2em; // required as well.
 }
 
 @media screen and (max-width: 40rem) {
-  .container {
-    padding: 95px 20px 0px 20px;
-  }
   .video {
     margin: 0;
     max-width: 23rem;
@@ -64,7 +61,7 @@ body {
 
 .hero-img {
   width: 100%;
-  height: 50vw;
+  height: 35vw;
   max-height: $max-page-width * 0.5;
   overflow: hidden;
   img {
@@ -158,16 +155,15 @@ body {
   color: $white;
 }
 
-.content-excerpt-section {
-  padding: 3em 0;
-  margin: 2em 0;
-  margin-bottom: 4em;
-  background: $gray;
-  font-size: 1.3em;
-  text-align: center;
+
+
+.anchor-adjust {
+  padding-top: 4.6em;
+  margin-top: -4.6em;
+  width: 0;
+  position: absolute;
 }
-.high-contrast {
-  .content-excerpt-section {
-    background: lighten($black, 8);
-  }
+
+.page-title {
+  font-size: 2em;
 }
