@@ -40,8 +40,6 @@ body {
   top: 4.2em; }
 
 @media screen and (max-width: 40rem) {
-  .container {
-    padding: 95px 20px 0px 20px; }
   .video {
     margin: 0;
     max-width: 23rem;
@@ -133,22 +131,14 @@ body {
 .white {
   color: #ffffff; }
 
-.content-excerpt-section {
-  padding: 3em 0;
-  margin: 2em 0;
-  margin-bottom: 4em;
-  background: #cecfd4;
-  font-size: 1.3em;
-  text-align: center; }
-
-.high-contrast .content-excerpt-section {
-  background: #141414; }
-
 .anchor-adjust {
   padding-top: 4.6em;
   margin-top: -4.6em;
   width: 0;
   position: absolute; }
+
+.page-title {
+  font-size: 2em; }
 
 .large-font {
   font-size: 1.6em; }
@@ -218,7 +208,8 @@ body {
   font-family: 'Unica One', cursive;
   font-size: 1.5em;
   font-weight: 800;
-  color: #f5d76e; }
+  color: #f5d76e;
+  margin: 0; }
   .navbar-brand a {
     color: #1e90ff;
     text-decoration: none; }
@@ -305,8 +296,30 @@ body {
       color: #ffffff;
       text-decoration: none; }
 
-#lil-about {
-  font-size: 1.2em; }
+.home-content {
+  margin: 1em 0; }
+
+.high-contrast .home-content {
+  background: #141414; }
+
+#lil-about-box {
+  font-size: 1.4em; }
+
+#lil-about-text {
+  padding: 1em; }
+  #lil-about-text p {
+    margin: 0; }
+
+#call-to-action-box {
+  background-color: #f8e294;
+  color: #141414; }
+
+#call-to-action-text {
+  padding: 1em; }
+  #call-to-action-text h3 {
+    margin: 0; }
+  #call-to-action-text a {
+    color: #345d8a; }
 
 .mc-field-group {
   display: flex;

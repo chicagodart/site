@@ -36,9 +36,6 @@ body {
 }
 
 @media screen and (max-width: 40rem) {
-  .container {
-    padding: 95px 20px 0px 20px;
-  }
   .video {
     margin: 0;
     max-width: 23rem;
@@ -156,23 +153,15 @@ body {
   color: $white;
 }
 
-.content-excerpt-section {
-  padding: 3em 0;
-  margin: 2em 0;
-  margin-bottom: 4em;
-  background: $gray;
-  font-size: 1.3em;
-  text-align: center;
-}
-.high-contrast {
-  .content-excerpt-section {
-    background: lighten($black, 8);
-  }
-}
+
 
 .anchor-adjust {
   padding-top: 4.6em;
   margin-top: -4.6em;
   width: 0;
   position: absolute;
+}
+
+.page-title {
+  font-size: 2em;
 }

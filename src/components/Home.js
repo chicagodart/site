@@ -43,41 +43,23 @@ class Home extends Component {
 
   render() {
     const { page } = this.props;
-    const posts = Object.keys(this.props.posts).map(key => this.props.posts[key]).sort((a, b) => {
-      const dateA = new Date(a.date_gmt);
-      const dateB = new Date(b.date_gmt);
-      if (dateA < dateB) {
-        return -1;
-      }
-      if (dateA > dateB) {
-        return 1;
-      }
-      return 0;
-    });
-
+    const posts = Object.keys(this.props.posts).map(key => this.props.posts[key]);
     return (
       <div>
-
         <HeroImage src={page ? page.acf.hero_image.sizes.medium_large : ' '} alt={page ? page.acf.hero_image.title : ' '} />
-
         <div className="max-width-12">
-          <div className="clearfix content-excerpt-section">
-            <div className="sm-col sm-col-6 px3">
-              <div dangerouslySetInnerHTML={{ __html: page ? page.content.rendered : '' }} />
+          <div className="clearfix home-content">
+            <div className="sm-col sm-col-8 px2" id="lil-about-box">
+              <div dangerouslySetInnerHTML={{ __html: page ? page.content.rendered : '' }} id="lil-about-text" />
             </div>
-            <div className="sm-col sm-col-6 px3">
-              <p>
-                {!!page && page.acf.call_to_action}
-              </p>
+            <div className="sm-col sm-col-4 px2" id="call-to-action-box">
+              <div dangerouslySetInnerHTML={{ __html: page ? page.acf.call_to_action : '' }} id="call-to-action-text" />
             </div>
           </div>
         </div>
-        <h2>News</h2>
+        <h2 className="page-title">News</h2>
         <ol className="event-list">
           {!!posts && this.renderNews(posts) }
-          {/* {!!posts && posts.map(post =>
-            <PostInList key={!!post && post.id} post={post} />
-          )} */}
         </ol>
       </div>
     );

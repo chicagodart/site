@@ -40,12 +40,12 @@ class Navbar extends React.Component {
       <div className="clearfix">
         <nav className="navbar col col-12">
           <div className="navbar-container">
-            <div className="navbar-brand">
+            <h1 className="navbar-brand">
               <Link to="/">
                 <div>Chicago</div>
                 <div><span>D</span><span id="art-parens">(ART)</span></div>
               </Link>
-            </div>
+            </h1>
             <nav className="navbar-menu-center">
               <ul className={this.showHideMenu()}>
                 <li onClick={this.closeMenu}><Link to="/about">About</Link></li>
