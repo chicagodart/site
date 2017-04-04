@@ -21,6 +21,10 @@
   }
 }
 
+#mc_embed_signup { // form container
+  margin: 1em 0;
+}
+
 #mc-embedded-subscribe { // button
   border-radius: 10px;
   border-style: solid;
@@ -29,6 +33,7 @@
   border-color: $bright-blue;
   color: $bright-blue;
   border-width: 1px;
+  cursor: pointer;
 }
 
 #mailing-list-submit { // button text

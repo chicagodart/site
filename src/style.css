@@ -32,7 +32,8 @@ body {
   width: 85vw;
   max-width: 70rem;
   margin: 0 auto;
-  padding-top: 4.6em; }
+  padding-top: 4.6em;
+  padding-bottom: 3em; }
 
 .fixed-sidebar {
   position: -webkit-sticky;
@@ -335,6 +336,9 @@ body {
     border-radius: 4px;
     min-height: 2em; }
 
+#mc_embed_signup {
+  margin: 1em 0; }
+
 #mc-embedded-subscribe {
   border-radius: 10px;
   border-style: solid;
@@ -342,7 +346,8 @@ body {
   background-color: #ffffff;
   border-color: #1e90ff;
   color: #1e90ff;
-  border-width: 1px; }
+  border-width: 1px;
+  cursor: pointer; }
 
 #mailing-list-submit {
   padding: 10px;
