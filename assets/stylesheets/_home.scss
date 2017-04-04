@@ -1,17 +1,37 @@
-#lil-about {
-  font-size: 1.2em;
-}
-
-.content-excerpt-section {
-  padding: 3em 0;
+.home-content {
   margin: 1em 0;
-  background: $gray;
-  font-size: 1.3em;
-  text-align: center;
 }
 
 .high-contrast {
-  .content-excerpt-section {
+  .home-content {
     background: lighten($black, 8);
   }
+}
+
+#lil-about-box {
+  font-size: 1.4em;
+}
+
+#lil-about-text {
+  padding: 1em;
+
+  p {
+    margin: 0;
+  }
+}
+
+#call-to-action-box {
+  background-color: lighten($yellow, 8);
+  color: lighten($black, 8);
+}
+
+#call-to-action-text {
+  padding: 1em;
+  h3 {
+    margin: 0;
+  }
+  a {
+    color: $medium-blue;
+  }
+
 }

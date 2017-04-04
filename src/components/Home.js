@@ -48,14 +48,12 @@ class Home extends Component {
       <div>
         <HeroImage src={page ? page.acf.hero_image.sizes.medium_large : ' '} alt={page ? page.acf.hero_image.title : ' '} />
         <div className="max-width-12">
-          <div className="clearfix content-excerpt-section">
-            <div className="sm-col sm-col-6 px3">
-              <div dangerouslySetInnerHTML={{ __html: page ? page.content.rendered : '' }} />
+          <div className="clearfix home-content">
+            <div className="sm-col sm-col-8 px2" id="lil-about-box">
+              <div dangerouslySetInnerHTML={{ __html: page ? page.content.rendered : '' }} id="lil-about-text" />
             </div>
-            <div className="sm-col sm-col-6 px3">
-              <p>
-                {!!page && page.acf.call_to_action}
-              </p>
+            <div className="sm-col sm-col-4 px2" id="call-to-action-box">
+              <div dangerouslySetInnerHTML={{ __html: page ? page.acf.call_to_action : '' }} id="call-to-action-text" />
             </div>
           </div>
         </div>
