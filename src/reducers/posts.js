@@ -22,19 +22,21 @@ export const loadPosts = slug => (dispatch) => {
     : Promise.resolve({});
   return catReq
     .then(({ data: cats }) => {
-      const query = cats[0] ? { categories: cats[0].id } : {};
+      const query = cats && cats[0] ? { categories: cats[0].id } : {};
       return axios.get(resolve(resolve(root, apiRoot), './posts'), {
         params: query });
     })
     .then(res => res.data)
-    .then(posts => dispatch(receivePosts(posts)));
+    .then(posts => dispatch(receivePosts(posts)))
+    .catch(console.log);
 };
 
 export const loadPost = slug => dispatch =>
   axios.get(`${apiRoot}/posts`, { params: { slug } })
     .then(({ data: posts }) => {
       dispatch(receivePosts(posts));
-    });
+    })
+    .catch(console.log);
 
 // reducer
 const postsReducer = (prevState = initialState, action) => {

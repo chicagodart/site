@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import dateFormat from 'dateformat';
 import { resolve } from 'uri-js';
 
@@ -9,14 +9,25 @@ const EventCard = ({ event }) => (
   <div className="event-card">
     <img src={resolve(root, event.acf.hero_image.url)} alt={event.desc} style={{ width: '100%' }} />
     <div className="event-card-text">
-      <h2><a href={event.link}>{event.title.rendered}</a></h2>
-      <h3>{getEventDisplayDate(event)}</h3>
-      <h4>{getEventDisplayTime(event)}</h4>
+      <h2><a href={event.link}><span dangerouslySetInnerHTML={{ __html: event ? event.title.rendered : '' }} /></a></h2>
+      {getDate(event)}
       <p dangerouslySetInnerHTML={{ __html: event.excerpt.rendered }} />
       {!!event.reviews && event.reviews.map((review, i) => <h4 key={i}>{review}</h4>)}
     </div>
   </div>
 );
+
+const getDate = (event) => {
+  if (event.acf.start_date) {
+    return (
+      <div>
+        <h3>{getEventDisplayDate(event)}</h3>
+        <h4>{getEventDisplayTime(event)}</h4>
+      </div>
+    );
+  }
+  return <h3>{dateFormat(event.date, 'mmmm dS, yyyy')}</h3>;
+};
 
 const getEventDisplayDate = (event) => {
   const startDate = new Date(event.acf.start_date);
@@ -24,7 +35,7 @@ const getEventDisplayDate = (event) => {
 
   // Return one date and a time range
   if (startDate.toDateString() === endDate.toDateString()) {
-    return dateFormat(startDate, 'dddd, mmmm dS, yyyy');
+    return dateFormat(startDate, 'mmmm dS, yyyy');
   }
   // Return a date range and no times
   if (startDate.getYear() !== endDate.getYear()) {
