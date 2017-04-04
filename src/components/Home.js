@@ -28,12 +28,12 @@ class Home extends Component {
     }
 
     return postsInPairs.map((postPair, i) => (
-      <div key={i}>
-        <div className="event col col-6 p2">
+      <div key={i} className="mxn2 event-row">
+        <div className="event col col-6 px2">
           <EventCard event={postPair[0]} />
         </div>
         {
-          postPair[1] && <div className="event col col-6 p2">
+          postPair[1] && <div className="event col col-6 px2">
             <EventCard event={postPair[1]} />
           </div>
         }

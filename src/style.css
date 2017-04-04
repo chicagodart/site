@@ -339,6 +339,10 @@ body {
   display: flex;
   flex-direction: column; }
 
+.event-row {
+  padding-top: 5em;
+  padding-bottom: 5em; }
+
 .event-list {
   display: block;
   width: 100%;

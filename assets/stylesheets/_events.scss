@@ -1,4 +1,8 @@
 // Home page
+.event-row {
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
 
 .event-list {
   @extend .clearfix;

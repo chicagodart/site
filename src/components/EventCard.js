@@ -26,7 +26,7 @@ const getDate = (event) => {
       </div>
     );
   }
-  return <h3>{dateFormat(event.date, 'dddd, mmmm dS, yyyy')}</h3>;
+  return <h3>{dateFormat(event.date, 'mmmm dS, yyyy')}</h3>;
 };
 
 const getEventDisplayDate = (event) => {
@@ -35,7 +35,7 @@ const getEventDisplayDate = (event) => {
 
   // Return one date and a time range
   if (startDate.toDateString() === endDate.toDateString()) {
-    return dateFormat(startDate, 'dddd, mmmm dS, yyyy');
+    return dateFormat(startDate, 'mmmm dS, yyyy');
   }
   // Return a date range and no times
   if (startDate.getYear() !== endDate.getYear()) {
