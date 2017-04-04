@@ -12,7 +12,7 @@ html {
 
 html {
   height: 100%;
-  color: #313131; }
+  color: #000000; }
 
 body {
   position: relative;
@@ -142,7 +142,7 @@ body {
   text-align: center; }
 
 .high-contrast .content-excerpt-section {
-  background: #454545; }
+  background: #141414; }
 
 .anchor-adjust {
   padding-top: 4.6em;
@@ -154,25 +154,27 @@ body {
   font-size: 1.6em; }
 
 .high-contrast {
-  background-color: #313131;
+  background-color: #000000;
   color: #ffffff; }
   .high-contrast a {
     color: #f5d76e; }
   .high-contrast .navbar-button {
     color: #f5d76e; }
   .high-contrast .navbar {
-    background-color: #313131; }
+    background-color: #000000; }
     .high-contrast .navbar a {
       color: #f5d76e; }
     .high-contrast .navbar #art-parens {
       color: #ffffff; }
     .high-contrast .navbar .navbar-menu-center ul {
-      background-color: #313131; }
+      background-color: #000000; }
+  .high-contrast .event-card {
+    border-color: #ffffff; }
   .high-contrast .footer {
     background-color: #f5d76e;
-    color: #313131; }
+    color: #000000; }
     .high-contrast .footer a {
-      color: #313131; }
+      color: #000000; }
 
 .navbar {
   position: fixed;
@@ -227,7 +229,7 @@ body {
   align-items: flex-end; }
 
 #art-parens {
-  color: #313131; }
+  color: #000000; }
 
 .toggle-nav {
   display: none; }
@@ -371,7 +373,7 @@ body {
     transform: translateY(-50%); }
 
 .event-card {
-  border: 0.1em solid #313131;
+  border: 0.1em solid #000000;
   min-height: 35em; }
 
 .event-card-text {

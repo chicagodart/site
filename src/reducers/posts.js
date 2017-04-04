@@ -17,7 +17,6 @@ const receivePosts = posts => ({
 });
 
 export const loadPosts = slug => (dispatch) => {
-  console.log('slug is', slug);
   const catReq = slug
     ? axios.get(resolve(resolve(root, apiRoot), './categories'), { params: { slug } })
     : Promise.resolve({});

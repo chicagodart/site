@@ -14,10 +14,29 @@ class Home extends Component {
   }
 
   renderNews(posts) {
-    const postsOrdered = _.orderBy(posts, [post => post.acf.end_date], ['desc']);
-    return postsOrdered.map((post, i) => (
-      <div key={i} className="event col col-6 p2">
-        <EventCard event={post} />
+    posts = posts.map((post) => {
+      const newPost = { ...post };
+      newPost.orderByDate = newPost.acf.end_date ? newPost.acf.end_date : newPost.date;
+      return newPost;
+    });
+    const postsOrdered = _.orderBy(posts, ['orderByDate'], ['desc']);
+    const postsInPairs = [];
+    for (let i = 0; i < postsOrdered.length; i += 2) {
+      postsOrdered[i + 1]
+      ? postsInPairs.push([postsOrdered[i], postsOrdered[i + 1]])
+      : postsInPairs.push([postsOrdered[i]]);
+    }
+
+    return postsInPairs.map((postPair, i) => (
+      <div key={i}>
+        <div className="event col col-6 p2">
+          <EventCard event={postPair[0]} />
+        </div>
+        {
+          postPair[1] && <div className="event col col-6 p2">
+            <EventCard event={postPair[1]} />
+          </div>
+        }
       </div>
       ));
   }

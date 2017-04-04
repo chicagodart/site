@@ -9,7 +9,7 @@ const EventCard = ({ event }) => (
   <div className="event-card">
     <img src={resolve(root, event.acf.hero_image.url)} alt={event.desc} style={{ width: '100%' }} />
     <div className="event-card-text">
-      <h2><a href={event.link}>{event.title.rendered}</a></h2>
+      <h2><a href={event.link}><span dangerouslySetInnerHTML={{ __html: event ? event.title.rendered : '' }} /></a></h2>
       {getDate(event)}
       <p dangerouslySetInnerHTML={{ __html: event.excerpt.rendered }} />
       {!!event.reviews && event.reviews.map((review, i) => <h4 key={i}>{review}</h4>)}
