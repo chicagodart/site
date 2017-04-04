@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import dateFormat from 'dateformat';
-import { resolve } from 'uri-js';
+import { resolve, parse } from 'uri-js';
 
 import { apiDomain } from '../../.config.json';
 const root = apiDomain || '/';
 
 const EventCard = ({ event }) => (
   <div className="event-card">
-    <img src={resolve(root, event.acf.hero_image.url)} alt={event.desc} style={{ width: '100%' }} />
+    <img src={resolve(root, event.acf.hero_image.sizes.medium_large)} alt={event.desc} style={{ width: '100%' }} />
     <div className="event-card-text">
-      <h2><a href={event.link}>{event.title.rendered}</a></h2>
+      <h2><a href={parse(event.link).path} dangerouslySetInnerHTML={{ __html: event.title.rendered }} /></h2>
       <h3>{getEventDisplayDate(event)}</h3>
       <h4>{getEventDisplayTime(event)}</h4>
       <p dangerouslySetInnerHTML={{ __html: event.excerpt.rendered }} />
@@ -18,7 +18,7 @@ const EventCard = ({ event }) => (
   </div>
 );
 
-const getEventDisplayDate = (event) => {
+export const getEventDisplayDate = (event) => {
   const startDate = new Date(event.acf.start_date);
   const endDate = new Date(event.acf.end_date);
 

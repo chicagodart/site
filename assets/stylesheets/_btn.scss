@@ -1,0 +1,62 @@
+.btn {
+  display: inline-block;
+  margin: 0;
+  padding: 0.8em 1.5em;
+  font-size: 1.1em;
+  border: 0.15em solid $bright-blue;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  color: $bright-blue;
+  background: inherit;
+
+  &:hover {
+    color: $white;
+    background: $bright-blue;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 1em -0.1em $bright-blue;
+  }
+}
+
+.high-contrast {
+  .btn {
+    border-color: $yellow;
+    color: $yellow;
+
+    &:hover {
+      color: $black;
+      background: $yellow;
+    }
+    &:focus {
+      box-shadow: 0 0 1em -0.1em $yellow;
+    }
+  }
+}
+
+.btn--large {
+  font-size: 1.5em;
+}
+
+.btn--invert {
+  color: $white;
+  background: $bright-blue;
+
+  &:hover {
+    color: $bright-blue;
+    background: $white;
+  }
+}
+
+.high-contrast {
+  .btn--invert {
+    color: $black;
+    background: $yellow;
+
+    &:hover {
+      color: $yellow;
+      background: inherit;
+    }
+  }
+}

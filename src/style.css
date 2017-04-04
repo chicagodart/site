@@ -93,6 +93,9 @@ body {
 .content {
   display: flex; }
 
+.page-wrapper {
+  padding-bottom: 5em; }
+
 .sidebar-item {
   margin: 10px 0px; }
 
@@ -355,7 +358,7 @@ body {
     transform: translateY(-50%); }
 
 .event-card {
-  border: 0.1em solid #000000;
+  border: 0.1em solid #313131;
   min-height: 35em; }
 
 .event-card-text {
@@ -369,3 +372,92 @@ body {
   background: none;
   outline: none;
   font: inherit; }
+
+.btn {
+  display: inline-block;
+  margin: 0;
+  padding: 0.8em 1.5em;
+  font-size: 1.1em;
+  border: 0.15em solid #1e90ff;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  color: #1e90ff;
+  background: inherit; }
+  .btn:hover {
+    color: #ffffff;
+    background: #1e90ff; }
+  .btn:focus {
+    outline: none;
+    box-shadow: 0 0 1em -0.1em #1e90ff; }
+
+.high-contrast .btn {
+  border-color: #f5d76e;
+  color: #f5d76e; }
+  .high-contrast .btn:hover {
+    color: #313131;
+    background: #f5d76e; }
+  .high-contrast .btn:focus {
+    box-shadow: 0 0 1em -0.1em #f5d76e; }
+
+.btn--large {
+  font-size: 1.5em; }
+
+.btn--invert {
+  color: #ffffff;
+  background: #1e90ff; }
+  .btn--invert:hover {
+    color: #1e90ff;
+    background: #ffffff; }
+
+.high-contrast .btn--invert {
+  color: #313131;
+  background: #f5d76e; }
+  .high-contrast .btn--invert:hover {
+    color: #f5d76e;
+    background: inherit; }
+
+.single-event p {
+  font-size: 1.2em; }
+
+.single-event ul {
+  max-width: 40rem;
+  margin: 2em auto;
+  padding: 0;
+  font-size: 1.2em;
+  text-align: left;
+  list-style: none; }
+  .single-event ul ul {
+    float: right;
+    width: 50%;
+    margin: 0;
+    font-size: inherit;
+    padding-left: 1em;
+    background: #ffffff;
+    text-align: right; }
+    .single-event ul ul li {
+      margin: 0; }
+    .single-event ul ul::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      display: block;
+      width: 200%;
+      border-bottom: 0.1em dashed #1e90ff; }
+
+.single-event li {
+  margin: 2em auto; }
+  .single-event li::before, .single-event li::after {
+    content: '';
+    display: block;
+    clear: both; }
+
+.single-event__section {
+  margin: 5em auto; }
+
+.single-event__date {
+  font-weight: 600; }
+
+.single-event__ticket-btn {
+  float: right;
+  text-align: right; }
