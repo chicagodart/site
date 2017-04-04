@@ -24,7 +24,7 @@ function PageLayout(props) {
     .replace(/(<h\d)>(.+?)(<\/h\d>)/g, (match, p1, p2, p3) => {
       const id = stringToId(p2);
       anchors.push([p2, `#${id}`]);
-      return `${p1} id="${id}">${p2}${p3}`;
+      return `${p1}><div id="${id}" class="anchor-adjust"></div>${p2}${p3}`;
     });
   return (
     <div>
@@ -48,6 +48,6 @@ PageLayout.propTypes = {
   toggle: React.PropTypes.object.isRequired
 };
 
-const mapStateToProps = ({ pages, toggle }) => ({ pages, toggle });
+const mapStateToProps = ({ toggle }) => ({ toggle });
 
 export default connect(mapStateToProps, { loadPages, toggleVideo })(PageLayout);
