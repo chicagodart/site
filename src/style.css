@@ -1,4 +1,4 @@
-.clearfix::before, .event-list::before, .event-in-list::before, .clearfix::after, .event-list::after, .event-in-list::after {
+.clearfix::before, .event-row::before, .event-list::before, .event-in-list::before, .clearfix::after, .event-row::after, .event-list::after, .event-in-list::after {
   content: '';
   display: block;
   clear: both; }
@@ -340,8 +340,7 @@ body {
   flex-direction: column; }
 
 .event-row {
-  padding-top: 5em;
-  padding-bottom: 5em; }
+  padding-bottom: 2em; }
 
 .event-list {
   display: block;

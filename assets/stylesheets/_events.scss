@@ -1,7 +1,7 @@
 // Home page
 .event-row {
-  padding-top: 5em;
-  padding-bottom: 5em;
+  @extend .clearfix;
+  padding-bottom: 2em;
 }
 
 .event-list {
