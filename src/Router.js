@@ -33,6 +33,7 @@ class Router extends React.Component {
             <Switch>
               <Route
                 exact path="/" render={(p) => {
+                  console.log('This the the root route');
                   const slug = p.match.params.slug;
                   const page = this.props.pages.home;
                   return <Home {...p} page={page} />;

@@ -10,7 +10,7 @@ function stringToId(str) {
   return str.replace(/(^\s+|[^A-Za-z0-9\s]|\s$)/g, '').replace(/\s+/g, '_');
 }
 
-function PageLayout(props) {
+function Layout(props) {
   const { page, toggle } = props;
   const { video } = toggle;
   const anchors = [];
@@ -28,7 +28,7 @@ function PageLayout(props) {
       return `${p1}><div id="${id}" class="anchor-adjust"></div>${p2}${p3}`;
     });
   return (
-    <div>
+    <main className="page-wrapper">
 
       <HeroImage
         src={page ? page.acf.hero_image.sizes.medium_large : ' '}
@@ -41,14 +41,14 @@ function PageLayout(props) {
           React.cloneElement(child, { ...props, content, anchors, videoCount }))}
       </div>
 
-    </div>
+    </main>
   );
 }
-PageLayout.propTypes = {
+Layout.propTypes = {
   page: React.PropTypes.object.isRequired,
   toggle: React.PropTypes.object.isRequired
 };
 
 const mapStateToProps = ({ toggle }) => ({ toggle });
 
-export default connect(mapStateToProps, { loadPages, toggleVideo })(PageLayout);
+export default connect(mapStateToProps, { loadPages, toggleVideo })(Layout);
