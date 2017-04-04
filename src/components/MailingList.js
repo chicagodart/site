@@ -38,7 +38,7 @@ class MailingList extends Component {
             noValidate
           >
             <div id="mc_embed_signup_scroll">
-              <h2 className="page-title">Subscribe to Our Mailing List</h2>
+              <h2 className="page-title">Subscribe to our Mailing List</h2>
               <div className="mc-field-group col sm-col-6">
                 <label htmlFor="mce-EMAIL">Email<span className="asterisk">*</span></label>
                 <input type="email" value={this.state.EMAIL} name="EMAIL" className="required email" id="mce-EMAIL" onChange={this.handleChange} />

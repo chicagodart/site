@@ -340,18 +340,18 @@ body {
   margin: 1em 0; }
 
 #mc-embedded-subscribe {
-  border-radius: 10px;
+  border-radius: 0.5em;
   border-style: solid;
-  min-height: 40px;
+  min-height: 4em;
   background-color: #ffffff;
   border-color: #1e90ff;
   color: #1e90ff;
-  border-width: 1px;
+  border-width: 0.2em;
   cursor: pointer; }
 
 #mailing-list-submit {
-  padding: 10px;
-  font-size: 1.5em; }
+  padding: 0.5em;
+  font-size: 1.6em; }
 
 #mc_embed_signup_scroll {
   display: flex;
