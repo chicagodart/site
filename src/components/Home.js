@@ -10,7 +10,7 @@ import EventCard from './EventCard';
 
 class Home extends Component {
   componentDidMount() {
-    this.props.loadPosts('events');
+    this.props.loadPosts();
   }
 
   renderNews(posts) {
