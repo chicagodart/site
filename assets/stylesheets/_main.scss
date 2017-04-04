@@ -26,13 +26,13 @@ body {
   width: $page-width;
   max-width: $max-page-width;
   margin: 0 auto;
-  padding-top: 95px;
+  padding-top: 4.6em;
 }
 
 .fixed-sidebar {
   position: -webkit-sticky;  // required for Safari
   position: sticky;
-  top: 77px; // required as well.
+  top: 4.2em; // required as well.
 }
 
 @media screen and (max-width: 40rem) {
@@ -168,4 +168,11 @@ body {
   .content-excerpt-section {
     background: lighten($black, 8);
   }
+}
+
+.anchor-adjust {
+  padding-top: 4.6em;
+  margin-top: -4.6em;
+  width: 0;
+  position: absolute;
 }

@@ -32,12 +32,12 @@ body {
   width: 85vw;
   max-width: 70rem;
   margin: 0 auto;
-  padding-top: 95px; }
+  padding-top: 4.6em; }
 
 .fixed-sidebar {
   position: -webkit-sticky;
   position: sticky;
-  top: 77px; }
+  top: 4.2em; }
 
 @media screen and (max-width: 40rem) {
   .container {
@@ -143,6 +143,12 @@ body {
 
 .high-contrast .content-excerpt-section {
   background: #454545; }
+
+.anchor-adjust {
+  padding-top: 4.6em;
+  margin-top: -4.6em;
+  width: 0;
+  position: absolute; }
 
 .large-font {
   font-size: 1.6em; }
