@@ -59,7 +59,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <h2>News</h2>
+        <h2 className="page-title">News</h2>
         <ol className="event-list">
           {!!posts && this.renderNews(posts) }
         </ol>
