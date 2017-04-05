@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { resolve, parse } from 'uri-js';
 // Calendar
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import BigCalendar from 'react-big-calendar';
@@ -61,17 +61,37 @@ class Events extends Component {
       ));
   }
 
+  unescapeHTML(str) {//modified from underscore.string and string.js
+      return str.replace(/\&([^;]+);/g, function(entity, entityCode) {
+          var match;
+          var escapeChars = { lt: '<', gt: '>', quot: '"', apos: "'", amp: '&' };
+
+          if ( entityCode in escapeChars) {
+              return escapeChars[entityCode];
+          } else if ( match = entityCode.match(/^#x([\da-fA-F]+)$/)) {
+              return String.fromCharCode(parseInt(match[1], 16));
+          } else if ( match = entityCode.match(/^#(\d+)$/)) {
+              return String.fromCharCode(~~match[1]);
+          } else {
+              return entity;
+          }
+      });
+  }
+
   showCalendarView() {
     if (this.state.showCalendar) {
       const events = this.props.events.map(event => ({
-        title: event.title.rendered,
+        title: this.unescapeHTML(event.title.rendered),
         start: new Date(event.acf.start_date),
-        end: new Date(event.acf.end_date)
+        end: new Date(event.acf.end_date),
+        link: event.link
       }));
       return (
         <div id="big-calendar">
           <BigCalendar
             events={events}
+            selectable
+            onSelectEvent={(event) => window.location.assign(`${parse(event.link).path}`)}
             defaultDate={new Date()}
             startAccessor="start"
             endAccessor="end"
