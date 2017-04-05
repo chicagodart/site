@@ -95,6 +95,10 @@ body {
   top: 4.2em;
   z-index: 4; }
 
+.sidebar-title {
+  font-weight: 800;
+  font-size: 1.2em; }
+
 @media screen and (max-width: 40rem) {
   .video {
     margin: 0;
@@ -162,18 +166,6 @@ body {
 #menu-item {
   padding-bottom: 6px; }
 
-#donate-button-text {
-  padding: 10px;
-  font-size: 2.4em;
-  font-weight: 600;
-  letter-spacing: 0.05em; }
-
-.toggle-video {
-  margin-top: 15px; }
-
-.toggle-video-text {
-  font-size: 1.3em; }
-
 .white {
   color: #ffffff; }
 
@@ -192,6 +184,8 @@ body {
 .high-contrast {
   background-color: #000000;
   color: #ffffff; }
+  .high-contrast *:focus {
+    outline-color: #f5d76e; }
   .high-contrast a {
     color: #f5d76e; }
   .high-contrast .navbar-button {
@@ -209,6 +203,8 @@ body {
   .high-contrast .footer {
     background-color: #f5d76e;
     color: #000000; }
+    .high-contrast .footer *:focus {
+      outline-color: #000000; }
     .high-contrast .footer a {
       color: #000000; }
 
@@ -317,6 +313,8 @@ body {
   min-height: 6em;
   font-size: 1em;
   color: #ffffff; }
+  .footer *:focus {
+    outline-color: #ffffff; }
   .footer ul {
     list-style-type: none;
     list-style-position: initial;
@@ -392,20 +390,18 @@ body {
 .btn {
   display: inline-block;
   margin: 0;
-  padding: 0.7em 1em;
-  font-size: 1.1em;
+  padding: 0.6em 0.9em;
+  font-size: 1em;
   border: 0.15em solid #1e90ff;
   border-radius: 0.3em;
   cursor: pointer;
   transition: 0.3s ease-in-out;
   color: #1e90ff;
-  background: inherit; }
+  background: inherit;
+  z-index: 5; }
   .btn:hover {
     color: #ffffff;
     background: #1e90ff; }
-  .btn:focus {
-    outline: none;
-    box-shadow: 0 0 1em -0.1em #1e90ff; }
 
 .high-contrast .btn {
   border-color: #f5d76e;
@@ -413,8 +409,6 @@ body {
   .high-contrast .btn:hover {
     color: #000000;
     background: #f5d76e; }
-  .high-contrast .btn:focus {
-    box-shadow: 0 0 1em -0.1em #f5d76e; }
 
 .btn--large {
   font-size: 1.3em; }
@@ -433,6 +427,18 @@ body {
     color: #f5d76e;
     background: inherit; }
 
+#donate-button-text {
+  padding: 10px;
+  font-size: 2.4em;
+  font-weight: 600;
+  letter-spacing: 0.05em; }
+
+.toggle-video {
+  margin-top: 1.5em; }
+
+.toggle-video-text {
+  font-size: 1.3em; }
+
 .single-event p {
   font-size: 1.2em; }
 
@@ -449,7 +455,6 @@ body {
     margin: 0;
     font-size: inherit;
     padding-left: 1em;
-    background: #ffffff;
     text-align: right; }
     .single-event ul ul li {
       margin: 0; }
@@ -477,6 +482,9 @@ body {
 .single-event__ticket-btn {
   float: right;
   text-align: right; }
+
+.high-contrast ul ul::after {
+  border-color: #f5d76e; }
 
 .video-wrapper {
   padding-top: 56.25%;
