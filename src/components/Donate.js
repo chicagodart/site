@@ -10,10 +10,10 @@ function Donate({ content, videoCount, page, toggleVideo, anchors, toggle }) {
   return (
     <div className="max-width-12">
       <h2 className="page-title">Donate</h2>
-      <div className="clearfix mxn1 content-sidebar-container">
-        <div className="col col-8 px1" dangerouslySetInnerHTML={{ __html: content }} />
-        <div className="col col-4 px1 center fixed-sidebar">
-          <div className="clearfix my1">
+      <div className="clearfix mxn3 content-sidebar-container">
+        <div className="col col-8 px3" dangerouslySetInnerHTML={{ __html: content }} />
+        <div className="col col-4 px3 fixed-sidebar">
+          <div className="clearfix my1 mb3">
             <a href="https://www.paypal.me/ChicagoDART">
               <button type="button" name="donate" className="btn btn--large btn--invert">Donate Now</button>
             </a>

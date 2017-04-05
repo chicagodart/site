@@ -358,7 +358,9 @@ body {
   background: #141414; }
 
 #lil-about-box {
-  font-size: 1.4em; }
+  font-size: 1.5em;
+  font-weight: 800;
+  line-height: 140%; }
 
 #lil-about-text {
   padding: 1em; }

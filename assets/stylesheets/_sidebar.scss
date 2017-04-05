@@ -1,8 +1,8 @@
 .fixed-sidebar {
-  position: -webkit-sticky;  // required for Safari
+  position: -webkit-sticky; // required for Safari
   position: sticky;
-  margin-top: -60px;
-  top: 90px; // required as well.
+  margin-top: $navbar-height * 66%;
+  top: $navbar-height; // required as well.
 }
 
 .sidebar-title {
@@ -11,14 +11,14 @@
   margin: 0 0 1em 0;
 }
 
+.menu-item {
+  padding-bottom: 0.4em;
+}
+
 .toggle-video { // button
   margin-top: 1.5em;
 }
 
-.toggle-video-text { // button
+.toggle-video-text { // button text
   font-size: 1.3em;
-}
-
-.menu-item {
-  padding-bottom: 0.4em;
 }

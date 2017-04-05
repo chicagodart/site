@@ -24,7 +24,7 @@ body {
   width: $page-width;
   max-width: $max-page-width;
   margin: 0 auto;
-  padding-top: 90px;
+  padding-top: $navbar-height;
   padding-bottom: 3em;
 }
 
@@ -109,8 +109,8 @@ body {
 }
 
 .anchor-adjust {
-  padding-top: 4.6em;
-  margin-top: -4.6em;
+  padding-top: $navbar-height;
+  margin-top: -$navbar-height;
   width: 0;
   position: absolute;
 }
