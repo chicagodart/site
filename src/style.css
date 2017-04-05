@@ -92,7 +92,8 @@ body {
   position: -webkit-sticky;
   position: sticky;
   margin-top: -4.2em;
-  top: 4.2em; }
+  top: 4.2em;
+  z-index: 4; }
 
 @media screen and (max-width: 40rem) {
   .video {
@@ -113,7 +114,8 @@ body {
     padding-bottom: 0; }
   .fixed-sidebar {
     position: auto;
-    top: auto; } }
+    top: auto;
+    padding-top: 3em; } }
 
 .hero-img {
   width: 100%;

@@ -26,6 +26,10 @@ body {
   margin: 0 auto;
   padding-top: 4.6em;
   padding-bottom: 3em;
+  // background-color: inherit;
+}
+.content-sidebar-container {
+  // background-color: inherit;
 }
 
 .fixed-sidebar {
@@ -33,6 +37,8 @@ body {
   position: sticky;
   margin-top: -4.2em;
   top: 4.2em; // required as well.
+  // background-color: inherit;
+  z-index: 4;
 }
 
 @media screen and (max-width: 40rem) {
@@ -62,6 +68,7 @@ body {
   .fixed-sidebar {
     position: auto;
     top: auto;
+    padding-top: 3em;
   }
 }
 
