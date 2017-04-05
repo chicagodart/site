@@ -17,7 +17,6 @@
       margin: 0;
       font-size: inherit;
       padding-left: 1em;
-      background: $white;
       text-align: right;
 
       li {
@@ -30,8 +29,10 @@
         right: 0;
         display: block;
         width: 200%;
-        border-bottom: 0.1em dashed $bright-blue
+        border-bottom: 0.1em dashed $bright-blue;
       }
+
+
     }
   }
 
@@ -53,4 +54,12 @@
 .single-event__ticket-btn {
   float: right;
   text-align: right;
+}
+
+.high-contrast {
+  ul {
+    ul::after {
+      border-color: $yellow;
+    }
+  }
 }
