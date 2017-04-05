@@ -9,24 +9,53 @@ import HeroImage from './HeroImage';
 import EventCard from './EventCard';
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentPage: 1,
+      postPairsPerPage: 2
+    };
+
+    this.handleClick = this.handleClick.bind(this);
+    this.addActiveClass = this.addActiveClass.bind(this);
+  }
+
   componentDidMount() {
     this.props.loadPosts();
   }
 
+  addActiveClass(num) {
+    console.log(num === this.state.currentPage);
+    return num === this.state.currentPage ? 'active' : '';
+  }
+
+  handleClick(e) {
+    this.setState({
+      currentPage: Number(e.target.id)
+    });
+  }
+
   renderNews(posts) {
-    posts = posts.map((post) => {
+    const postsWithOrderByDate = posts.map((post) => {
       const newPost = { ...post };
-      newPost.orderByDate = newPost.acf.end_date ? newPost.acf.end_date : newPost.date;
+      newPost.orderByDate = newPost.acf.end_date ? new Date(newPost.acf.end_date) : new Date(newPost.date);
       return newPost;
     });
-    const postsOrdered = _.orderBy(posts, ['orderByDate'], ['desc']);
+    console.log('postsWithOrderByDate', postsWithOrderByDate);
+    const postsOrdered = _.orderBy(postsWithOrderByDate, ['orderByDate'], ['desc']);
+    console.log('postsOrdered', postsOrdered);
     const postsInPairs = [];
     for (let i = 0; i < postsOrdered.length; i += 2) {
       if (postsOrdered[i + 1]) postsInPairs.push([postsOrdered[i], postsOrdered[i + 1]]);
       else postsInPairs.push([postsOrdered[i]]);
     }
 
-    return postsInPairs.map((postPair, i) => (
+    const { currentPage, postPairsPerPage } = this.state;
+    const indexOfLastPostPair = currentPage * postPairsPerPage;
+    const indexOfFirstPostPair = indexOfLastPostPair - postPairsPerPage;
+    const currentPagePosts = postsInPairs.slice(indexOfFirstPostPair, indexOfLastPostPair);
+
+    return currentPagePosts.map((postPair, i) => (
       <div key={i} className="mxn2 event-row">
         <div className="event col col-6 px2">
           <EventCard event={postPair[0]} />
@@ -39,6 +68,22 @@ class Home extends Component {
       </div>
       ));
   }
+
+  renderPageNumbers() {
+    const pageNumbers = [];
+    const numOfPostPairs = Object.keys(this.props.posts).length / 2;
+    for (let i = 1; i <= Math.ceil(numOfPostPairs / this.state.postPairsPerPage); i++) {
+      pageNumbers.push(i);
+    }
+    return pageNumbers.length === 1 ? null : pageNumbers.map(number => (
+      <li key={number}>
+        <button id={number} className={this.addActiveClass(number)} onClick={this.handleClick}>
+          {number}
+        </button>
+      </li>
+    ));
+  }
+
 
   render() {
     const { page } = this.props;
@@ -59,6 +104,9 @@ class Home extends Component {
         <ol className="event-list">
           {!!posts && this.renderNews(posts) }
         </ol>
+        <ul className="pagination-container">
+          {!!posts && this.renderPageNumbers() }
+        </ul>
       </div>
     );
   }

@@ -27,6 +27,7 @@ function Layout(props) {
       anchors.push([p2, `#${id}`]);
       return `${p1}><div id="${id}" class="anchor-adjust"></div>${p2}${p3}`;
     });
+
   return (
     <main id="main" className="page-wrapper">
 
@@ -37,9 +38,9 @@ function Layout(props) {
       />
 
       <div className="max-width-12">
-        {React.Children.map(props.children, child => React.cloneElement(child, { ...props, content, anchors, videoCount }))}
+        {React.Children.map(props.children, child =>
+          React.cloneElement(child, { ...props, content, anchors, videoCount }))}
       </div>
-
     </main>
   );
 }

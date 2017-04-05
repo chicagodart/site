@@ -129,7 +129,9 @@ body {
   .fixed-sidebar {
     position: auto;
     top: auto;
-    padding-top: 3em; } }
+    padding-top: 0em;
+    margin: 2em auto;
+    text-align: center; } }
 
 .hero-img {
   width: 100%;
@@ -278,7 +280,7 @@ body {
   color: #1e90ff;
   cursor: pointer; }
 
-@media screen and (max-width: 80rem) {
+@media screen and (max-width: 48rem) {
   .navbar-menu-center {
     position: relative;
     display: inline-block; }
@@ -384,6 +386,24 @@ body {
     color: #ffffff;
     border-bottom: solid 0.13em white;
     padding-bottom: 0.1em; }
+
+.pagination-container {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; }
+  .pagination-container button {
+    width: 2em;
+    height: 2em;
+    margin-left: .5em;
+    padding: auto;
+    background-color: #1e90ff;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    font: inherit; }
+  .pagination-container .active {
+    background-color: #70B8FF; }
 
 .mc-field-group {
   display: flex;
