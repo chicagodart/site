@@ -305,6 +305,11 @@ body {
   #hamburger-button {
     z-index: 10; } }
 
+.skip-nav {
+  position: absolute;
+  opacity: 0;
+  z-index: -5; }
+
 .footer {
   background-color: #1e90ff;
   display: flex;

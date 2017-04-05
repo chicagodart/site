@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { loadPages } from './reducers/pages';
 
 // Components
+import Layout from './components/Layout';
 import RelativeRoutes from './components/RelativeRoutes';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -33,10 +34,13 @@ class Router extends React.Component {
             <Switch>
               <Route
                 exact path="/" render={(p) => {
-                  console.log('This the the root route');
-                  const slug = p.match.params.slug;
                   const page = this.props.pages.home;
-                  return <Home {...p} page={page} />;
+                  if (!page) return <div />;
+                  return (
+                    <Layout page={page}>
+                      <Home />
+                    </Layout>
+                  );
                 }}
               />
               <Redirect from="/home" to="/" />
