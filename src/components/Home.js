@@ -25,7 +25,6 @@ class Home extends Component {
   }
 
   addActiveClass(num) {
-    console.log(num === this.state.currentPage);
     return num === this.state.currentPage ? 'active' : '';
   }
 
@@ -41,9 +40,7 @@ class Home extends Component {
       newPost.orderByDate = newPost.acf.end_date ? new Date(newPost.acf.end_date) : new Date(newPost.date);
       return newPost;
     });
-    console.log('postsWithOrderByDate', postsWithOrderByDate);
     const postsOrdered = _.orderBy(postsWithOrderByDate, ['orderByDate'], ['desc']);
-    console.log('postsOrdered', postsOrdered);
     const postsInPairs = [];
     for (let i = 0; i < postsOrdered.length; i += 2) {
       if (postsOrdered[i + 1]) postsInPairs.push([postsOrdered[i], postsOrdered[i + 1]]);
@@ -86,7 +83,6 @@ class Home extends Component {
 
 
   render() {
-    console.log('HOME');
     const { page } = this.props;
     const posts = Object.keys(this.props.posts).map(key => this.props.posts[key]);
     return (
