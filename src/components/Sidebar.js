@@ -12,7 +12,7 @@ function Sidebar({ listItems }) {
           href = item[1];
         } else content = href = item;
         return (
-          <div id="menu-item" key={href}>
+          <div className="menu-item" key={href}>
             <a href={`${href}`} dangerouslySetInnerHTML={{ __html: content }} />
           </div>
         );

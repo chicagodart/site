@@ -24,21 +24,8 @@ body {
   width: $page-width;
   max-width: $max-page-width;
   margin: 0 auto;
-  padding-top: 4.6em;
+  padding-top: 90px;
   padding-bottom: 3em;
-}
-
-.fixed-sidebar {
-  position: -webkit-sticky;  // required for Safari
-  position: sticky;
-  margin-top: -4.2em;
-  top: 4.2em; // required as well.
-  z-index: 4;
-}
-
-.sidebar-title {
-  font-weight: 800;
-  font-size: 1.2em;
 }
 
 @media screen and (max-width: 40rem) {
@@ -109,27 +96,12 @@ body {
   padding-bottom: 5em;
 }
 
-.sidebar-item {
-  margin: 10px 0px;
-}
-
 #big-calendar {
   z-index: 1;
 }
 
 .active-events-view {
   color: $bright-blue;
-}
-
-#donate-button { // button
-  min-height: 5em;
-  background-color: $bright-blue;
-  color: $white;
-  margin-top: 2.2em;
-}
-
-#menu-item {
-  padding-bottom: 6px;
 }
 
 .white {
