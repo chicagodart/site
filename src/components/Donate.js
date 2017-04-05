@@ -6,13 +6,12 @@ import { loadPages } from '../reducers/pages';
 import Sidebar from './Sidebar';
 
 function Donate({ content, videoCount, page, toggleVideo, anchors, toggle }) {
+  console.log('anchors', anchors);
   return (
     <div className="max-width-12">
       <div className="clearfix content-sidebar-container">
         <div className="col col-8" dangerouslySetInnerHTML={{ __html: content }} />
-
         <div className="col col-4 center fixed-sidebar">
-
           <div className="clearfix my1">
             <a href="https://www.paypal.me/ChicagoDART">
               <button type="button" name="donate" className="btn btn--large btn--invert">DONATE</button>

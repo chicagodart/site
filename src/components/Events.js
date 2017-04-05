@@ -61,21 +61,20 @@ class Events extends Component {
       ));
   }
 
-  unescapeHTML(str) {//modified from underscore.string and string.js
-      return str.replace(/\&([^;]+);/g, function(entity, entityCode) {
-          var match;
-          var escapeChars = { lt: '<', gt: '>', quot: '"', apos: "'", amp: '&' };
+  unescapeHTML(str) { // modified from underscore.string and string.js
+    return str.replace(/\&([^;]+);/g, (entity, entityCode) => {
+      let match;
+      const escapeChars = { lt: '<', gt: '>', quot: '"', apos: "'", amp: '&' };
 
-          if ( entityCode in escapeChars) {
-              return escapeChars[entityCode];
-          } else if ( match = entityCode.match(/^#x([\da-fA-F]+)$/)) {
-              return String.fromCharCode(parseInt(match[1], 16));
-          } else if ( match = entityCode.match(/^#(\d+)$/)) {
-              return String.fromCharCode(~~match[1]);
-          } else {
-              return entity;
-          }
-      });
+      if (entityCode in escapeChars) {
+        return escapeChars[entityCode];
+      } else if (match = entityCode.match(/^#x([\da-fA-F]+)$/)) {
+        return String.fromCharCode(parseInt(match[1], 16));
+      } else if (match = entityCode.match(/^#(\d+)$/)) {
+        return String.fromCharCode(~~match[1]);
+      }
+      return entity;
+    });
   }
 
   showCalendarView() {
@@ -91,7 +90,7 @@ class Events extends Component {
           <BigCalendar
             events={events}
             selectable
-            onSelectEvent={(event) => window.location.assign(`${parse(event.link).path}`)}
+            onSelectEvent={event => window.location.assign(`${parse(event.link).path}`)}
             defaultDate={new Date()}
             startAccessor="start"
             endAccessor="end"
@@ -105,11 +104,9 @@ class Events extends Component {
     }
     return (
       <div className="col col-12">
-
         <div className="clearfix">
           {this.renderEvents(this.props.events)}
         </div>
-
       </div>
     );
   }
