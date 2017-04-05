@@ -20,10 +20,10 @@ function Layout(props) {
     .replace(/\[vimeo=https?:\/\/([^\]]+)\]/g, (match, p1) => {
       const videoId = p1.replace(/^.*\/(\d+)$/, '$1');
       videoCount++;
-      return video ? `<iframe src="https://player.vimeo.com/video/${videoId}" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>`
+      return video ? `<div class="video-wrapper"><iframe src="https://player.vimeo.com/video/${videoId}" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>`
         : '';
     })
-    .replace(/(<h\d)>(.+?)(<\/h\d>)/g, (match, p1, p2, p3) => {
+    .replace(/(<h\d.*)>(.+?)(<\/h\d>)/g, (match, p1, p2, p3) => {
       const id = stringToId(p2);
       console.log('here is an anchor to push', [p2, `#${id}`]); // This is never getting hit on Donate page
       anchors.push([p2, `#${id}`]);
