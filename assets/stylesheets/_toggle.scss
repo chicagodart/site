@@ -36,7 +36,8 @@
   }
 
   .event-card {
-    border-color: $white;
+    background-color: lighten($black, 15);
+    border-bottom: 0.2em solid $yellow;
   }
 
   .footer {
