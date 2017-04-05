@@ -153,9 +153,10 @@ class Events extends Component {
   render() {
     return (
       <div className="max-width-12 mx-auto">
-        <div className="clearfix center">
+        <div className="clearfix center" style={{ marginBottom: '2em' }}>
           <h2 className="page-title">Upcoming Events</h2>
-          <div className="event-calendar-toggle">{this.changeSelectedTab(this.selectedTab)}</div>
+          <button className="btn" onClick={this.toggleCalendarView}>{this.state.showCalendar ? 'List View' : 'Calendar View'}</button>
+          {/* <div className="event-calendar-toggle">{this.changeSelectedTab(this.selectedTab)}</div> */}
         </div>
         <div className="clearfix">
           {this.showCalendarView()}
