@@ -109,8 +109,8 @@ body {
 }
 
 .anchor-adjust {
-  padding-top: 4.6em;
-  margin-top: -4.6em;
+  padding-top: $navbar-height;
+  margin-top: -$navbar-height;
   width: 0;
   position: absolute;
 }
