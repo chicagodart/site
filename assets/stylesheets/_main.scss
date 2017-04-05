@@ -24,7 +24,7 @@ body {
   width: $page-width;
   max-width: $max-page-width;
   margin: 0 auto;
-  padding-top: 90px;
+  padding-top: $navbar-height;
   padding-bottom: 3em;
 }
 
