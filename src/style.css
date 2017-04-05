@@ -47,7 +47,8 @@ html {
     transform: translateY(-50%); }
 
 .event-card {
-  border: 0.1em solid #000000;
+  border-bottom: 0.2em solid #1e90ff;
+  background-color: #ffffff;
   min-height: 35em; }
 
 .event-card-text {
@@ -92,7 +93,7 @@ body {
   min-height: 100%;
   margin: 0px;
   font-family: 'Karla', sans-serif;
-  background-color: #ffffff;
+  background-color: #f3f3f2;
   font-size: 1em; }
   body a {
     color: #1e90ff;
@@ -196,7 +197,8 @@ body {
     .high-contrast .navbar .navbar-menu-center ul {
       background-color: #000000; }
   .high-contrast .event-card {
-    border-color: #ffffff; }
+    background-color: #262626;
+    border-bottom: 0.2em solid #f5d76e; }
   .high-contrast .footer {
     background-color: #f5d76e;
     color: #000000; }
@@ -352,15 +354,17 @@ body {
       text-decoration: none; }
 
 .home-content {
-  margin: 1em 0; }
+  background-color: #ffffff;
+  display: flex;
+  margin-top: 1.5em; }
 
 .high-contrast .home-content {
   background: #141414; }
 
 #lil-about-box {
-  font-size: 1.5em;
-  font-weight: 800;
-  line-height: 140%; }
+  font-size: 1.6em;
+  line-height: 140%;
+  align-self: center; }
 
 #lil-about-text {
   padding: 1em; }
@@ -368,15 +372,18 @@ body {
     margin: 0; }
 
 #call-to-action-box {
-  background-color: #f8e294;
-  color: #141414; }
+  background-color: #ff8400;
+  color: #000000;
+  font-size: 1.4em; }
 
 #call-to-action-text {
   padding: 1em; }
   #call-to-action-text h3 {
     margin: 0; }
   #call-to-action-text a {
-    color: #345d8a; }
+    color: #ffffff;
+    border-bottom: solid 0.13em white;
+    padding-bottom: 0.1em; }
 
 .mc-field-group {
   display: flex;

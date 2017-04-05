@@ -1,5 +1,7 @@
 .home-content {
-  margin: 1em 0;
+  background-color: $white;
+  display: flex;
+  margin-top: 1.5em;
 }
 
 .high-contrast {
@@ -9,13 +11,14 @@
 }
 
 #lil-about-box {
-  font-size: 1.5em;
-  font-weight: 800;
+  font-size: 1.6em;
   line-height: 140%;
+  align-self: center;
 }
 
 #lil-about-text {
   padding: 1em;
+
 
   p {
     margin: 0;
@@ -23,8 +26,9 @@
 }
 
 #call-to-action-box {
-  background-color: lighten($yellow, 8);
-  color: lighten($black, 8);
+  background-color: $orange;
+  color: $black;
+  font-size: 1.4em;
 }
 
 #call-to-action-text {
@@ -33,7 +37,9 @@
     margin: 0;
   }
   a {
-    color: $medium-blue;
+    color: $white;
+    border-bottom: solid 0.13em white;
+    padding-bottom: 0.1em;
   }
 
 }

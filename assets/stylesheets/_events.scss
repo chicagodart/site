@@ -48,7 +48,8 @@
 
 //  Events page
 .event-card {
-  border: 0.1em solid $black;
+  border-bottom: 0.2em solid $bright-blue;
+  background-color: $white;
   min-height: 35em;
 }
 
