@@ -99,9 +99,9 @@ class Home extends Component {
         <ol className="event-list">
           {!!posts && this.renderNews(posts) }
         </ol>
-        <ol>
+        <ul className="pagination-container">
           {!!posts && this.renderPageNumbers() }
-        </ol>
+        </ul>
       </div>
     );
   }

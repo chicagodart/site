@@ -378,6 +378,22 @@ body {
   #call-to-action-text a {
     color: #345d8a; }
 
+.pagination-container {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; }
+  .pagination-container button {
+    width: 2em;
+    height: 2em;
+    margin-left: .5em;
+    padding: auto;
+    background-color: #1e90ff;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    font: inherit; }
+
 .mc-field-group {
   display: flex;
   flex-direction: row;
