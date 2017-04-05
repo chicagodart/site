@@ -7,7 +7,7 @@ const root = apiDomain || '/';
 
 const EventCard = ({ event }) => (
   <div className="event-card">
-    <img src={resolve(root, event.acf.hero_image.sizes.medium_large)} alt={event.desc} style={{ width: '100%' }} />
+    <img src={resolve(root, event.acf.hero_image.sizes.medium_large)} alt={event.acf.hero_image.alt} style={{ width: '100%' }} />
     <div className="event-card-text">
       <h2><a href={parse(event.link).path} dangerouslySetInnerHTML={{ __html: event.title.rendered }} /></h2>
       {getDate(event)}
