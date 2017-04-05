@@ -185,6 +185,12 @@ body {
     outline-color: #f5d76e; }
   .high-contrast a {
     color: #f5d76e; }
+  .high-contrast .rbc-btn-group button {
+    color: #f5d76e;
+    background-color: #000000; }
+  .high-contrast .rbc-event {
+    color: #000000 !important;
+    background-color: #f5d76e; }
   .high-contrast .navbar-button {
     color: #f5d76e; }
   .high-contrast .navbar {
