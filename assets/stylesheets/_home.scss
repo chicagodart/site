@@ -1,7 +1,11 @@
 .home-content {
   background-color: $white;
-  display: flex;
   margin-top: 1.5em;
+  display: flex;
+
+  @media screen and (max-width: $breakpoint-medium) {
+      display: block;
+  }
 }
 
 .high-contrast {
@@ -18,8 +22,6 @@
 
 #lil-about-text {
   padding: 1em;
-
-
   p {
     margin: 0;
   }
@@ -41,8 +43,8 @@
     border-bottom: solid 0.13em white;
     padding-bottom: 0.1em;
   }
-
 }
+
 
 .pagination-container {
   list-style: none;

@@ -27,7 +27,7 @@
     width: 100%;
   }
 
-  @media screen and (max-width: 40rem) {
+  @media screen and (max-width: $breakpoint-medium) {
     ul {
       flex-direction: column;
     }

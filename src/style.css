@@ -124,6 +124,59 @@ html {
 .toggle-video-text {
   font-size: 1.3em; }
 
+.home-content {
+  background-color: #ffffff;
+  margin-top: 1.5em;
+  display: flex; }
+  @media screen and (max-width: 40rem) {
+    .home-content {
+      display: block; } }
+
+.high-contrast .home-content {
+  background: #141414; }
+
+#lil-about-box {
+  font-size: 1.6em;
+  line-height: 140%;
+  align-self: center; }
+
+#lil-about-text {
+  padding: 1em; }
+  #lil-about-text p {
+    margin: 0; }
+
+#call-to-action-box {
+  background-color: #ff8400;
+  color: #000000;
+  font-size: 1.4em; }
+
+#call-to-action-text {
+  padding: 1em; }
+  #call-to-action-text h3 {
+    margin: 0; }
+  #call-to-action-text a {
+    color: #ffffff;
+    border-bottom: solid 0.13em white;
+    padding-bottom: 0.1em; }
+
+.pagination-container {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; }
+  .pagination-container button {
+    width: 2em;
+    height: 2em;
+    margin-left: .5em;
+    padding: auto;
+    background-color: #1e90ff;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    font: inherit; }
+  .pagination-container .active {
+    background-color: #70B8FF; }
+
 html {
   height: 100%;
   color: #000000; }
@@ -173,7 +226,9 @@ body {
     top: auto;
     padding-top: 0em;
     margin: 2em auto;
-    text-align: center; } }
+    text-align: center; }
+  .home-content {
+    display: static; } }
 
 .hero-img {
   width: 100%;
@@ -396,56 +451,6 @@ body {
     .footer li a {
       color: #ffffff;
       text-decoration: none; }
-
-.home-content {
-  background-color: #ffffff;
-  display: flex;
-  margin-top: 1.5em; }
-
-.high-contrast .home-content {
-  background: #141414; }
-
-#lil-about-box {
-  font-size: 1.6em;
-  line-height: 140%;
-  align-self: center; }
-
-#lil-about-text {
-  padding: 1em; }
-  #lil-about-text p {
-    margin: 0; }
-
-#call-to-action-box {
-  background-color: #ff8400;
-  color: #000000;
-  font-size: 1.4em; }
-
-#call-to-action-text {
-  padding: 1em; }
-  #call-to-action-text h3 {
-    margin: 0; }
-  #call-to-action-text a {
-    color: #ffffff;
-    border-bottom: solid 0.13em white;
-    padding-bottom: 0.1em; }
-
-.pagination-container {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end; }
-  .pagination-container button {
-    width: 2em;
-    height: 2em;
-    margin-left: .5em;
-    padding: auto;
-    background-color: #1e90ff;
-    color: #ffffff;
-    border: none;
-    outline: none;
-    font: inherit; }
-  .pagination-container .active {
-    background-color: #70B8FF; }
 
 .mc-field-group {
   display: flex;
