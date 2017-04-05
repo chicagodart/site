@@ -173,7 +173,8 @@ html {
     color: #ffffff;
     border: none;
     outline: none;
-    font: inherit; }
+    font: inherit;
+    cursor: pointer; }
   .pagination-container .active {
     background-color: #70B8FF; }
 
@@ -308,7 +309,7 @@ body {
 
 .navbar {
   position: fixed;
-  z-index: 5;
+  z-index: 100;
   top: 0;
   display: flex;
   width: 100%;
