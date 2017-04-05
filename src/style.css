@@ -393,6 +393,8 @@ body {
     border: none;
     outline: none;
     font: inherit; }
+  .pagination-container .active {
+    background-color: #70B8FF; }
 
 .mc-field-group {
   display: flex;

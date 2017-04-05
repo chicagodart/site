@@ -17,10 +17,16 @@ class Home extends Component {
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.addActiveClass = this.addActiveClass.bind(this);
   }
 
   componentDidMount() {
     this.props.loadPosts();
+  }
+
+  addActiveClass(num) {
+    console.log(num === this.state.currentPage);
+    return num === this.state.currentPage ? 'active' : '';
   }
 
   handleClick(e) {
@@ -69,9 +75,9 @@ class Home extends Component {
     for (let i = 1; i <= Math.ceil(numOfPostPairs / this.state.postPairsPerPage); i++) {
       pageNumbers.push(i);
     }
-    return pageNumbers.map(number => (
+    return pageNumbers.length === 1 ? null : pageNumbers.map(number => (
       <li key={number}>
-        <button id={number} onClick={this.handleClick}>
+        <button id={number} className={this.addActiveClass(number)} onClick={this.handleClick}>
           {number}
         </button>
       </li>
