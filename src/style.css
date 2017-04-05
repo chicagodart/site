@@ -80,16 +80,6 @@ body {
   bottom: 0;
   transform: none; }
 
-.btn-default {
-  border-radius: 0.5em;
-  border-style: solid;
-  min-height: 4em;
-  background-color: #ffffff;
-  border-color: #1e90ff;
-  color: #1e90ff;
-  border-width: 0.2em;
-  cursor: pointer; }
-
 .content {
   display: flex; }
 
@@ -158,10 +148,6 @@ body {
       background-color: #000000; }
   .high-contrast .event-card {
     border-color: #ffffff; }
-  .high-contrast .btn-default {
-    color: #000000;
-    background-color: #f5d76e;
-    border: none; }
   .high-contrast .footer {
     background-color: #f5d76e;
     color: #000000; }
