@@ -41,9 +41,7 @@ class Home extends Component {
       newPost.orderByDate = newPost.acf.end_date ? new Date(newPost.acf.end_date) : new Date(newPost.date);
       return newPost;
     });
-    console.log('postsWithOrderByDate', postsWithOrderByDate);
     const postsOrdered = _.orderBy(postsWithOrderByDate, ['orderByDate'], ['desc']);
-    console.log('postsOrdered', postsOrdered);
     const postsInPairs = [];
     for (let i = 0; i < postsOrdered.length; i += 2) {
       if (postsOrdered[i + 1]) postsInPairs.push([postsOrdered[i], postsOrdered[i + 1]]);
@@ -56,7 +54,7 @@ class Home extends Component {
     const currentPagePosts = postsInPairs.slice(indexOfFirstPostPair, indexOfLastPostPair);
 
     return currentPagePosts.map((postPair, i) => (
-      <div key={i} className="mxn2 event-row">
+      <div key={i} className="mxn2 sm-mxn2 event-row">
         <div className="event col col-6 px2">
           <EventCard event={postPair[0]} />
         </div>
