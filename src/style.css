@@ -124,11 +124,15 @@ body {
     width: 100%;
     padding: 1em 0; }
   .event-row {
-    padding-bottom: 0; }
+    padding-bottom: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important; }
   .fixed-sidebar {
     position: auto;
     top: auto;
-    padding-top: 3em; } }
+    padding-top: 0em;
+    margin: 2em auto;
+    text-align: center; } }
 
 .hero-img {
   width: 100%;
