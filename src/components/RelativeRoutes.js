@@ -11,7 +11,6 @@ import { loadPosts } from '../reducers/posts';
 
 class PageLayout extends Component {
   render() {
-    console.log('This is a page route', this.props);
     const slug = this.props.match.params.slug;
     const page = this.props.pages[slug];
     if (!page) return (<div />);

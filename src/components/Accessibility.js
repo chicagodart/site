@@ -3,23 +3,23 @@ import { connect } from 'react-redux';
 
 import { loadPages } from '../reducers/pages';
 
-//components
+// components
 import Sidebar from './Sidebar';
 
 
 class Accessibility extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       video: false,
-    }
+    };
   }
 
   convertHeaders(header) {
     return header.split('_')
-    .map(word => {
-      if(!!word){
-        return word[0].toUpperCase() + word.slice(1)
+    .map((word) => {
+      if (word) {
+        return word[0].toUpperCase() + word.slice(1);
       }
     })
     .join(' ');
@@ -29,10 +29,10 @@ class Accessibility extends Component {
     this.setState({ video: !this.state.video });
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <div>
-      
+
         <div className="hero-img">
           <img src="http://www.arshtcenter.org/Global/PressRoom/photos/hi/Spring%20Awakening%20photo%20by%20Paul%20Kolnick.jpg" alt="A scene from Spring Awakening" height="100%" width="100%" />
         </div>
@@ -56,14 +56,14 @@ class Accessibility extends Component {
             </div>
           </div>
           <div className="col col-4 center">
-            <Sidebar listItems={this.props.page.acf}/>
-            <button id="toggle-video" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? 'Hide Video' : 'Show Video'}</button>
+            <Sidebar listItems={this.props.page.acf} />
+            <button className="btn toggle-video" onClick={this.toggleVideoButton.bind(this)}>{this.state.video ? 'Hide Video' : 'Show Video'}</button>
           </div>
-          
+
         </div>
-        
+
       </div>
-    )
+    );
   }
 }
 

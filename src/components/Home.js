@@ -5,7 +5,7 @@ import _ from 'lodash';
 import { loadPosts } from '../reducers/posts';
 
 import HeroImage from './HeroImage';
-import Sidebar from './Sidebar';
+// import Sidebar from './Sidebar';
 import EventCard from './EventCard';
 
 class Home extends Component {
@@ -22,9 +22,8 @@ class Home extends Component {
     const postsOrdered = _.orderBy(posts, ['orderByDate'], ['desc']);
     const postsInPairs = [];
     for (let i = 0; i < postsOrdered.length; i += 2) {
-      postsOrdered[i + 1]
-      ? postsInPairs.push([postsOrdered[i], postsOrdered[i + 1]])
-      : postsInPairs.push([postsOrdered[i]]);
+      if (postsOrdered[i + 1]) postsInPairs.push([postsOrdered[i], postsOrdered[i + 1]]);
+      else postsInPairs.push([postsOrdered[i]]);
     }
 
     return postsInPairs.map((postPair, i) => (
@@ -42,11 +41,11 @@ class Home extends Component {
   }
 
   render() {
+    console.log('HOME');
     const { page } = this.props;
     const posts = Object.keys(this.props.posts).map(key => this.props.posts[key]);
     return (
       <div>
-        <HeroImage src={page ? page.acf.hero_image.sizes.medium_large : ' '} alt={page ? page.acf.hero_image.title : ' '} />
         <div className="max-width-12">
           <div className="clearfix home-content">
             <div className="sm-col sm-col-8 px2" id="lil-about-box">
@@ -66,22 +65,22 @@ class Home extends Component {
   }
 }
 
-function PostInList(props) {
-  const { post } = props;
-  const img = post.content.rendered.slice(0, post.content.rendered.indexOf('</') + 4);
-  const content = post.content.rendered.slice(post.content.rendered.indexOf('</') + 4);
-  return (
-    <li className="event-in-list">
-      <Link to={`/events/${post.slug}`}>
-        <div className="event-in-list__display-img">
-          <div dangerouslySetInnerHTML={{ __html: img }} />
-        </div>
-        <h3 className="event-in-list__title">{post.title.rendered}</h3>
-        <div dangerouslySetInnerHTML={{ __html: content }} />
-      </Link>
-    </li>
-  );
-}
+// function PostInList(props) {
+//   const { post } = props;
+//   const img = post.content.rendered.slice(0, post.content.rendered.indexOf('</') + 4);
+//   const content = post.content.rendered.slice(post.content.rendered.indexOf('</') + 4);
+//   return (
+//     <li className="event-in-list">
+//       <Link to={`/events/${post.slug}`}>
+//         <div className="event-in-list__display-img">
+//           <div dangerouslySetInnerHTML={{ __html: img }} />
+//         </div>
+//         <h3 className="event-in-list__title">{post.title.rendered}</h3>
+//         <div dangerouslySetInnerHTML={{ __html: content }} />
+//       </Link>
+//     </li>
+//   );
+// }
 
 const mapStateToProps = ({ posts }) => ({ posts });
 

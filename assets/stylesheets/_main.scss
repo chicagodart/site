@@ -33,6 +33,12 @@ body {
   position: sticky;
   margin-top: -4.2em;
   top: 4.2em; // required as well.
+  z-index: 4;
+}
+
+.sidebar-title {
+  font-weight: 800;
+  font-size: 1.2em;
 }
 
 @media screen and (max-width: 40rem) {
@@ -62,6 +68,7 @@ body {
   .fixed-sidebar {
     position: auto;
     top: auto;
+    padding-top: 3em;
   }
 }
 
@@ -123,20 +130,6 @@ body {
 
 #menu-item {
   padding-bottom: 6px;
-}
-
-#donate-button-text { // button text
-  padding: 10px;
-  font-size: 2.4em;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-}
-.toggle-video { // button
-  margin-top: 15px;
-}
-
-.toggle-video-text { // button
-  font-size: 1.3em;
 }
 
 .white {

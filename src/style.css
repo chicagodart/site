@@ -92,7 +92,12 @@ body {
   position: -webkit-sticky;
   position: sticky;
   margin-top: -4.2em;
-  top: 4.2em; }
+  top: 4.2em;
+  z-index: 4; }
+
+.sidebar-title {
+  font-weight: 800;
+  font-size: 1.2em; }
 
 @media screen and (max-width: 40rem) {
   .video {
@@ -113,7 +118,8 @@ body {
     padding-bottom: 0; }
   .fixed-sidebar {
     position: auto;
-    top: auto; } }
+    top: auto;
+    padding-top: 3em; } }
 
 .hero-img {
   width: 100%;
@@ -159,18 +165,6 @@ body {
 
 #menu-item {
   padding-bottom: 6px; }
-
-#donate-button-text {
-  padding: 10px;
-  font-size: 2.4em;
-  font-weight: 600;
-  letter-spacing: 0.05em; }
-
-.toggle-video {
-  margin-top: 15px; }
-
-.toggle-video-text {
-  font-size: 1.3em; }
 
 .white {
   color: #ffffff; }
@@ -311,6 +305,11 @@ body {
   #hamburger-button {
     z-index: 10; } }
 
+.skip-nav {
+  position: absolute;
+  opacity: 0;
+  z-index: -5; }
+
 .footer {
   background-color: #1e90ff;
   display: flex;
@@ -398,8 +397,8 @@ body {
 .btn {
   display: inline-block;
   margin: 0;
-  padding: 0.7em 1em;
-  font-size: 1.1em;
+  padding: 0.6em 0.9em;
+  font-size: 1em;
   border: 0.15em solid #1e90ff;
   border-radius: 0.3em;
   cursor: pointer;
@@ -434,6 +433,18 @@ body {
   .high-contrast .btn--invert:hover {
     color: #f5d76e;
     background: inherit; }
+
+#donate-button-text {
+  padding: 10px;
+  font-size: 2.4em;
+  font-weight: 600;
+  letter-spacing: 0.05em; }
+
+.toggle-video {
+  margin-top: 1.5em; }
+
+.toggle-video-text {
+  font-size: 1.3em; }
 
 .single-event p {
   font-size: 1.2em; }

@@ -12,7 +12,6 @@ function stringToId(str) {
 
 function Layout(props) {
   const { page, toggle } = props;
-  console.log('hello i am Layout and here is page', page);
   const { video } = toggle;
   const anchors = [];
   let videoCount = 0;
@@ -30,17 +29,19 @@ function Layout(props) {
       return `${p1}><div id="${id}" class="anchor-adjust"></div>${p2}${p3}`;
     });
   return (
-    <main className="page-wrapper">
+    <main id="main" className="page-wrapper">
 
       <HeroImage
-        src={page ? page.acf.hero_image.sizes.medium_large : ' '}
+        src={page ? page.acf.hero_image.sizes.medium_large : ''}
         alt={page ? page.acf.hero_image.title : ''}
         align={page ? page.acf.hero_image_align : ''}
       />
 
       <div className="max-width-12">
-        {React.Children.map(props.children, child =>
-          React.cloneElement(child, { ...props, content, anchors, videoCount }))}
+        {React.Children.map(props.children, (child) => {
+          console.log('ABC', child);
+          return React.cloneElement(child, { ...props, content, anchors, videoCount });
+        })}
       </div>
 
     </main>

@@ -3,7 +3,7 @@ import React from 'react';
 function Sidebar({ listItems }) {
   return (
     <div>
-      {!!listItems.length && <h3>Jump to:</h3> }
+      {!!listItems.length && <h3 className="sidebar-title">Jump to:</h3> }
       { listItems && listItems.map((item) => {
         let href;
         let content;

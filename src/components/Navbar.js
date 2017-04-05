@@ -39,6 +39,7 @@ class Navbar extends React.Component {
     return (
       <div className="clearfix">
         <nav className="navbar col col-12">
+          <a href="#main" className="skip-nav">Skip to main content</a>
           <div className="navbar-container">
             <h1 className="navbar-brand">
               <Link to="/">
