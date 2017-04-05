@@ -54,6 +54,10 @@ body {
   }
   .event {
     width: 100%;
+    padding: 1em 0;
+  }
+  .event-row {
+    padding-bottom: 0;
   }
   .fixed-sidebar {
     position: auto;
