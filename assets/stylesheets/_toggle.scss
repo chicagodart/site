@@ -9,6 +9,9 @@
 .high-contrast {
   background-color: $black;
   color: $white;
+  *:focus {
+    outline-color: $yellow;
+  }
   a {
     color: $yellow;
   }
@@ -39,6 +42,9 @@
   .footer {
     background-color: $yellow;
     color: $black;
+    *:focus {
+      outline-color: $black;
+    }
     a {
       color: $black;
     }
