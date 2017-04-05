@@ -85,7 +85,7 @@ body {
   width: 85vw;
   max-width: 70rem;
   margin: 0 auto;
-  padding-top: 4.6em;
+  padding-top: 4em;
   padding-bottom: 3em; }
 
 .fixed-sidebar {
@@ -190,6 +190,8 @@ body {
 .high-contrast {
   background-color: #000000;
   color: #ffffff; }
+  .high-contrast *:focus {
+    outline-color: #f5d76e; }
   .high-contrast a {
     color: #f5d76e; }
   .high-contrast .navbar-button {
@@ -207,6 +209,8 @@ body {
   .high-contrast .footer {
     background-color: #f5d76e;
     color: #000000; }
+    .high-contrast .footer *:focus {
+      outline-color: #000000; }
     .high-contrast .footer a {
       color: #000000; }
 
@@ -238,7 +242,6 @@ body {
     padding: 0;
     display: flex;
     flex-direction: row;
-    font-size: 1em;
     align-items: center;
     text-align: center; }
   .navbar-container li {
@@ -255,18 +258,21 @@ body {
 
 .navbar-brand {
   font-family: 'Unica One', cursive;
-  font-size: 1.5em;
-  font-weight: 800;
+  font-size: 30px;
   color: #f5d76e;
   margin: 0; }
   .navbar-brand a {
     color: #1e90ff;
     text-decoration: none; }
 
+.navbar-menu-center {
+  font-size: 1em; }
+
 .navbar-menu-right {
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end; }
+  align-items: flex-end;
+  font-size: 20px; }
 
 #art-parens {
   color: #000000; }
@@ -315,6 +321,8 @@ body {
   min-height: 6em;
   font-size: 1em;
   color: #ffffff; }
+  .footer *:focus {
+    outline-color: #ffffff; }
   .footer ul {
     list-style-type: none;
     list-style-position: initial;
@@ -397,13 +405,11 @@ body {
   cursor: pointer;
   transition: 0.3s ease-in-out;
   color: #1e90ff;
-  background: inherit; }
+  background: inherit;
+  z-index: 5; }
   .btn:hover {
     color: #ffffff;
     background: #1e90ff; }
-  .btn:focus {
-    outline: none;
-    box-shadow: 0 0 1em -0.1em #1e90ff; }
 
 .high-contrast .btn {
   border-color: #f5d76e;
@@ -411,8 +417,6 @@ body {
   .high-contrast .btn:hover {
     color: #000000;
     background: #f5d76e; }
-  .high-contrast .btn:focus {
-    box-shadow: 0 0 1em -0.1em #f5d76e; }
 
 .btn--large {
   font-size: 1.3em; }
@@ -447,7 +451,6 @@ body {
     margin: 0;
     font-size: inherit;
     padding-left: 1em;
-    background: #ffffff;
     text-align: right; }
     .single-event ul ul li {
       margin: 0; }
@@ -475,6 +478,9 @@ body {
 .single-event__ticket-btn {
   float: right;
   text-align: right; }
+
+.high-contrast ul ul::after {
+  border-color: #f5d76e; }
 
 .video-wrapper {
   padding-top: 56.25%;
