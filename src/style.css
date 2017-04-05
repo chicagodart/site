@@ -385,10 +385,6 @@ body {
 #mc_embed_signup {
   margin: 1em 0; }
 
-#mailing-list-submit {
-  padding: 0.5em;
-  font-size: 1.6em; }
-
 #mc_embed_signup_scroll {
   display: flex;
   flex-direction: column; }
@@ -481,3 +477,14 @@ body {
 .single-event__ticket-btn {
   float: right;
   text-align: right; }
+
+.video-wrapper {
+  padding-top: 56.25%;
+  overflow: hidden; }
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }

@@ -11,6 +11,10 @@
   font-size: 1em;
   color: $white;
 
+  *:focus {
+    outline-color: $white;
+  }
+
   ul {
     list-style-type: none;
     list-style-position: initial;

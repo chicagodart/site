@@ -9,14 +9,11 @@
   transition: 0.3s ease-in-out;
   color: $bright-blue;
   background: inherit;
+  z-index: 5;
 
   &:hover {
     color: $white;
     background: $bright-blue;
-  }
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 1em -0.1em $bright-blue;
   }
 }
 
@@ -28,9 +25,6 @@
     &:hover {
       color: $black;
       background: $yellow;
-    }
-    &:focus {
-      box-shadow: 0 0 1em -0.1em $yellow;
     }
   }
 }
