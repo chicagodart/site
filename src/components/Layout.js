@@ -33,7 +33,7 @@ function Layout(props) {
 
       <HeroImage
         src={page ? page.acf.hero_image.sizes.medium_large : ''}
-        alt={page ? page.acf.hero_image.title : ''}
+        alt={page ? page.acf.hero_image.alt : ''}
         align={page ? page.acf.hero_image_align : ''}
       />
 
