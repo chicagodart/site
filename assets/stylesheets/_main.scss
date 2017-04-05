@@ -31,6 +31,7 @@ body {
 .fixed-sidebar {
   position: -webkit-sticky;  // required for Safari
   position: sticky;
+  margin-top: -4.2em;
   top: 4.2em; // required as well.
 }
 

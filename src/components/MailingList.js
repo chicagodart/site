@@ -60,7 +60,7 @@ class MailingList extends Component {
               </div>
               <div className="mc-field-group col sm-col-6">
                 <label />
-                <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="btn-default">
+                <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="btn">
                   <span id="mailing-list-submit">Submit</span>
                 </button>
               </div>

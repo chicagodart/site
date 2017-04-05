@@ -38,6 +38,7 @@ body {
 .fixed-sidebar {
   position: -webkit-sticky;
   position: sticky;
+  margin-top: -4.2em;
   top: 4.2em; }
 
 @media screen and (max-width: 40rem) {
