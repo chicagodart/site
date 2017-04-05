@@ -1,0 +1,24 @@
+.fixed-sidebar {
+  position: -webkit-sticky;  // required for Safari
+  position: sticky;
+  margin-top: -60px;
+  top: 90px; // required as well.
+}
+
+.sidebar-title {
+  font-weight: 800;
+  font-size: 1.2em;
+  margin: 0 0 1em 0;
+}
+
+.toggle-video { // button
+  margin-top: 1.5em;
+}
+
+.toggle-video-text { // button
+  font-size: 1.3em;
+}
+
+.menu-item {
+  padding-bottom: 0.4em;
+}
