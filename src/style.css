@@ -276,7 +276,7 @@ body {
   color: #1e90ff;
   cursor: pointer; }
 
-@media screen and (max-width: 80rem) {
+@media screen and (max-width: 48rem) {
   .navbar-menu-center {
     position: relative;
     display: inline-block; }
