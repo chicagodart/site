@@ -47,7 +47,7 @@ class Navbar extends React.Component {
                 <div><span>D</span><span id="art-parens">(ART)</span></div>
               </Link>
             </h1>
-            <nav className="navbar-menu-center">
+            <div className="navbar-menu-center">
               <ul className={this.showHideMenu()}>
                 <li onClick={this.closeMenu}><Link to="/about">About</Link></li>
                 <li onClick={this.closeMenu}><Link to="/events">Tickets & Events</Link></li>
@@ -55,7 +55,7 @@ class Navbar extends React.Component {
                 <li onClick={this.closeMenu}><Link to="/auditions">Auditions</Link></li>
                 <li onClick={this.closeMenu}><Link to="/accessibility">Accessibility</Link></li>
               </ul>
-            </nav>
+            </div>
             <div className="navbar-menu-right">
               <ul>
                 <li>
@@ -69,7 +69,7 @@ class Navbar extends React.Component {
                   </button>
                 </li>
                 <li className="toggle-nav">
-                  <button className="navbar-button" onClick={this.toggleMenu}>
+                  <button className="navbar-button" aria-hidden="true" onClick={this.toggleMenu}>
                     <i className="fa fa-bars fa-lg" aria-hidden="true" />
                   </button>
                 </li>
