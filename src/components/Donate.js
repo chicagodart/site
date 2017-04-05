@@ -6,7 +6,6 @@ import { loadPages } from '../reducers/pages';
 import Sidebar from './Sidebar';
 
 function Donate({ content, videoCount, page, toggleVideo, anchors, toggle }) {
-  console.log('anchors', anchors);
   return (
     <div className="max-width-12">
       <h2 className="page-title">Donate</h2>

@@ -51,11 +51,15 @@ body {
   }
   .event-row {
     padding-bottom: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
   .fixed-sidebar {
     position: auto;
     top: auto;
-    padding-top: 3em;
+    padding-top: 0em;
+    margin: 2em auto;
+    text-align: center;
   }
 }
 

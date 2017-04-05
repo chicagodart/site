@@ -53,7 +53,7 @@ class Home extends Component {
     const currentPagePosts = postsInPairs.slice(indexOfFirstPostPair, indexOfLastPostPair);
 
     return currentPagePosts.map((postPair, i) => (
-      <div key={i} className="mxn2 event-row">
+      <div key={i} className="mxn2 sm-mxn2 event-row">
         <div className="event col col-6 px2">
           <EventCard event={postPair[0]} />
         </div>

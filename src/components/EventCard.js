@@ -5,17 +5,23 @@ import { resolve, parse } from 'uri-js';
 import { apiDomain } from '../../.config.json';
 const root = apiDomain || '/';
 
-const EventCard = ({ event }) => (
-  <div className="event-card">
-    <img src={resolve(root, event.acf.hero_image.sizes.medium_large)} alt={event.acf.hero_image.alt} style={{ width: '100%' }} />
-    <div className="event-card-text">
-      <h2><a href={parse(event.link).path} dangerouslySetInnerHTML={{ __html: event.title.rendered }} /></h2>
-      {getDate(event)}
-      <p dangerouslySetInnerHTML={{ __html: event.excerpt.rendered }} />
-      {!!event.reviews && event.reviews.map((review, i) => <h4 key={i}>{review}</h4>)}
+const EventCard = ({ event }) => {
+  const title = event.title.rendered;
+  const heroImage = event.acf.hero_image;
+  const link = parse(event.link).path;
+  const content = event.excerpt.rendered.replace(/\[&hellip;\]/g, `<a href="${link}">... read more</a>`);
+
+  return (
+    <div className="event-card">
+      <img src={resolve(root, heroImage.sizes.medium_large)} alt={heroImage.alt} style={{ width: '100%' }} />
+      <div className="event-card-text">
+        <h2><a href={link} dangerouslySetInnerHTML={{ __html: title }} /></h2>
+        {getDate(event)}
+        <p dangerouslySetInnerHTML={{ __html: content }} />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const getDate = (event) => {
   if (event.acf.start_date) {
@@ -30,6 +36,7 @@ const getDate = (event) => {
 };
 
 export const getEventDisplayDate = (event) => {
+  if (!event.acf.start_date || !event.acf.end_date) return null;
   const startDate = new Date(event.acf.start_date);
   const endDate = new Date(event.acf.end_date);
 
