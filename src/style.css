@@ -66,7 +66,7 @@ html {
 .fixed-sidebar {
   position: -webkit-sticky;
   position: sticky;
-  margin-top: -60px;
+  margin-top: 59.4px;
   top: 90px; }
 
 .sidebar-title {
@@ -74,14 +74,14 @@ html {
   font-size: 1.2em;
   margin: 0 0 1em 0; }
 
+.menu-item {
+  padding-bottom: 0.4em; }
+
 .toggle-video {
   margin-top: 1.5em; }
 
 .toggle-video-text {
   font-size: 1.3em; }
-
-.menu-item {
-  padding-bottom: 0.4em; }
 
 html {
   height: 100%;
@@ -167,8 +167,8 @@ body {
   color: #ffffff; }
 
 .anchor-adjust {
-  padding-top: 4.6em;
-  margin-top: -4.6em;
+  padding-top: 90px;
+  margin-top: -90px;
   width: 0;
   position: absolute; }
 
@@ -438,18 +438,6 @@ body {
   .high-contrast .btn--invert:hover {
     color: #f5d76e;
     background: inherit; }
-
-#donate-button-text {
-  padding: 10px;
-  font-size: 2.4em;
-  font-weight: 600;
-  letter-spacing: 0.05em; }
-
-.toggle-video {
-  margin-top: 1.5em; }
-
-.toggle-video-text {
-  font-size: 1.3em; }
 
 .single-event p {
   font-size: 1.2em; }
