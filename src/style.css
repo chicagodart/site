@@ -63,6 +63,26 @@ html {
   font: inherit;
   cursor: pointer; }
 
+.fixed-sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: -60px;
+  top: 90px; }
+
+.sidebar-title {
+  font-weight: 800;
+  font-size: 1.2em;
+  margin: 0 0 1em 0; }
+
+.toggle-video {
+  margin-top: 1.5em; }
+
+.toggle-video-text {
+  font-size: 1.3em; }
+
+.menu-item {
+  padding-bottom: 0.4em; }
+
 html {
   height: 100%;
   color: #000000; }
@@ -85,19 +105,8 @@ body {
   width: 85vw;
   max-width: 70rem;
   margin: 0 auto;
-  padding-top: 4.6em;
+  padding-top: 90px;
   padding-bottom: 3em; }
-
-.fixed-sidebar {
-  position: -webkit-sticky;
-  position: sticky;
-  margin-top: -4.2em;
-  top: 4.2em;
-  z-index: 4; }
-
-.sidebar-title {
-  font-weight: 800;
-  font-size: 1.2em; }
 
 @media screen and (max-width: 40rem) {
   .video {
@@ -148,23 +157,11 @@ body {
 .page-wrapper {
   padding-bottom: 5em; }
 
-.sidebar-item {
-  margin: 10px 0px; }
-
 #big-calendar {
   z-index: 1; }
 
 .active-events-view {
   color: #1e90ff; }
-
-#donate-button {
-  min-height: 5em;
-  background-color: #1e90ff;
-  color: #ffffff;
-  margin-top: 2.2em; }
-
-#menu-item {
-  padding-bottom: 6px; }
 
 .white {
   color: #ffffff; }
@@ -236,13 +233,12 @@ body {
     padding: 0;
     display: flex;
     flex-direction: row;
-    font-size: 1em;
     align-items: center;
     text-align: center; }
   .navbar-container li {
     display: flex;
     margin: 0px 0px 0px 50px; }
-    @media screen and (max-width: 60rem) {
+    @media screen and (max-width: 80rem) {
       .navbar-container li {
         margin: 0px 0px 0px 1vw; } }
   .navbar-container a {
@@ -253,18 +249,21 @@ body {
 
 .navbar-brand {
   font-family: 'Unica One', cursive;
-  font-size: 1.5em;
-  font-weight: 800;
+  font-size: 30px;
   color: #f5d76e;
   margin: 0; }
   .navbar-brand a {
     color: #1e90ff;
     text-decoration: none; }
 
+.navbar-menu-center {
+  font-size: 1em; }
+
 .navbar-menu-right {
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end; }
+  align-items: flex-end;
+  font-size: 20px; }
 
 #art-parens {
   color: #000000; }
@@ -277,7 +276,7 @@ body {
   color: #1e90ff;
   cursor: pointer; }
 
-@media screen and (max-width: 60rem) {
+@media screen and (max-width: 80rem) {
   .navbar-menu-center {
     position: relative;
     display: inline-block; }
