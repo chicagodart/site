@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { resolve, parse } from 'uri-js';
 // Calendar
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import BigCalendar from 'react-big-calendar';
@@ -66,12 +66,15 @@ class Events extends Component {
       const events = this.props.events.map(event => ({
         title: event.title.rendered,
         start: new Date(event.acf.start_date),
-        end: new Date(event.acf.end_date)
+        end: new Date(event.acf.end_date),
+        link: event.link
       }));
       return (
         <div id="big-calendar">
           <BigCalendar
             events={events}
+            selectable
+            onSelectEvent={(event) => window.location.assign(`${parse(event.link).path}`)}
             defaultDate={new Date()}
             startAccessor="start"
             endAccessor="end"
