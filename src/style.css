@@ -10,6 +10,46 @@ html {
   position: relative;
   box-sizing: inherit; }
 
+.btn {
+  display: inline-block;
+  margin: 0;
+  padding: 0.6em 0.9em;
+  font-size: 1em;
+  border: 0.15em solid #1e90ff;
+  border-radius: 0.3em;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  color: #1e90ff;
+  background: inherit;
+  z-index: 5; }
+  .btn:hover {
+    color: #ffffff;
+    background: #1e90ff; }
+
+.high-contrast .btn {
+  border-color: #f5d76e;
+  color: #f5d76e; }
+  .high-contrast .btn:hover {
+    color: #000000;
+    background: #f5d76e; }
+
+.btn--large {
+  font-size: 1.3em; }
+
+.btn--invert {
+  color: #ffffff;
+  background: #1e90ff; }
+  .btn--invert:hover {
+    color: #1e90ff;
+    background: #ffffff; }
+
+.high-contrast .btn--invert {
+  color: #000000;
+  background: #f5d76e; }
+  .high-contrast .btn--invert:hover {
+    color: #f5d76e;
+    background: inherit; }
+
 .event-row {
   padding-bottom: 2em; }
 
@@ -67,8 +107,8 @@ html {
 .fixed-sidebar {
   position: -webkit-sticky;
   position: sticky;
-  margin-top: 59.4px;
-  top: 90px; }
+  margin-top: -72px;
+  top: 108px; }
 
 .sidebar-title {
   font-weight: 800;
@@ -280,7 +320,7 @@ body {
   color: #1e90ff;
   cursor: pointer; }
 
-@media screen and (max-width: 48rem) {
+@media screen and (max-width: 80rem) {
   .navbar-menu-center {
     position: relative;
     display: inline-block; }
@@ -425,46 +465,6 @@ body {
 #mc_embed_signup_scroll {
   display: flex;
   flex-direction: column; }
-
-.btn {
-  display: inline-block;
-  margin: 0;
-  padding: 0.6em 0.9em;
-  font-size: 1em;
-  border: 0.15em solid #1e90ff;
-  border-radius: 0.3em;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  color: #1e90ff;
-  background: inherit;
-  z-index: 5; }
-  .btn:hover {
-    color: #ffffff;
-    background: #1e90ff; }
-
-.high-contrast .btn {
-  border-color: #f5d76e;
-  color: #f5d76e; }
-  .high-contrast .btn:hover {
-    color: #000000;
-    background: #f5d76e; }
-
-.btn--large {
-  font-size: 1.3em; }
-
-.btn--invert {
-  color: #ffffff;
-  background: #1e90ff; }
-  .btn--invert:hover {
-    color: #1e90ff;
-    background: #ffffff; }
-
-.high-contrast .btn--invert {
-  color: #000000;
-  background: #f5d76e; }
-  .high-contrast .btn--invert:hover {
-    color: #f5d76e;
-    background: inherit; }
 
 .single-event p {
   font-size: 1.2em; }
