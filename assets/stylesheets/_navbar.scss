@@ -36,10 +36,17 @@
   li {
     display: flex;
     margin: 0px 0px 0px 50px;
+    @media screen and (max-width: 60rem) {
+      margin: 0px 0px 0px 1vw;
+    }
   }
   a {
     color: $bright-blue;
     text-decoration: none;
+  }
+
+  .toggle-nav {
+    display: none;
   }
 }
 
@@ -67,10 +74,6 @@
 
 #art-parens {
   color: $black;
-}
-
-.toggle-nav {
-  display: none;
 }
 
 .navbar-button {
@@ -111,11 +114,8 @@
   .navbar-menu-center i {
     display: block;
   }
-  .toggle-nav {
-    display: inline-block;
-    font-size: 1.2em;
-    transition: color linear 0.15s;
-    margin-left: 45px;
+  .navbar-container .toggle-nav {
+    display: block;
   }
   #hamburger-button {
     z-index: 10;

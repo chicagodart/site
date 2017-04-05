@@ -23,7 +23,7 @@ class SingleEvent extends Component {
 
           { !exclude_tickets && ticket_url &&
             <div className="single-event__ticket-btn">
-              <a href={ticket_url} className="btn">Buy Tickets</a>
+              <a href={ticket_url} className="btn btn--large">Buy Tickets</a>
             </div>
           }
           <h2>About the Show</h2>
@@ -37,13 +37,6 @@ class SingleEvent extends Component {
           <div className="single-event__section center">
             <h3>Cast & Artists</h3>
             <div dangerouslySetInnerHTML={{ __html: cast }} />
-          </div>
-        }
-
-
-        { !exclude_tickets && ticket_url &&
-          <div className="single-event__section">
-            <a href={ticket_url} className="btn">Buy Tickets</a>
           </div>
         }
 
