@@ -41,7 +41,6 @@ class Home extends Component {
   }
 
   render() {
-    console.log('HOME');
     const { page } = this.props;
     const posts = Object.keys(this.props.posts).map(key => this.props.posts[key]);
     return (

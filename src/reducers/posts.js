@@ -28,7 +28,7 @@ export const loadPosts = slug => (dispatch) => {
     })
     .then(res => res.data)
     .then(posts => dispatch(receivePosts(posts)))
-    .catch(console.log);
+    .catch(console.error);
 };
 
 export const loadPost = slug => dispatch =>
@@ -36,14 +36,14 @@ export const loadPost = slug => dispatch =>
     .then(({ data: posts }) => {
       dispatch(receivePosts(posts));
     })
-    .catch(console.log);
+    .catch(console.error);
 
 // reducer
 const postsReducer = (prevState = initialState, action) => {
   switch (action.type) {
     case LOAD_POSTS:
       return action.posts.reduce((result, curr) => {
-        if (curr.status === 'publish') result[curr.slug] = curr;
+        if (curr.status === 'publish') result[decodeURI(curr.slug)] = curr;
         return result;
       }, {});
     default:
