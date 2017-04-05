@@ -276,7 +276,7 @@ body {
   color: #1e90ff;
   cursor: pointer; }
 
-@media screen and (max-width: 80rem) {
+@media screen and (max-width: 48rem) {
   .navbar-menu-center {
     position: relative;
     display: inline-block; }
@@ -377,6 +377,24 @@ body {
     margin: 0; }
   #call-to-action-text a {
     color: #345d8a; }
+
+.pagination-container {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; }
+  .pagination-container button {
+    width: 2em;
+    height: 2em;
+    margin-left: .5em;
+    padding: auto;
+    background-color: #1e90ff;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    font: inherit; }
+  .pagination-container .active {
+    background-color: #70B8FF; }
 
 .mc-field-group {
   display: flex;

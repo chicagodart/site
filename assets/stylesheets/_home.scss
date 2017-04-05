@@ -37,3 +37,24 @@
   }
 
 }
+
+.pagination-container {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  button {
+    width: 2em;
+    height: 2em;
+    margin-left: .5em;
+    padding: auto;
+    background-color: $bright-blue;
+    color: $white;
+    border: none;
+    outline: none;
+    font: inherit;
+  }
+  .active {
+    background-color: #70B8FF;
+  }
+}
