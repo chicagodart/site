@@ -10,6 +10,59 @@ html {
   position: relative;
   box-sizing: inherit; }
 
+.event-row {
+  padding-bottom: 2em; }
+
+.event-list {
+  display: block;
+  width: 100%;
+  list-style: none;
+  padding: 0; }
+
+.event-in-list {
+  display: block;
+  float: left;
+  width: 100%;
+  margin: 1.5em auto;
+  padding-bottom: 1em;
+  font-size: 1.2em; }
+  .event-in-list a {
+    color: inherit;
+    text-decoration: none; }
+
+.event-in-list__display-img {
+  position: relative;
+  display: block;
+  float: left;
+  width: 60%;
+  margin-right: 1em;
+  padding-top: 40%;
+  overflow: hidden;
+  border-radius: 2px; }
+  .event-in-list__display-img img {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%); }
+
+.event-card {
+  border: 0.1em solid #000000;
+  min-height: 35em; }
+
+.event-card-text {
+  padding: 0em 2em 1em 2em; }
+
+.event-calendar-toggle {
+  margin-bottom: 2em; }
+
+.event-calendar-toggle-button {
+  border: none;
+  background: none;
+  outline: none;
+  font: inherit;
+  cursor: pointer; }
+
 html {
   height: 100%;
   color: #000000; }
@@ -54,7 +107,10 @@ body {
   .content-sidebar-container div {
     width: 100%; }
   .event {
-    width: 100%; }
+    width: 100%;
+    padding: 1em 0; }
+  .event-row {
+    padding-bottom: 0; }
   .fixed-sidebar {
     position: auto;
     top: auto; } }
@@ -188,9 +244,14 @@ body {
   .navbar-container li {
     display: flex;
     margin: 0px 0px 0px 50px; }
+    @media screen and (max-width: 60rem) {
+      .navbar-container li {
+        margin: 0px 0px 0px 1vw; } }
   .navbar-container a {
     color: #1e90ff;
     text-decoration: none; }
+  .navbar-container .toggle-nav {
+    display: none; }
 
 .navbar-brand {
   font-family: 'Unica One', cursive;
@@ -209,9 +270,6 @@ body {
 
 #art-parens {
   color: #000000; }
-
-.toggle-nav {
-  display: none; }
 
 .navbar-button {
   border: none;
@@ -242,11 +300,8 @@ body {
     display: block; }
   .navbar-menu-center i {
     display: block; }
-  .toggle-nav {
-    display: inline-block;
-    font-size: 1.2em;
-    transition: color linear 0.15s;
-    margin-left: 45px; }
+  .navbar-container .toggle-nav {
+    display: block; }
   #hamburger-button {
     z-index: 10; } }
 
@@ -336,66 +391,13 @@ body {
   display: flex;
   flex-direction: column; }
 
-.event-row {
-  padding-bottom: 2em; }
-
-.event-list {
-  display: block;
-  width: 100%;
-  list-style: none;
-  padding: 0; }
-
-.event-in-list {
-  display: block;
-  float: left;
-  width: 100%;
-  margin: 1.5em auto;
-  padding-bottom: 1em;
-  font-size: 1.2em; }
-  .event-in-list a {
-    color: inherit;
-    text-decoration: none; }
-
-.event-in-list__display-img {
-  position: relative;
-  display: block;
-  float: left;
-  width: 60%;
-  margin-right: 1em;
-  padding-top: 40%;
-  overflow: hidden;
-  border-radius: 2px; }
-  .event-in-list__display-img img {
-    position: absolute;
-    display: block;
-    width: 100%;
-    top: 50%;
-    transform: translateY(-50%); }
-
-.event-card {
-  border: 0.1em solid #000000;
-  min-height: 35em; }
-
-.event-card-text {
-  padding: 0em 2em 1em 2em; }
-
-.event-calendar-toggle {
-  margin-bottom: 2em; }
-
-.event-calendar-toggle-button {
-  border: none;
-  background: none;
-  outline: none;
-  font: inherit;
-  cursor: pointer; }
-
 .btn {
   display: inline-block;
   margin: 0;
-  padding: 0.8em 1.5em;
+  padding: 0.7em 1em;
   font-size: 1.1em;
   border: 0.15em solid #1e90ff;
-  border-radius: 0.5em;
+  border-radius: 0.3em;
   cursor: pointer;
   transition: 0.3s ease-in-out;
   color: #1e90ff;
@@ -417,7 +419,7 @@ body {
     box-shadow: 0 0 1em -0.1em #f5d76e; }
 
 .btn--large {
-  font-size: 1.5em; }
+  font-size: 1.3em; }
 
 .btn--invert {
   color: #ffffff;

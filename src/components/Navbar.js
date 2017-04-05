@@ -67,9 +67,11 @@ class Navbar extends React.Component {
                     <i className="fa fa-font fa-lg" title="Toggle to large font view" />
                   </button>
                 </li>
-                <button className="navbar-button" id="hamburger-button" onClick={this.toggleMenu}>
-                  <i className="fa fa-bars fa-lg toggle-nav" aria-hidden="true" />
-                </button>
+                <li className="toggle-nav">
+                  <button className="navbar-button" onClick={this.toggleMenu}>
+                    <i className="fa fa-bars fa-lg" aria-hidden="true" />
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
