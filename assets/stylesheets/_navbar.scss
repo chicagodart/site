@@ -117,5 +117,8 @@
     transition: color linear 0.15s;
     margin-left: 45px;
   }
+  #hamburger-button {
+    z-index: 10;
+  }
 
 }

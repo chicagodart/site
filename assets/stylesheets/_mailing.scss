@@ -21,19 +21,13 @@
   }
 }
 
-#mc-embedded-subscribe { // button
-  border-radius: 10px;
-  border-style: solid;
-  min-height: 40px;
-  background-color: $white;
-  border-color: $bright-blue;
-  color: $bright-blue;
-  border-width: 1px;
+#mc_embed_signup { // form container
+  margin: 1em 0;
 }
 
 #mailing-list-submit { // button text
-  padding: 10px;
-  font-size: 1.5em;
+  padding: 0.5em;
+  font-size: 1.6em;
 }
 
 #mc_embed_signup_scroll {

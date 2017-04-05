@@ -12,6 +12,7 @@ function stringToId(str) {
 
 function Layout(props) {
   const { page, toggle } = props;
+  console.log('hello i am Layout and here is page', page);
   const { video } = toggle;
   const anchors = [];
   let videoCount = 0;
@@ -24,6 +25,7 @@ function Layout(props) {
     })
     .replace(/(<h\d)>(.+?)(<\/h\d>)/g, (match, p1, p2, p3) => {
       const id = stringToId(p2);
+      console.log('here is an anchor to push', [p2, `#${id}`]); // This is never getting hit on Donate page
       anchors.push([p2, `#${id}`]);
       return `${p1}><div id="${id}" class="anchor-adjust"></div>${p2}${p3}`;
     });

@@ -25,11 +25,13 @@ body {
   max-width: $max-page-width;
   margin: 0 auto;
   padding-top: 4.6em;
+  padding-bottom: 3em;
 }
 
 .fixed-sidebar {
   position: -webkit-sticky;  // required for Safari
   position: sticky;
+  margin-top: -4.2em;
   top: 4.2em; // required as well.
 }
 
@@ -88,17 +90,6 @@ body {
   }
 }
 
-#vid-btn {
-    background-color: $bright-blue;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-
 .content {
   display: flex;
 }
@@ -106,7 +97,6 @@ body {
 .page-wrapper {
   padding-bottom: 5em;
 }
-
 
 .sidebar-item {
   margin: 10px 0px;
@@ -121,13 +111,10 @@ body {
 }
 
 #donate-button { // button
-  border-radius: 10px;
-  border-style: solid;
-  min-height: 60px;
+  min-height: 5em;
   background-color: $bright-blue;
-  border-color: $white;
   color: $white;
-  border-width: 1px;
+  margin-top: 2.2em;
 }
 
 #menu-item {
@@ -140,22 +127,17 @@ body {
   font-weight: 600;
   letter-spacing: 0.05em;
 }
-#toggle-video { // button
-  border-radius: 10px;
-  border-style: solid;
-  min-height: 40px;
-  background-color: $white;
-  border-color: $bright-blue;
-  color: $bright-blue;
-  border-width: 1px;
+.toggle-video { // button
   margin-top: 15px;
+}
+
+.toggle-video-text { // button
+  font-size: 1.3em;
 }
 
 .white {
   color: $white;
 }
-
-
 
 .anchor-adjust {
   padding-top: 4.6em;

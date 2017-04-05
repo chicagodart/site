@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { resolve } from 'uri-js';
+import { apiDomain } from '../../.config.json';
+
+const root = apiDomain || '/';
 
 class MailingList extends Component {
   constructor(props) {
@@ -20,8 +24,8 @@ class MailingList extends Component {
   render() {
     return (
       <div>
-        <div className="hero-img">
-          <img src="http://www.arshtcenter.org/Global/PressRoom/photos/hi/Spring%20Awakening%20photo%20by%20Paul%20Kolnick.jpg" alt="A scene from Spring Awakening" height="100%" width="100%" />
+        <div className="hero-img hero-img--top">
+          <img src={resolve(root, '/wp-content/uploads/2017/04/ASL-Slam-Cizzy.png')} alt="Cizzy performing at ASL Slam" />
         </div>
         <div className="clearfix mx3" id="mc_embed_signup">
           <form
@@ -34,7 +38,7 @@ class MailingList extends Component {
             noValidate
           >
             <div id="mc_embed_signup_scroll">
-              <h2 className="page-title">Subscribe to our mailing list</h2>
+              <h2 className="page-title">Subscribe to our Mailing List</h2>
               <div className="mc-field-group col sm-col-6">
                 <label htmlFor="mce-EMAIL">Email<span className="asterisk">*</span></label>
                 <input type="email" value={this.state.EMAIL} name="EMAIL" className="required email" id="mce-EMAIL" onChange={this.handleChange} />
@@ -56,7 +60,7 @@ class MailingList extends Component {
               </div>
               <div className="mc-field-group col sm-col-6">
                 <label />
-                <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
+                <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="btn">
                   <span id="mailing-list-submit">Submit</span>
                 </button>
               </div>

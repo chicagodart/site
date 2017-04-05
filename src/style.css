@@ -32,11 +32,13 @@ body {
   width: 85vw;
   max-width: 70rem;
   margin: 0 auto;
-  padding-top: 4.6em; }
+  padding-top: 4.6em;
+  padding-bottom: 3em; }
 
 .fixed-sidebar {
   position: -webkit-sticky;
   position: sticky;
+  margin-top: -4.2em;
   top: 4.2em; }
 
 @media screen and (max-width: 40rem) {
@@ -78,16 +80,6 @@ body {
   bottom: 0;
   transform: none; }
 
-#vid-btn {
-  background-color: #1e90ff;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px; }
-
 .content {
   display: flex; }
 
@@ -104,13 +96,10 @@ body {
   color: #1e90ff; }
 
 #donate-button {
-  border-radius: 10px;
-  border-style: solid;
-  min-height: 60px;
+  min-height: 5em;
   background-color: #1e90ff;
-  border-color: #ffffff;
   color: #ffffff;
-  border-width: 1px; }
+  margin-top: 2.2em; }
 
 #menu-item {
   padding-bottom: 6px; }
@@ -121,15 +110,11 @@ body {
   font-weight: 600;
   letter-spacing: 0.05em; }
 
-#toggle-video {
-  border-radius: 10px;
-  border-style: solid;
-  min-height: 40px;
-  background-color: #ffffff;
-  border-color: #1e90ff;
-  color: #1e90ff;
-  border-width: 1px;
+.toggle-video {
   margin-top: 15px; }
+
+.toggle-video-text {
+  font-size: 1.3em; }
 
 .white {
   color: #ffffff; }
@@ -261,7 +246,9 @@ body {
     display: inline-block;
     font-size: 1.2em;
     transition: color linear 0.15s;
-    margin-left: 45px; } }
+    margin-left: 45px; }
+  #hamburger-button {
+    z-index: 10; } }
 
 .footer {
   background-color: #1e90ff;
@@ -338,18 +325,12 @@ body {
     border-radius: 4px;
     min-height: 2em; }
 
-#mc-embedded-subscribe {
-  border-radius: 10px;
-  border-style: solid;
-  min-height: 40px;
-  background-color: #ffffff;
-  border-color: #1e90ff;
-  color: #1e90ff;
-  border-width: 1px; }
+#mc_embed_signup {
+  margin: 1em 0; }
 
 #mailing-list-submit {
-  padding: 10px;
-  font-size: 1.5em; }
+  padding: 0.5em;
+  font-size: 1.6em; }
 
 #mc_embed_signup_scroll {
   display: flex;
