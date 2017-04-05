@@ -22,17 +22,32 @@ class Events extends Component {
 
     this.state = {
       showCalendar: false,
-      selectedTab: 'events'
+      selectedTab: 'events',
+      currentPage: 1,
+      eventsPerPage: 4
     };
 
     this.renderEvents = this.renderEvents.bind(this);
     this.showCalendarView = this.showCalendarView.bind(this);
     this.toggleCalendarView = this.toggleCalendarView.bind(this);
     this.changeSelectedTab = this.changeSelectedTab.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.addActiveClass = this.addActiveClass.bind(this);
   }
 
   componentDidMount() {
     this.props.loadPosts('events');
+  }
+
+  addActiveClass(num) {
+    console.log(num === this.state.currentPage);
+    return num === this.state.currentPage ? 'active' : '';
+  }
+
+  handleClick(e) {
+    this.setState({
+      currentPage: Number(e.target.id)
+    });
   }
 
   // calendar event style
@@ -54,11 +69,32 @@ class Events extends Component {
 
   renderEvents(events) {
     const eventsOrdered = _.orderBy(events, [event => event.acf.end_date], ['desc']);
-    return eventsOrdered.map((event, i) => (
+
+    const { currentPage, eventsPerPage } = this.state;
+    const indexOfLastEvent = currentPage * eventsPerPage;
+    const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
+    const currentPageEvents = eventsOrdered.slice(indexOfFirstEvent, indexOfLastEvent);
+    return currentPageEvents.map((event, i) => (
       <div key={i} className="event col col-6 p2">
         <EventCard event={event} />
       </div>
       ));
+  }
+
+  renderPageNumbers() {
+    const pageNumbers = [];
+    const numOfEvents = Object.keys(this.props.events).length;
+    const numOfPages = Math.ceil(numOfEvents / this.state.eventsPerPage);
+    for (let i = 1; i <= numOfPages; i++) {
+      pageNumbers.push(i);
+    }
+    return pageNumbers.length === 1 ? null : pageNumbers.map(number => (
+      <li key={number}>
+        <button id={number} className={this.addActiveClass(number)} onClick={this.handleClick}>
+          {number}
+        </button>
+      </li>
+    ));
   }
 
   unescapeHTML(str) { // modified from underscore.string and string.js
@@ -107,6 +143,9 @@ class Events extends Component {
         <div className="clearfix">
           {this.renderEvents(this.props.events)}
         </div>
+        <ul className="pagination-container">
+          {this.renderPageNumbers()}
+        </ul>
       </div>
     );
   }

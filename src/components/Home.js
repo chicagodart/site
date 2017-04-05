@@ -13,7 +13,7 @@ class Home extends Component {
     super(props);
     this.state = {
       currentPage: 1,
-      postPairsPerPage: 1
+      postPairsPerPage: 2
     };
 
     this.handleClick = this.handleClick.bind(this);
