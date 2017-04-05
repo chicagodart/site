@@ -188,9 +188,14 @@ body {
   .navbar-container li {
     display: flex;
     margin: 0px 0px 0px 50px; }
+    @media screen and (max-width: 60rem) {
+      .navbar-container li {
+        margin: 0px 0px 0px 1vw; } }
   .navbar-container a {
     color: #1e90ff;
     text-decoration: none; }
+  .navbar-container .toggle-nav {
+    display: none; }
 
 .navbar-brand {
   font-family: 'Unica One', cursive;
@@ -209,9 +214,6 @@ body {
 
 #art-parens {
   color: #000000; }
-
-.toggle-nav {
-  display: none; }
 
 .navbar-button {
   border: none;
@@ -242,11 +244,8 @@ body {
     display: block; }
   .navbar-menu-center i {
     display: block; }
-  .toggle-nav {
-    display: inline-block;
-    font-size: 1.2em;
-    transition: color linear 0.15s;
-    margin-left: 45px; }
+  .navbar-container .toggle-nav {
+    display: block; }
   #hamburger-button {
     z-index: 10; } }
 
@@ -392,10 +391,10 @@ body {
 .btn {
   display: inline-block;
   margin: 0;
-  padding: 0.8em 1.5em;
+  padding: 0.7em 1em;
   font-size: 1.1em;
   border: 0.15em solid #1e90ff;
-  border-radius: 0.5em;
+  border-radius: 0.3em;
   cursor: pointer;
   transition: 0.3s ease-in-out;
   color: #1e90ff;
@@ -417,7 +416,7 @@ body {
     box-shadow: 0 0 1em -0.1em #f5d76e; }
 
 .btn--large {
-  font-size: 1.5em; }
+  font-size: 1.3em; }
 
 .btn--invert {
   color: #ffffff;
