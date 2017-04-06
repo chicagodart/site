@@ -67,7 +67,7 @@ class Events extends Component {
 
 
   renderEvents(events) {
-    const eventsOrdered = _.orderBy(events, [event => event.acf.end_date], ['desc']);
+    const eventsOrdered = _.orderBy(events, [event => event.acf.end_date], ['asc']);
 
     const { currentPage, eventsPerPage } = this.state;
     const indexOfLastEvent = currentPage * eventsPerPage;
