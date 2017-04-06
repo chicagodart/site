@@ -74,7 +74,7 @@ class Home extends Component {
     }
     return pageNumbers.length === 1 ? null : pageNumbers.map(number => (
       <li key={number}>
-        <button id={number} className={this.addActiveClass(number)} onClick={this.handleClick}>
+        <button id={number} className={this.addActiveClass(number)} onClick={this.handleClick} aria-label={`page ${number}`}>
           {number}
         </button>
       </li>
@@ -108,23 +108,6 @@ class Home extends Component {
     );
   }
 }
-
-// function PostInList(props) {
-//   const { post } = props;
-//   const img = post.content.rendered.slice(0, post.content.rendered.indexOf('</') + 4);
-//   const content = post.content.rendered.slice(post.content.rendered.indexOf('</') + 4);
-//   return (
-//     <li className="event-in-list">
-//       <Link to={`/events/${post.slug}`}>
-//         <div className="event-in-list__display-img">
-//           <div dangerouslySetInnerHTML={{ __html: img }} />
-//         </div>
-//         <h3 className="event-in-list__title">{post.title.rendered}</h3>
-//         <div dangerouslySetInnerHTML={{ __html: content }} />
-//       </Link>
-//     </li>
-//   );
-// }
 
 const mapStateToProps = ({ posts }) => ({ posts });
 

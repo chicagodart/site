@@ -91,7 +91,7 @@ class Events extends Component {
     }
     return pageNumbers.length === 1 ? null : pageNumbers.map(number => (
       <li key={number}>
-        <button id={number} className={this.addActiveClass(number)} onClick={this.handleClick}>
+        <button id={number} className={this.addActiveClass(number)} onClick={this.handleClick} aria-label={`page ${number}`}>
           {number}
         </button>
       </li>
