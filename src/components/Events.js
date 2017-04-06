@@ -207,7 +207,7 @@ class Events extends Component {
 }
 
 const mapStateToProps = state => ({
-  events: Object.values(state.posts).filter(post => post.categories.indexOf(11) !== -1)
+  events: Object.keys(state.posts).map(key => state.posts[key]).filter(post => post.categories.indexOf(11) !== -1)
 });
 const mapDispatchtoProps = { loadPosts };
 

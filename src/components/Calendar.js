@@ -16,7 +16,6 @@ class Calendar extends Component {
   }
 
   render() {
-    console.log('this.cal', this.cal);
     const events = this.props.events.map(event => ({
       title: event.title.rendered,
       start: new Date(event.acf.start_date),
@@ -40,9 +39,8 @@ class Calendar extends Component {
 }
 
 const mapStateToProps = state => ({
-  events: Object.values(state.posts).filter(post => post.categories.indexOf(11) !== -1)
+  events: Object.keys(state.posts).map(key => state.posts[key]).filter(post => post.categories.indexOf(11) !== -1);
 });
 const mapDispatchtoProps = { loadPosts };
 
 export default connect(mapStateToProps, mapDispatchtoProps)(Calendar);
-
