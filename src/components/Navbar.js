@@ -49,6 +49,7 @@ class Navbar extends React.Component {
             </h1>
             <div className="navbar-menu-center">
               <ul className={this.showHideMenu()}>
+                <li id="navbar-menu-home" onClick={this.closeMenu}><Link to="/">Home</Link></li>
                 <li onClick={this.closeMenu}><Link to="/about">About</Link></li>
                 <li onClick={this.closeMenu}><Link to="/events">Tickets & Events</Link></li>
                 <li onClick={this.closeMenu}><Link to="/donate">Donate</Link></li>

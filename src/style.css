@@ -256,6 +256,11 @@ body {
     text-decoration: none; }
   .navbar-container .toggle-nav {
     display: none; }
+  .navbar-container #navbar-menu-home {
+    display: none; }
+    @media screen and (max-width: 48rem) {
+      .navbar-container #navbar-menu-home {
+        display: block; } }
 
 .navbar-brand {
   font-family: 'Unica One', cursive;
@@ -292,7 +297,7 @@ body {
     display: inline-block; }
   .navbar-menu-center ul {
     position: fixed;
-    top: 3em;
+    top: 4em;
     right: 5px;
     padding: 10px 18px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);

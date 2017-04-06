@@ -47,6 +47,12 @@
   .toggle-nav {
     display: none;
   }
+  #navbar-menu-home {
+    display: none;
+    @media screen and (max-width : 48rem) {
+      display: block;
+    }
+  }
 }
 
 .navbar-brand {
@@ -92,7 +98,7 @@
   .navbar-menu-center {
     ul {
       position: fixed;
-      top: 3em;
+      top: 4em;
       right: 5px;
       padding: 10px 18px;
       box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
