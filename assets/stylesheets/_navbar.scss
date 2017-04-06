@@ -47,6 +47,12 @@
   .toggle-nav {
     display: none;
   }
+  #navbar-menu-home {
+    display: none;
+    @media screen and (max-width : $breakpoint-large) {
+      display: block;
+    }
+  }
 }
 
 .navbar-brand {

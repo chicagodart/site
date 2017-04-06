@@ -360,6 +360,11 @@ body {
     text-decoration: none; }
   .navbar-container .toggle-nav {
     display: none; }
+  .navbar-container #navbar-menu-home {
+    display: none; }
+    @media screen and (max-width: 80rem) {
+      .navbar-container #navbar-menu-home {
+        display: block; } }
 
 .navbar-brand {
   font-family: 'Unica One', cursive;
