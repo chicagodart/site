@@ -22,8 +22,9 @@
 
 #lil-about-text {
   padding: 1em;
-  p {
-    margin: 0;
+
+  @media screen and (max-width: $breakpoint-medium) {
+      padding: 10px;
   }
 }
 
@@ -42,6 +43,10 @@
     color: $white;
     border-bottom: solid 0.13em white;
     padding-bottom: 0.1em;
+  }
+
+  @media screen and (max-width: $breakpoint-medium) {
+      padding: 10px;
   }
 }
 
