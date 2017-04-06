@@ -15,6 +15,16 @@
   a {
     color: $yellow;
   }
+  .rbc-btn-group {
+    button {
+      color: $yellow;
+      background-color: $black;
+    }
+  }
+  .rbc-event {
+    color: $black !important;
+    background-color: $yellow;
+  }
 
   .navbar-button {
     color: $yellow;

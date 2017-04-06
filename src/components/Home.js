@@ -25,7 +25,6 @@ class Home extends Component {
   }
 
   addActiveClass(num) {
-    console.log(num === this.state.currentPage);
     return num === this.state.currentPage ? 'active' : '';
   }
 

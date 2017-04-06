@@ -24,6 +24,7 @@ class Calendar extends Component {
     return (
       <div id="big-calendar">
         <BigCalendar
+          ref={(el) => { this.cal = el; }}
           events={events}
           startAccessor="start"
           views={{ month: true, week: true }}
