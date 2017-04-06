@@ -362,7 +362,7 @@ body {
     display: none; }
   .navbar-container #navbar-menu-home {
     display: none; }
-    @media screen and (max-width: 48rem) {
+    @media screen and (max-width: 80rem) {
       .navbar-container #navbar-menu-home {
         display: block; } }
 
