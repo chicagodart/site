@@ -95,7 +95,7 @@
       position: fixed;
       top: $navbar-height;
       right: 5px;
-      padding: 10px 18px;
+      padding: 0 0.9em 0.6em 0.9em;
       box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
       border-radius: 2px;
       display: block;
@@ -113,7 +113,7 @@
     }
   }
   .navbar-menu-center li {
-    margin: 5px 0px 5px 0px;
+    margin: 0.4em 0;
     float: none;
     display: block;
   }

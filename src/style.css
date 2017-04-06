@@ -278,7 +278,8 @@ body {
   position: absolute; }
 
 .page-title {
-  font-size: 2em; }
+  font-size: 2em;
+  padding: 0; }
 
 .large-font {
   font-size: 1.6em; }
@@ -391,7 +392,7 @@ body {
     position: fixed;
     top: 90px;
     right: 5px;
-    padding: 10px 18px;
+    padding: 0 0.9em 0.6em 0.9em;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
     border-radius: 2px;
     display: block;
@@ -405,7 +406,7 @@ body {
     padding: 0;
     z-index: -100; }
   .navbar-menu-center li {
-    margin: 5px 0px 5px 0px;
+    margin: 0.4em 0;
     float: none;
     display: block; }
   .navbar-menu-center i {
