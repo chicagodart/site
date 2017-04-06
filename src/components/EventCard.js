@@ -6,6 +6,10 @@ import { apiDomain } from '../../.config.json';
 const root = apiDomain || '/';
 
 const EventCard = ({ event }) => {
+  const {
+    ticket_url,
+    exclude_tickets
+  } = event.acf;
   const title = event.title.rendered;
   const heroImage = event.acf.hero_image;
   const link = parse(event.link).path;
@@ -18,6 +22,11 @@ const EventCard = ({ event }) => {
         <h2><a href={link} dangerouslySetInnerHTML={{ __html: title }} /></h2>
         {getDate(event)}
         <p dangerouslySetInnerHTML={{ __html: content }} />
+        { !exclude_tickets && ticket_url &&
+          <div className="event-card__ticket-btn">
+            <a href={ticket_url} className="btn">Buy Tickets</a>
+          </div>
+        }
       </div>
     </div>
   );
