@@ -89,7 +89,7 @@ class Events extends Component {
     }
     return pageNumbers.length === 1 ? null : pageNumbers.map(number => (
       <li key={number}>
-        <button id={number} className={this.addActiveClass(number)} onClick={this.handleClick}>
+        <button id={number} className={this.addActiveClass(number)} onClick={this.handleClick} aria-label={`page ${number}`}>
           {number}
         </button>
       </li>
@@ -205,7 +205,7 @@ class Events extends Component {
 }
 
 const mapStateToProps = state => ({
-  events: Object.values(state.posts).filter(post => post.categories.indexOf(11) !== -1)
+  events: Object.keys(state.posts).map(key => state.posts[key]).filter(post => post.categories.indexOf(11) !== -1)
 });
 const mapDispatchtoProps = { loadPosts };
 

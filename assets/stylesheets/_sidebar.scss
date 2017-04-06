@@ -1,8 +1,8 @@
 .fixed-sidebar {
   position: -webkit-sticky; // required for Safari
   position: sticky;
-  margin-top: $navbar-height * .66;
-  top: $navbar-height; // required as well.
+  margin-top: -$navbar-height * .8;
+  top: $navbar-height * 1.2; // required as well.
 }
 
 .sidebar-title {

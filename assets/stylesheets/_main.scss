@@ -8,7 +8,7 @@ body {
   min-height: 100%;
   margin: 0px;
   font-family: 'Karla', sans-serif;
-  background-color: $white;
+  background-color: $light-gray;
   font-size: 1em;
   a {
     color: $bright-blue;
@@ -28,7 +28,7 @@ body {
   padding-bottom: 3em;
 }
 
-@media screen and (max-width: 40rem) {
+@media screen and (max-width: $breakpoint-medium) {
   .video {
     margin: 0;
     max-width: 23rem;
@@ -60,6 +60,9 @@ body {
     padding-top: 0em;
     margin: 2em auto;
     text-align: center;
+  }
+  .home-content {
+    display: static;
   }
 }
 
@@ -121,4 +124,5 @@ body {
 
 .page-title {
   font-size: 2em;
+  padding: 0;
 }
