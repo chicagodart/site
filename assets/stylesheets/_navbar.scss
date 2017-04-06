@@ -35,7 +35,7 @@
   li {
     display: flex;
     margin: 0px 0px 0px 50px;
-    @media screen and (max-width: 80rem) {
+    @media screen and (max-width: $breakpoint-large) {
       margin: 0px 0px 0px 1vw;
     }
   }
@@ -84,7 +84,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width : 48rem) {
+@media screen and (max-width : $breakpoint-large) {
   .navbar-menu-center {
     position: relative;
     display: inline-block;
