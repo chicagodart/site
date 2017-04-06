@@ -23,8 +23,7 @@ function SingleEvent(props) {
           <a href={ticket_url} className="btn btn--large">Buy Tickets</a>
         </div>
           }
-        <h2>About the Show</h2>
-        <h3 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+        <h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
         <div className="single-event__date">{displayDate}</div>
       </hgroup>
 
