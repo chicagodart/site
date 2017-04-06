@@ -37,11 +37,9 @@ class Events extends Component {
 
   componentDidMount() {
     this.props.loadPosts('events');
-    console.log('this.cal', this.cal);
   }
 
   addActiveClass(num) {
-    console.log(num === this.state.currentPage);
     return num === this.state.currentPage ? 'active' : '';
   }
 
@@ -123,7 +121,7 @@ class Events extends Component {
         link: event.link
       }));
       return (
-        <div ref={(el) => { this.cal = el; }} id="big-calendar" >
+        <div id="big-calendar" >
           <BigCalendar
             events={events}
             selectable

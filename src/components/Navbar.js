@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { toggleFontSize, toggleContrast } from '../reducers/toggle';
+import NavbarMenu from './NavbarMenu';
+
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -10,27 +12,12 @@ class Navbar extends React.Component {
       menu: false
     };
     this.toggleMenu = this.toggleMenu.bind(this);
-    this.closeMenu = this.closeMenu.bind(this);
-    this.showHideMenu = this.showHideMenu.bind(this);
   }
 
-  toggleMenu() {
+  toggleMenu(e) {
     this.setState({
       menu: !this.state.menu
     });
-  }
-
-  closeMenu() {
-    this.setState({
-      menu: false
-    });
-  }
-
-  showHideMenu() {
-    if (this.state.menu) {
-      return '';
-    }
-    return 'hide-menu';
   }
 
   render() {
@@ -48,14 +35,7 @@ class Navbar extends React.Component {
               </Link>
             </h1>
             <div className="navbar-menu-center">
-              <ul className={this.showHideMenu()}>
-                <li id="navbar-menu-home" onClick={this.closeMenu}><Link to="/">Home</Link></li>
-                <li onClick={this.closeMenu}><Link to="/about">About</Link></li>
-                <li onClick={this.closeMenu}><Link to="/events">Tickets & Events</Link></li>
-                <li onClick={this.closeMenu}><Link to="/donate">Donate</Link></li>
-                <li onClick={this.closeMenu}><Link to="/auditions">Auditions</Link></li>
-                <li onClick={this.closeMenu}><Link to="/accessibility">Accessibility</Link></li>
-              </ul>
+              <NavbarMenu showMenu={this.state.menu} toggleMenu={this.toggleMenu} />
             </div>
             <div className="navbar-menu-right">
               <ul>
