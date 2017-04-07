@@ -1,10 +1,8 @@
 import React from 'react';
 import dateFormat from 'dateformat';
-import { resolve, parse } from 'uri-js';
+import { parse } from 'uri-js';
 
-import { apiDomain } from '../../.config.json';
-const root = apiDomain || '/';
-import EventImage from './EventImage'
+import EventImage from './EventImage';
 
 const EventCard = ({ event }) => {
   const {
@@ -12,7 +10,6 @@ const EventCard = ({ event }) => {
     exclude_tickets
   } = event.acf;
   const title = event.title.rendered;
-  const heroImage = event.acf.hero_image;
   const link = parse(event.link).path;
   const content = event.excerpt.rendered.replace(/\[&hellip;\]/g, `<a href="${link}">... read more</a>`);
 

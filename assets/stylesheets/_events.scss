@@ -60,13 +60,11 @@
   width: 100%;
   overflow: hidden;
   height: 30vh;
-  max-height: $max-page-width * 0.5;
   img {
     position: absolute;
     display: block;
     width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
   }
 }
 
