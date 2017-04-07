@@ -21,6 +21,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.props.loadPosts();
   }
 
