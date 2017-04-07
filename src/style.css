@@ -96,12 +96,15 @@ html {
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 30vh; }
+  height: 20vh; }
   .event-img img {
     position: absolute;
     display: block;
     width: 100%;
     top: 0; }
+  @media screen and (max-width: 40rem) {
+    .event-img {
+      height: 30vh; } }
 
 .event-img--top img {
   top: 0;
@@ -376,7 +379,7 @@ body {
   .navbar-container li {
     display: flex;
     margin: 0px 0px 0px 50px; }
-    @media screen and (max-width: 80rem) {
+    @media screen and (max-width: 75rem) {
       .navbar-container li {
         margin: 0px 0px 0px 1vw; } }
   .navbar-container a {
@@ -386,7 +389,7 @@ body {
     display: none; }
   .navbar-container #navbar-menu-home {
     display: none; }
-    @media screen and (max-width: 80rem) {
+    @media screen and (max-width: 75rem) {
       .navbar-container #navbar-menu-home {
         display: block; } }
 
@@ -419,7 +422,7 @@ body {
   color: #1e90ff;
   cursor: pointer; }
 
-@media screen and (max-width: 80rem) {
+@media screen and (max-width: 75rem) {
   .navbar-menu-center {
     position: relative;
     display: inline-block;
