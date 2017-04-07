@@ -27,7 +27,7 @@ function Layout(props) {
       anchors.push([p2, `#${id}`]);
       return `${p1}><div id="${id}" class="anchor-adjust"></div>${p2}${p3}`;
     });
-  window.scrollTo(0, 0);
+  // window.scrollTo(0, 0);
   return (
     <main id="main" className="page-wrapper">
 

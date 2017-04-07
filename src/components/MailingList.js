@@ -15,9 +15,9 @@ class MailingList extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  componentDidMount() {
-    window.scrollTo(0, 0);
-  }
+  // componentDidMount() {
+  //   window.scrollTo(0, 0);
+  // }
 
   handleChange(evt) {
     this.setState({
