@@ -46,21 +46,27 @@
   }
 }
 
+
+
+//  Events page
+.event-card {
+  border-bottom: 0.2em solid $bright-blue;
+  background-color: $white;
+  min-height: 35em;
+}
+
 .event-img {
   position: relative;
-  display: block;
-  float: left;
-  width: 60%;
-  margin-right: 1em;
-  padding-top: 40%;
+  width: 100%;
   overflow: hidden;
-  max-height: $max-page-width * 0.7;
+  height: 30vh;
+  max-height: $max-page-width * 0.5;
   img {
-    display: block;
     position: absolute;
+    display: block;
+    width: 100%;
     top: 50%;
     transform: translateY(-50%);
-    width: 100%;
   }
 }
 
@@ -77,13 +83,6 @@
     bottom: 0;
     transform: none;
   }
-}
-
-//  Events page
-.event-card {
-  border-bottom: 0.2em solid $bright-blue;
-  background-color: $white;
-  min-height: 35em;
 }
 
 .event-card-text {
