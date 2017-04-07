@@ -59,12 +59,15 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 30vh;
+  height: 20vh;
   img {
     position: absolute;
     display: block;
     width: 100%;
     top: 0;
+  }
+  @media screen and (max-width : $breakpoint-medium) {
+    height: 30vh;
   }
 }
 
