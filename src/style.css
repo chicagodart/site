@@ -485,7 +485,8 @@ body {
     .footer .social {
       flex-direction: row; }
       .footer .social li {
-        padding: 5px; } }
+        padding: 5px;
+        margin: 0 10px; } }
   .footer li {
     display: block;
     text-align: center; }
