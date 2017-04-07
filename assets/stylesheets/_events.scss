@@ -46,6 +46,39 @@
   }
 }
 
+.event-img {
+  position: relative;
+  display: block;
+  float: left;
+  width: 60%;
+  margin-right: 1em;
+  padding-top: 40%;
+  overflow: hidden;
+  max-height: $max-page-width * 0.7;
+  img {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+}
+
+.event-img--top {
+  img {
+    top: 0;
+    transform: none;
+  }
+}
+
+.event-img--bottom {
+  img {
+    top: auto;
+    bottom: 0;
+    transform: none;
+  }
+}
+
 //  Events page
 .event-card {
   border-bottom: 0.2em solid $bright-blue;
