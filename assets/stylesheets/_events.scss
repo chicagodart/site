@@ -46,11 +46,41 @@
   }
 }
 
+
+
 //  Events page
 .event-card {
   border-bottom: 0.2em solid $bright-blue;
   background-color: $white;
   min-height: 35em;
+}
+
+.event-img {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 30vh;
+  img {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 0;
+  }
+}
+
+.event-img--top {
+  img {
+    top: 0;
+    transform: none;
+  }
+}
+
+.event-img--bottom {
+  img {
+    top: auto;
+    bottom: 0;
+    transform: none;
+  }
 }
 
 .event-card-text {

@@ -1,9 +1,8 @@
 import React from 'react';
 import dateFormat from 'dateformat';
-import { resolve, parse } from 'uri-js';
+import { parse } from 'uri-js';
 
-import { apiDomain } from '../../.config.json';
-const root = apiDomain || '/';
+import EventImage from './EventImage';
 
 const EventCard = ({ event }) => {
   const {
@@ -11,13 +10,16 @@ const EventCard = ({ event }) => {
     exclude_tickets
   } = event.acf;
   const title = event.title.rendered;
-  const heroImage = event.acf.hero_image;
   const link = parse(event.link).path;
   const content = event.excerpt.rendered.replace(/\[&hellip;\]/g, `<a href="${link}">... read more</a>`);
 
   return (
     <div className="event-card">
-      <img src={resolve(root, heroImage.sizes.medium_large)} alt={heroImage.alt} style={{ width: '100%' }} />
+      <EventImage
+        src={event ? event.acf.hero_image.sizes.medium_large : ''}
+        alt={event ? event.acf.hero_image.alt : ''}
+        align={event ? event.acf.hero_image_align : ''}
+      />
       <div className="event-card-text">
         <h2><a href={link} dangerouslySetInnerHTML={{ __html: title }} /></h2>
         {getDate(event)}

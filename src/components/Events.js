@@ -13,7 +13,6 @@ BigCalendar.setLocalizer(
   BigCalendar.momentLocalizer(moment)
 );
 
-// Components
 import EventCard from './EventCard';
 
 class Events extends Component {
@@ -24,7 +23,7 @@ class Events extends Component {
       showCalendar: false,
       selectedTab: 'events',
       currentPage: 1,
-      eventsPerPage: 4
+      eventPairsPerPage: 2
     };
 
     this.renderEvents = this.renderEvents.bind(this);
@@ -67,17 +66,30 @@ class Events extends Component {
 
 
   renderEvents(events) {
-    const eventsOrdered = _.orderBy(events, [event => event.acf.end_date], ['asc']);
+    const eventsOrdered = _.orderBy(events, [event => new Date(event.acf.end_date)], ['desc']);
+    const eventsInPairs = [];
+    for (let i = 0; i < eventsOrdered.length; i += 2) {
+      if (eventsOrdered[i + 1]) eventsInPairs.push([eventsOrdered[i], eventsOrdered[i + 1]]);
+      else eventsInPairs.push([eventsOrdered[i]]);
+    }
 
-    const { currentPage, eventsPerPage } = this.state;
-    const indexOfLastEvent = currentPage * eventsPerPage;
-    const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
-    const currentPageEvents = eventsOrdered.slice(indexOfFirstEvent, indexOfLastEvent);
-    return currentPageEvents.map((event, i) => (
-      <div key={i} className="event col col-6 p2">
-        <EventCard event={event} />
+    const { currentPage, eventPairsPerPage } = this.state;
+    const indexOfLastEventPair = currentPage * eventPairsPerPage;
+    const indexOfFirstEventPair = indexOfLastEventPair - eventPairsPerPage;
+    const currentPageEvents = eventsInPairs.slice(indexOfFirstEventPair, indexOfLastEventPair);
+
+    return currentPageEvents.map((postPair, i) => (
+      <div key={i} className="mxn2 sm-mxn2 event-row">
+        <div className="event col col-6 px2">
+          <EventCard event={postPair[0]} />
+        </div>
+        {
+            postPair[1] && <div className="event col col-6 px2">
+              <EventCard event={postPair[1]} />
+            </div>
+          }
       </div>
-      ));
+        ));
   }
 
   renderPageNumbers() {
@@ -168,7 +180,6 @@ class Events extends Component {
     );
   }
 
-  // Clean this up
   changeSelectedTab() {
     if (this.state.selectedTab === 'events' && this.state.showCalendar) {
       return (
@@ -192,9 +203,8 @@ class Events extends Component {
     return (
       <div className="max-width-12 mx-auto">
         <div className="clearfix center" style={{ marginBottom: '2em' }}>
-          <h2 className="page-title">Upcoming Events</h2>
+          <h2 className="page-title">Events</h2>
           <button className="btn" onClick={this.toggleCalendarView}>{this.state.showCalendar ? 'List View' : 'Calendar View'}</button>
-          {/* <div className="event-calendar-toggle">{this.changeSelectedTab(this.selectedTab)}</div> */}
         </div>
         <div className="clearfix">
           {this.showCalendarView()}

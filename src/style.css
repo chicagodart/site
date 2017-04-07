@@ -92,6 +92,26 @@ html {
   background-color: #ffffff;
   min-height: 35em; }
 
+.event-img {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 30vh; }
+  .event-img img {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 0; }
+
+.event-img--top img {
+  top: 0;
+  transform: none; }
+
+.event-img--bottom img {
+  top: auto;
+  bottom: 0;
+  transform: none; }
+
 .event-card-text {
   padding: 0em 2em 1em 2em; }
 
