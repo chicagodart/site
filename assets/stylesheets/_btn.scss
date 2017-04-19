@@ -23,7 +23,7 @@
     color: $yellow;
 
     &:hover {
-      color: $black;
+      color: $dark-gray;
       background: $yellow;
     }
   }
@@ -45,7 +45,7 @@
 
 .high-contrast {
   .btn--invert {
-    color: $black;
+    color: $dark-gray;
     background: $yellow;
 
     &:hover {

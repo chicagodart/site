@@ -31,7 +31,7 @@ html {
   border-color: #f5d76e;
   color: #f5d76e; }
   .high-contrast .btn:hover {
-    color: #000000;
+    color: #4d4d4d;
     background: #f5d76e; }
 
 .btn--large {
@@ -45,7 +45,7 @@ html {
     background: #ffffff; }
 
 .high-contrast .btn--invert {
-  color: #000000;
+  color: #4d4d4d;
   background: #f5d76e; }
   .high-contrast .btn--invert:hover {
     color: #f5d76e;
@@ -161,7 +161,7 @@ html {
       display: block; } }
 
 .high-contrast .home-content {
-  background: #141414; }
+  background: #616161; }
 
 #lil-about-box {
   font-size: 1.6em;
@@ -176,7 +176,7 @@ html {
 
 #call-to-action-box {
   background-color: #ff8400;
-  color: #000000;
+  color: #4d4d4d;
   font-size: 1.4em; }
 
 #call-to-action-text {
@@ -201,18 +201,25 @@ html {
     height: 2em;
     margin-left: .5em;
     padding: auto;
-    background-color: #1e90ff;
+    background-color: #6bb6ff;
     color: #ffffff;
     border: none;
     outline: none;
     font: inherit;
     cursor: pointer; }
   .pagination-container .active {
-    background-color: #70B8FF; }
+    background-color: #1e90ff; }
+
+.high-contrast .pagination-container button {
+  background-color: #737373;
+  color: #000000; }
+
+.high-contrast .pagination-container .active {
+  background-color: #f5d76e; }
 
 html {
   height: 100%;
-  color: #000000; }
+  color: #4d4d4d; }
 
 body {
   position: relative;
@@ -412,7 +419,7 @@ body {
   font-size: 20px; }
 
 #art-parens {
-  color: #000000; }
+  color: #4d4d4d; }
 
 .navbar-button {
   border: none;

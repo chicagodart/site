@@ -7,7 +7,7 @@
 }
 
 .high-contrast {
-  background-color: $blackreal;
+  background-color: $black;
   color: $white;
   *:focus {
     outline-color: $yellow;
@@ -18,11 +18,11 @@
   .rbc-btn-group {
     button {
       color: $yellow;
-      background-color: $blackreal;
+      background-color: $black;
     }
   }
   .rbc-event {
-    color: $blackreal !important;
+    color: $black !important;
     background-color: $yellow;
   }
 
@@ -31,7 +31,7 @@
   }
 
   .navbar {
-    background-color: $blackreal;
+    background-color: $black;
     a {
       color: $yellow;
     }
@@ -41,7 +41,7 @@
     }
 
     .navbar-menu-center ul {
-      background-color: $blackreal;
+      background-color: $black;
     }
   }
 
@@ -52,12 +52,12 @@
 
   .footer {
     background-color: $yellow;
-    color: $blackreal;
+    color: $black;
     *:focus {
-      outline-color: $blackreal;
+      outline-color: $black;
     }
     a {
-      color: $blackreal;
+      color: $black;
     }
   }
 }
