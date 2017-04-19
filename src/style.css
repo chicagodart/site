@@ -204,7 +204,6 @@ html {
     background-color: #6bb6ff;
     color: #ffffff;
     border: none;
-    outline: none;
     font: inherit;
     cursor: pointer; }
   .pagination-container .active {
@@ -424,7 +423,6 @@ body {
 .navbar-button {
   border: none;
   background: none;
-  outline: none;
   font: inherit;
   color: #1e90ff;
   cursor: pointer; }
