@@ -29,9 +29,9 @@ class Navbar extends React.Component {
           <a href="#main" className="skip-nav">Skip to main content</a>
           <div className="navbar-container">
             <h1 className="navbar-brand">
-              <Link to="/">
-                <div>Chicago</div>
-                <div><span>D</span><span id="art-parens">(ART)</span></div>
+              <Link to="/" aria-label="Chicago Dart">
+                <div aria-hidden="true">Chicago</div>
+                <div aria-hidden="true"><span>D</span><span id="art-parens">(ART)</span></div>
               </Link>
             </h1>
             <div className="navbar-menu-center">
